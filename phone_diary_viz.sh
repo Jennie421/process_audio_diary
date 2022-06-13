@@ -13,13 +13,19 @@ repo_root=$(dirname $full_path)
 # export the path to the repo for scripts called by this script to also use - will unset at end
 export repo_root
 
-# gather user settings, first asking which study the code should run on - this is only setting currently for the viz side
-# (in future will want to be able to read this from a config file so code can be run with no user intervention - hold up right now is password handling)
-echo "Study of interest?"
-echo "(should match PHOENIX study name, validated options are BLS and DPBPD)"
-read study
+# # gather user settings, first asking which study the code should run on - this is only setting currently for the viz side
+# # (in future will want to be able to read this from a config file so code can be run with no user intervention - hold up right now is password handling)
+# echo "Study of interest?"
+# echo "(validated options are BLS, DPBPD, DATA)"
+# read study
+study=DATA
+
+# modify data location 
+data_loc=/n/home_fasse/jennieli
+export data_loc 
+
 # sanity check that the study folder is real at least
-cd /data/sbdp/PHOENIX/PROTECTED
+cd $data_loc
 if [[ ! -d $study ]]; then
 	echo "invalid study id"
 	exit
@@ -41,7 +47,7 @@ echo ""
 
 # start with distributions - per patient and for the overall study
 # feature distributions (OpenSMILE and NLP) also generated here, including doing OpenSMILE summary operation
-echo "Generating QC and feature distributions with histograms"
+echo "*******************Generating QC and feature distributions with histograms*******************"
 bash "$repo_root"/individual_modules/run_distribution_plots.sh
 echo ""
 
@@ -50,39 +56,39 @@ now=$(date +"%T")
 echo "Current time: ${now}"
 echo ""
 
-# create heatmaps to see progression of select audio and transcript QC features over time per patient (each diary one block)
-# (could also propose alternative dot plots?)
-echo "Generating QC heatmaps for each patient"
-bash "$repo_root"/individual_modules/run_heatmap_plots.sh
-echo ""
+# # create heatmaps to see progression of select audio and transcript QC features over time per patient (each diary one block)
+# # (could also propose alternative dot plots?)
+# echo "*******************Generating QC heatmaps for each patient*******************"
+# bash "$repo_root"/individual_modules/run_heatmap_plots.sh
+# echo ""
 
-# add current time for runtime tracking purposes
-now=$(date +"%T")
-echo "Current time: ${now}"
-echo ""
+# # add current time for runtime tracking purposes
+# now=$(date +"%T")
+# echo "Current time: ${now}"
+# echo ""
 
-# sentiment-colored wordclouds for the transcripts
-echo "Generating sentiment-colored wordclouds for each available transcript"
-bash "$repo_root"/individual_modules/run_wordclouds.sh
-echo ""
+# # sentiment-colored wordclouds for the transcripts
+# echo "*******************Generating sentiment-colored wordclouds for each available transcript*******************"
+# bash "$repo_root"/individual_modules/run_wordclouds.sh
+# echo ""
 
-# add current time for runtime tracking purposes
-now=$(date +"%T")
-echo "Current time: ${now}"
-echo ""
+# # add current time for runtime tracking purposes
+# now=$(date +"%T")
+# echo "Current time: ${now}"
+# echo ""
 
-# finally do correlation matrices for the study-wide distributions
-# since no need to loop over patients here or do any other bash preprocessing, just call python script directly
-echo "Creating study-wide correlation matrices"
-python "$repo_root"/individual_modules/functions_called/phone_diary_correlations.py "$study"
-echo ""
+# # finally do correlation matrices for the study-wide distributions
+# # since no need to loop over patients here or do any other bash preprocessing, just call python script directly
+# echo "*******************Creating study-wide correlation matrices*******************"
+# python "$repo_root"/individual_modules/functions_called/phone_diary_correlations.py "$study"
+# echo ""
 
-# add current time for runtime tracking purposes
-now=$(date +"%T")
-echo "Current time: ${now}"
-echo ""
+# # add current time for runtime tracking purposes
+# now=$(date +"%T")
+# echo "Current time: ${now}"
+# echo ""
 
 # script wrap up - unset environment variables so doesn't mess with future scripts
 unset study
 unset repo_root
-echo "Script completed"
+echo "=============Script completed============="

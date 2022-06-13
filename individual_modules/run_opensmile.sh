@@ -13,7 +13,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d /data/sbdp/PHOENIX/PROTECTED/$study ]]; then
+	if [[ ! -d $data_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -26,7 +26,7 @@ fi
 
 # body:
 # actually start running the main computations
-cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+cd $data_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID, that has phone audio data
 	if [[ ! -d $p/phone/processed/audio ]]; then
@@ -36,7 +36,7 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 
 	# then check that there are some decrypted files available for OpenSMILE to run on this round
 	if [ -z "$(ls -A decrypted_files)" ]; then
-		cd /data/sbdp/PHOENIX/PROTECTED/"$study" # back out of folder before skipping over patient
+		cd $data_loc/"$study" # back out of folder before skipping over patient
 		continue
 	fi
 
@@ -63,5 +63,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	done
 
 	# at end of iteration for this pt go back to top
-	cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+	cd $data_loc/"$study"
 done

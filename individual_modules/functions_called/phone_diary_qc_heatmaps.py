@@ -14,7 +14,7 @@ pd.options.mode.chained_assignment = None
 def diary_qc_heatmap(study, OLID, wipe=False):
 	# switch to specific patient folder
 	try:
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
 	except:
 		print("Problem with input arguments") # should never reach this error if calling via bash module
 		return

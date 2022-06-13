@@ -15,7 +15,7 @@ def audio_length_check(study, length_limit):
 
 	# get paths of interest for all patients in this study
 	try:
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study)
+		os.chdir("$data_loc/" + study)
 	except:
 		print("Problem with study argument " + study + ", exiting")
 		sys.exit(0) # exit with status fine error code, so doesn't prevent later steps of code (although would likely fail anyway if study argument is wrong here)
@@ -39,7 +39,7 @@ def audio_length_check(study, length_limit):
 			continue # skip in case any improperly formatted filenames come around
 
 		try:
-			os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio")
+			os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
 		except:
 			print("Problem with processed audio folder for " + OLID + ", continuing")
 			continue

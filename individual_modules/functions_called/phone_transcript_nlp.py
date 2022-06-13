@@ -11,18 +11,27 @@ from language_feature_functions import count_number_syllables, calculate_speakin
 
 chosen_keywords=["stress", "depress", "anx"] # hardcoded across all studies for now, really just an example for illustration - will count anything fully containing these letters so can get at variations via roots
 
+data_loc= "/n/home_fasse/jennieli"
+
 def diary_transcript_nlp(study, OLID):
 	print("Running Transcript Feature Extraction for " + OLID) # if calling from bash module, this will only print for patients that have phone transcript CSVs that have not been processed yet
-
+    
 	try:
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio/transcripts/csv")
+		os.chdir(data_loc + "/" + study + "/" + OLID + "/transcripts/csv") # J modified 
+		
 	except: # this should only be possible to reach if the function was called directly, and not via the bash module.
 		print("No transcripts to process for input study/OLID - if this is unexpected, please ensure transcripts have been pulled and CSV formatting script has been run")
 		return
 
 	# load audio QC for this pt to get the diary file lengths - necessary for getting speech rate of final sentence
-	audio_QC_path = glob.glob("../../" + study + "-" + OLID + "-phoneAudioQC-day1to*.csv")[0] # should only ever be one match if called from module
+# 	audio_QC_path = glob.glob("../../" + study + "-" + OLID + "-phoneAudioQC-day1to*.csv")[0] # should only ever be one match if called from module
+
+# 	audio_QC_path = glob.glob("/n/home_fasse/jennieli/audio_qc/FRESH17/" + "FRESH_17_" + OLID + "_phoneAudioDiary_QC.csv")[0]
+	audio_QC_path = "/n/home_fasse/jennieli/audio_qc/FRESH17/" + "FRESH_17_" + OLID + "_phoneAudioDiary_QC.csv"
+
 	audio_QC = pd.read_csv(audio_QC_path)
+	
+	
 	# if this fails to load okay for function to crash on the input patient, error message should be clear and output can't be completed
 	# very unlikely this module would ever be called without having some basic QC results for a given diary
 
@@ -55,11 +64,15 @@ def diary_transcript_nlp(study, OLID):
 
 		# get audio length to use in the speech rate function
 		try:
-			cur_file_QC = audio_QC[audio_QC["transcript_name"]==filename]
-			cur_length_seconds = float(cur_file_QC["length(minutes)"].tolist()[0]) * 60.0
+			audio_QC_split = audio_QC["filename"].str.rsplit(".", expand=True).iloc[:, 0]
+# 			print(audio_QC_split)
+			cur_file_QC = audio_QC[ audio_QC_split == filename.split(".")[0]]      # cur_file_QC = audio_QC[audio_QC["transcript_name"]==filename]
+# 			print(cur_file_QC)
+			cur_length_seconds = float(cur_file_QC["length_minutes"].tolist()[0]) * 60.0    # length(minutes)
 		except:
 			print("No audio QC record for file (" + filename + "), skipping")
 			continue
+
 
 		# compute features for this transcript in place
 		try:
@@ -68,8 +81,9 @@ def diary_transcript_nlp(study, OLID):
 			calculate_wordtovec_transcript(cur_trans)
 			calculate_sentiment(cur_trans)
 			count_keywords(cur_trans, chosen_keywords, substrings=True)
-		except:
-			print("Problem with current transcript (" + filename + "), one or more of NLP functions crashed - continuing")
+
+		except Exception as e:
+			print("Problem with current transcript (" + filename + "), one or more of NLP functions crashed - continuing" + " error: " + str(e))
 			continue
 
 		# save the specific transcript CSV
@@ -80,7 +94,7 @@ def diary_transcript_nlp(study, OLID):
 		trans_dfs.append(cur_trans)
 
 	if len(trans_dfs) == 0: # transcripts/csv folder could exist without there being anything in it - but should only be able to reach this if function called directly rather than through pipeline/bash module
-		print("No available transcript CSVs for input OLID")
+		print("No available transcript CSVs for input" + OLID)
 		return
 
 	# finally compute the summary stats for this pt

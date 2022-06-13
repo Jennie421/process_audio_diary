@@ -10,7 +10,7 @@ import numpy as np
 def move_audio_to_send(study, OLID, length_cutoff, db_cutoff):
 	# navigate to folder of interest, load initial CSVs
 	try:
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
 		dpdash_name_format = study + "-" + OLID + "-phoneAudioQC-day1to*.csv"
 		dpdash_name = glob.glob(dpdash_name_format)[0] # DPDash script deletes any older days in this subfolder, so should only get 1 match each time
 		dpdash_qc = pd.read_csv(dpdash_name)

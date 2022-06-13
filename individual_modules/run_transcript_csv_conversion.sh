@@ -13,7 +13,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d /data/sbdp/PHOENIX/PROTECTED/$study ]]; then
+	if [[ ! -d $data_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -26,7 +26,7 @@ fi
 
 # body:
 # actually start running the main computations
-cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+cd $data_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first verify this is a patient folder w/ valid OLID
 	if [[ ! -d $p ]]; then # needs to be directory
@@ -35,12 +35,16 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	if [[ ${#p} != 5 ]]; then # needs to be 5 characters
 		continue
 	fi
-	# some patients may not yet have any transcripts available, check for this too
-	if [[ ! -d "$p"/phone/processed/audio/transcripts ]]; then 
+ 	# some patients may not yet have any transcripts available, check for this too
+	if [[ ! -d "$p"/transcripts ]]; then 
 		continue
 	fi
 	# now that patient confirmed, get started
-	cd "$p"/phone/processed/audio/transcripts
+
+## J
+	cd "$p"/transcripts
+    echo $PWD
+	
 	if [[ ! -d csv ]]; then # make csv subfolder if this is the first transcript conversion for this patient
 		mkdir csv 
 	fi
@@ -78,7 +82,7 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 				# if this module was called via the main pipeline, should add this info to the end of the email alert file (after a blank line)
 				echo "" >> "$repo_root"/transcript_lab_email_body.txt
 				echo "${file} is not ASCII encoded, so is not currently able to be processed. Please remove offending characters and then rerun processing steps on this transcript. The following command can be executed to identify the problematic parts:" >> "$repo_root"/transcript_lab_email_body.txt
-				echo "​grep -P '[^\x00-\x7f]' /data/sbdp/PHOENIX/PROTECTED/${study}/${p}/phone/processed/audio/transcripts/${file}" >> "$repo_root"/transcript_lab_email_body.txt
+				echo "​grep -P '[^\x00-\x7f]' $data_loc/${study}/${p}/transcripts/${file}" >> "$repo_root"/transcript_lab_email_body.txt
 				# not actually including the output here so that email won't ever accidentally include PII
 			fi
 
@@ -125,5 +129,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 		fi
 	fi
 
-	cd /data/sbdp/PHOENIX/PROTECTED/"$study" # at end of patient reset to root study dir for next loop
+	cd $data_loc/"$study" # at end of patient reset to root study dir for next loop
 done

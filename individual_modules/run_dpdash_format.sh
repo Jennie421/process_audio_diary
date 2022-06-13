@@ -14,7 +14,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d /data/sbdp/PHOENIX/PROTECTED/$study ]]; then
+	if [[ ! -d $data_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -36,7 +36,7 @@ fi
 
 # body:
 # actually start running the main computations
-cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+cd $data_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID, that has audio
 	if [[ ! -d $p/phone/processed/audio ]]; then
@@ -46,11 +46,11 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 
 	# then check that expected processed outputs exist, if not won't be possible to run DPDash compile for this OLID
 	if [[ ! -e ${study}_${p}_phone_audio_ETFileMap.csv ]]; then
-		cd /data/sbdp/PHOENIX/PROTECTED/"$study" # back out of patient folder before skipping
+		cd $data_loc/"$study" # back out of patient folder before skipping
 		continue
 	fi
 	if [[ ! -e ${study}_${p}_phone_audioQC_output.csv ]]; then
-		cd /data/sbdp/PHOENIX/PROTECTED/"$study" # back out of patient folder before skipping
+		cd $data_loc/"$study" # back out of patient folder before skipping
 		continue
 	fi
 	# VAD CSV can be optional though
@@ -59,5 +59,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	python "$func_root"/phone_diary_dpdash_compile.py "$study" "$p"
 
 	# back out of patient folder at end
-	cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+	cd $data_loc/"$study"
 done

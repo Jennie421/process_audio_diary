@@ -14,7 +14,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d /data/sbdp/PHOENIX/PROTECTED/$study ]]; then
+	if [[ ! -d $data_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -42,7 +42,7 @@ fi
 
 # body:
 # actually start running the main computations
-cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+cd $data_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID, that has phone data
 	if [[ ! -d $p/phone ]]; then
@@ -110,5 +110,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	fi
 
 	# back out of pt folder when done
-	cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+	cd $data_loc/"$study"
 done

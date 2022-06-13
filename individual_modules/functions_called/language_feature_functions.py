@@ -8,7 +8,21 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 # path to model is currently hardcoded but this will definitely need to be updated!
 # the model will be too big to include in GitLab but will also want to give instructions on downloading
-word2vec_model_path = '/data/sbdp/NLP_models/GoogleNews-vectors-negative300.bin' 
+
+
+# Import the os module
+import os
+# Get the current working directory
+cwd = os.getcwd()
+# Print the current working directory
+print("Current working directory: {0}".format(cwd))
+print()
+
+
+# J modified
+word2vec_model_path = '/n/home_fasse/jennieli/NLP_models/GoogleNews-vectors-negative300.bin' 
+
+
 # you may also consider using a different model or training your own, and point to it here. 
 # as long as the produced .bin will work with the gensim.models package no changes to the below code would be necessary, besides ensuring dimensionality matches:
 word2vec_dimensions = 300 # Google's model reduces word rep to 300 dimensions!
@@ -106,11 +120,24 @@ def calculate_speaking_rate(transcript_df_with_syls, audio_length=None, inplace=
 	# get sentence lengths in time
 	speech_times_raw = transcript_df_with_syls["timefromstart"].tolist()
 	# prior version was assuming there would be an hour placeholder as well, but for newer phone diaries there never is, so fix that!
-	try:
-		speech_times = [float(s[0:2])*60 + float(s[3:-1]) for s in speech_times_raw]
-	except:
-		# if there is an hour placeholder will hit this except block, can go from there
-		speech_times = [float(s[0:2])*60*60 + float(s[3:5])*60 + float(s[6:-1]) for s in speech_times_raw]
+# 	try:
+# 		speech_times = [float(s[0:2])*60 + float(s[3:-1]) for s in speech_times_raw]
+# 	except:
+# 		# if there is an hour placeholder will hit this except block, can go from there
+# 		speech_times = [float(s[0:2])*60*60 + float(s[3:5])*60 + float(s[6:-1]) for s in speech_times_raw]
+	
+	def str2float(s):
+		s_list = s.split(":")
+		if len(s_list) == 3: 
+			# if there is an hour placeholdder 
+			time = float(s_list[0])*60*60 + float(s_list[1])*60 + float(s_list[2])
+		else: 
+			time = float(s_list[0])*60 + float(s_list[1])
+		return time
+	
+	speech_times = [ str2float(s) for s in speech_times_raw]
+	# print(speech_times)  # to check if the time conversion is correct 
+	
 	speech_differences = [speech_times[j] - speech_times[i] for i,j in zip(range(len(speech_times)-1), range(1,len(speech_times)))]
 	if audio_length is not None:
 		speech_differences.append(audio_length - speech_times[-1])

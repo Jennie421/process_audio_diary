@@ -8,7 +8,7 @@ import numpy as np
 
 def get_email_summary_stats(study, lab_email_path, transcribeme_email_path):
 	# get paths of interest for all patients in this study
-	os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study)
+	os.chdir("$data_loc/" + study)
 	# first get paths to main folders for all patients that have them
 	path_of_interest1 = "*/phone/processed/audio/decrypted_files"
 	path_of_interest2 = "*/phone/processed/audio/to_send"
@@ -51,7 +51,7 @@ def get_email_summary_stats(study, lab_email_path, transcribeme_email_path):
 		# find dpdash path from file path
 		filen = filep.split("/")[-1]
 		OLID = filen.split("_")[1]
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
 		dpdash_name_format = study + "-" + OLID + "-phoneAudioQC-day1to*.csv"
 		dpdash_name = glob.glob(dpdash_name_format)[0] # DPDash script deletes any older days in this subfolder, so should only get 1 match each time
 		dpdash_qc = pd.read_csv(dpdash_name) 
@@ -74,7 +74,7 @@ def get_email_summary_stats(study, lab_email_path, transcribeme_email_path):
 		# find dpdash path from file path
 		filen = filep.split("/")[-1]
 		OLID = filen.split("_")[1]
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
 		dpdash_name_format = study + "-" + OLID + "-phoneAudioQC-day1to*.csv"
 		dpdash_name = glob.glob(dpdash_name_format)[0] # DPDash script deletes any older days in this subfolder, so should only get 1 match each time
 		dpdash_qc = pd.read_csv(dpdash_name) 
@@ -98,7 +98,7 @@ def get_email_summary_stats(study, lab_email_path, transcribeme_email_path):
 		# find dpdash path from file path
 		filen = filep.split("/")[-1]
 		OLID = decrypted_pt_match_list[index_counter]
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
 		audio_qc_raw_name = study + "_" + OLID + "_phone_audioQC_output.csv"
 		audio_qc_df = pd.read_csv(audio_qc_raw_name) 
 		# technically reloading this CSV for each file instead of for each patient, but should be a fast operation because CSV is small

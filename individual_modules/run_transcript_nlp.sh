@@ -14,7 +14,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d /data/sbdp/PHOENIX/PROTECTED/$study ]]; then
+	if [[ ! -d $data_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -36,16 +36,16 @@ fi
 
 # body:
 # actually start running the main computations
-cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+cd $data_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID that has previous transcripts
-	if [[ ! -d $p/phone/processed/audio/transcripts/csv ]]; then
+	if [[ ! -d $p/transcripts/csv ]]; then
 		continue
 	fi
-	cd "$p"/phone/processed/audio/transcripts
+	cd "$p"/transcripts
 	# confirm there are csvs in the folder, not just that it exists
 	if [ -z "$(ls -A csv)" ]; then
-		cd /data/sbdp/PHOENIX/PROTECTED/"$study" # back out of folder before skipping over patient
+		cd $data_loc/"$study" # back out of folder before skipping over patient
 		continue
 	fi
 
@@ -58,7 +58,7 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# (note this means that if new features are added old outputs will need to be cleared and code ran from the start again)
 	new_files=$(diff <(ls -1a csv) <(ls -1a csv_with_features))
 	if [[ -z "${new_files}" ]]; then # if diff of file names of these directories is empty
-		cd /data/sbdp/PHOENIX/PROTECTED/"$study" # back out of folder before skipping over patient
+		cd $data_loc/"$study" # back out of folder before skipping over patient
 		continue
 	fi
 	
@@ -66,5 +66,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	python "$func_root"/phone_transcript_nlp.py "$study" "$p"
 
 	# back out of folder for next loop
-	cd /data/sbdp/PHOENIX/PROTECTED/"$study"
+	cd $data_loc/"$study"
 done

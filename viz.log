@@ -1,0 +1,89 @@
+Study of interest?
+(validated options are BLS, DPBPD, DATA)
+
+Beginning script - diary visualization generation for:
+DATA
+
+Current time: 10:10:27
+
+Generating QC and feature distributions with histograms
+Looping through patients
+Generating study-wide plots
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_total_distributions.py", line 4, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+
+Current time: 10:10:28
+
+Generating QC heatmaps for each patient
+
+Current time: 10:10:28
+
+Generating sentiment-colored wordclouds for each available transcript
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 45: cd: 3KS75/phone/processed/audio: No such file or directory
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 4, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 45: cd: 6YG55/phone/processed/audio: No such file or directory
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 4, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+
+Current time: 10:10:28
+
+Creating study-wide correlation matrices
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_correlations.py", line 4, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+
+Current time: 10:10:28
+
+Script completed
+Study of interest?
+(validated options are BLS, DPBPD, DATA)
+
+Beginning script - diary visualization generation for:
+DATA
+
+Current time: 10:29:02
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+Generating study-wide plots
+Matplotlib is building the font cache; this may take a moment.
+no audio QC for this study yet
+no transcript QC for this study yet
+no OpenSMILE results summary for this study yet
+no filtered OpenSMILE results summary for this study yet
+no transcript NLP for this study yet
+No distribution info for this study yet, exiting
+
+Current time: 10:29:28
+
+*******************Generating QC heatmaps for each patient*******************
+
+Current time: 10:29:28
+
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 45: cd: 3KS75/phone/processed/audio: No such file or directory
+Problem with input arguments
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 45: cd: 6YG55/phone/processed/audio: No such file or directory
+Problem with input arguments
+
+Current time: 10:29:38
+
+*******************Creating study-wide correlation matrices*******************
+No audio QC data yet to correlate, continuing
+No transcript QC data yet to correlate, continuing
+No OpenSMILE data yet to correlate, continuing
+No pause-removed OpenSMILE data yet to correlate, continuing
+No transcript NLP data yet to correlate, continuing
+No key features distribution yet to correlate, continuing
+
+Current time: 10:29:47
+
+=============Script completed=============

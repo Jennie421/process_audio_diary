@@ -8,7 +8,7 @@ from viz_helper_functions import transcript_wordcloud
 def transcript_wordclouds(study, OLID):
 	# switch to specific patient folder - transcript CSVs
 	try:
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio/transcripts/csv")
+		os.chdir("$data_loc/" + study + "/" + OLID + "/transcripts/csv")
 	except:
 		print("Problem with input arguments") # should never reach this error if calling via bash module
 		return

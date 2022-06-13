@@ -17,7 +17,7 @@ from viz_helper_functions import distribution_plots
 def audio_dist(study, OLID):
 	# switch to specific patient folder
 	try:
-		os.chdir("/data/sbdp/PHOENIX/PROTECTED/" + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
 	except:
 		print("Problem with input arguments, or no processed audio for this patient yet") # should never reach this error if calling via bash module
 		return
