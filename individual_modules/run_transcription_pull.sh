@@ -14,7 +14,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d $data_loc/$study ]]; then
+	if [[ ! -d $study_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -51,7 +51,7 @@ if [[ $pipeline == "Y" ]]; then
 	echo "Each newly pulled phone diary transcript and each phone transcript still being waited on are listed below, split by OLID. Additionally, if warnings were encountered during the process of pulling an available transcript, they will be listed under the corresponding patient section. If any (known) issues arose with subsequent transcript processing steps, a description is appended at the bottom of this email." >> "$repo_root"/transcript_lab_email_body.txt
 fi
 # actually start running the main computations
-cd $data_loc/"$study"
+cd $study_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID, that has had some files successfully pushed to transcribeme in the past
 	if [[ ! -d $p/phone/processed/audio/pending_audio ]]; then
@@ -61,7 +61,7 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# also check that pending_audio is not empty, so we know if there are actually files actively being waited on
 	if [ -z "$(ls -A pending_audio)" ]; then
    		# back out of pt folder if there is nothing to check for
-		cd $data_loc/"$study"
+		cd $study_loc/"$study"
 		continue
 	fi
 	# create transcripts folder if it hasn't been done for this patient yet
@@ -109,5 +109,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	fi
 
 	# back out of pt folder when done
-	cd $data_loc/"$study"
+	cd $study_loc/"$study"
 done

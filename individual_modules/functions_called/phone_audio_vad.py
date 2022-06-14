@@ -26,7 +26,7 @@ def diary_vad(study, OLID):
 
 	# will run VAD on all audio files currently in this patient's decrypted_files folder
 	try:
-		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio/decrypted_files")
+		os.chdir("$study_loc/" + study + "/" + OLID + "/phone/processed/audio/decrypted_files")
 	except:
 		print("Problem with input arguments, or haven't decrypted any audio files yet for this patient") # should never reach this error if calling via pipeline
 		return
@@ -143,11 +143,11 @@ def diary_pause_detect(study, OLID, spec_thres=0.03, window_sec=0.25, slide_sec=
 	pause_stops = []
 	pause_lengths = []
 	df_vals = [filenames, pause_ids, pause_starts, pause_stops, pause_lengths]
-	pause_times_output_path = "$data_loc/" + study + "/" + OLID + "/phone/processed/audio/" + study + "_" + OLID + "_phone_audioVAD_pauseTimesOutput.csv"
+	pause_times_output_path = "$study_loc/" + study + "/" + OLID + "/phone/processed/audio/" + study + "_" + OLID + "_phone_audioVAD_pauseTimesOutput.csv"
 
 	# will run pause detection on all audio files currently in this patient's decrypted_files folder
 	try:
-		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio/decrypted_files/foreground_audio")
+		os.chdir("$study_loc/" + study + "/" + OLID + "/phone/processed/audio/decrypted_files/foreground_audio")
 	except:
 		print("Problem with input arguments, or haven't run VAD on any decrypted audio files yet for this patient") # should never reach this error if calling via pipeline
 		return
@@ -272,7 +272,7 @@ def diary_pause_qc(study, OLID):
 	pause_dbs = []
 	pause_flatnesses = []
 	df_vals = [patients, filenames, speech_lengths, num_pauses, max_pauses, mean_pauses, pause_dbs, pause_flatnesses]
-	pause_qc_output_path = "$data_loc/" + study + "/" + OLID + "/phone/processed/audio/" + study + "_" + OLID + "_phone_audioVAD_pauseDerivedQC_output.csv"
+	pause_qc_output_path = "$study_loc/" + study + "/" + OLID + "/phone/processed/audio/" + study + "_" + OLID + "_phone_audioVAD_pauseDerivedQC_output.csv"
 
 	# also setup for filtered OpenSMILE features. currently keeping all of the returned features, except metadata
 	# metadata will be processed separately as needed, filtered CSV will be saved with comma separation (OS by default uses semi-colon)
@@ -282,7 +282,7 @@ def diary_pause_qc(study, OLID):
 
 	# check first that the patient has audio in the decrypted_files folder, necessary for QC computations
 	try:
-		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio/decrypted_files")
+		os.chdir("$study_loc/" + study + "/" + OLID + "/phone/processed/audio/decrypted_files")
 	except:
 		print("Problem with input arguments, or haven't decrypted any audio files yet for this patient") # should never reach this error if calling via pipeline
 		return

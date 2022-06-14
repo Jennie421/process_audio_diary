@@ -29,7 +29,7 @@ fi
 # next will finish the lab alert email by looping over all patients to add more specific information
 # (in the process will also remove the prepended "new+" tags on the pending_audio files, as they are added to email)
 # right now going in patient order with the information, but in the future may want to be more strategic about ordering
-cd $data_loc/"$study" 
+cd $study_loc/"$study" 
 # before looping, add higher level header info on the contents of this list
 echo "" >> "$repo_root"/audio_lab_email_body.txt # add blank line
 echo "Additional information on each new diary per OLID is provided below. This includes a list of filenames for successfully pushed audio diaries (matching lab transcript naming convention) and a list of filenames for rejected audio diaries (matching raw naming format used by Beiwe) along with the general reason for each rejection." >> "$repo_root"/audio_lab_email_body.txt
@@ -43,7 +43,7 @@ for p in *; do
 	# also check that something new has happened with this patient
 	# (technically if there is outstanding pending audio but no new files this will not catch, but that should be relatively rare and only include still generally active patients)
 	if [ ! -d to_send ] && [ -z "$(ls -A decrypted_files)" ] && [ -z "$(ls -A pending_audio)" ]; then
-		cd $data_loc/"$study" # back out of pt folder before skipping
+		cd $study_loc/"$study" # back out of pt folder before skipping
 		continue
 	fi
 	
@@ -115,5 +115,5 @@ for p in *; do
 	cd ..
 
 	# back out of pt folder when done
-	cd $data_loc/"$study"
+	cd $study_loc/"$study"
 done

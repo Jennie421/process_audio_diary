@@ -13,7 +13,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d $data_loc/$study ]]; then
+	if [[ ! -d $study_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -26,7 +26,7 @@ fi
 
 # body:
 # actually start running the main computations
-cd $data_loc/"$study"
+cd $study_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first verify this is a patient folder w/ valid OLID
 	if [[ ! -d $p ]]; then # needs to be directory
@@ -36,14 +36,14 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 		continue
 	fi
  	# some patients may not yet have any transcripts available, check for this too
-	if [[ ! -d "$p"/transcripts ]]; then 
+	if [[ ! -d "$p/$transcript_loc" ]]; then 
 		continue
 	fi
 	# now that patient confirmed, get started
 
 ## J
-	cd "$p"/transcripts
-    echo $PWD
+	cd "$p"/$transcripts_loc
+	echo $PWD
 	
 	if [[ ! -d csv ]]; then # make csv subfolder if this is the first transcript conversion for this patient
 		mkdir csv 
@@ -82,7 +82,7 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 				# if this module was called via the main pipeline, should add this info to the end of the email alert file (after a blank line)
 				echo "" >> "$repo_root"/transcript_lab_email_body.txt
 				echo "${file} is not ASCII encoded, so is not currently able to be processed. Please remove offending characters and then rerun processing steps on this transcript. The following command can be executed to identify the problematic parts:" >> "$repo_root"/transcript_lab_email_body.txt
-				echo "​grep -P '[^\x00-\x7f]' $data_loc/${study}/${p}/transcripts/${file}" >> "$repo_root"/transcript_lab_email_body.txt
+				echo "​grep -P '[^\x00-\x7f]' $study_loc/${study}/${p}/${transcript_loc}/${file}" >> "$repo_root"/transcript_lab_email_body.txt
 				# not actually including the output here so that email won't ever accidentally include PII
 			fi
 
@@ -129,5 +129,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 		fi
 	fi
 
-	cd $data_loc/"$study" # at end of patient reset to root study dir for next loop
+	cd $study_loc/"$study" # at end of patient reset to root study dir for next loop
 done

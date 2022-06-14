@@ -22,8 +22,8 @@ def transcript_push(study, OLID, password, pipeline=False):
 	host = "sftp.transcribeme.com"
 	username = "partners_itp"
 
-	# $data_loc is also hardcoded pretty much throughout this pipeline - will want to replace with "data_root" variable for future release?
-	directory = os.path.join("$data_loc", study, OLID, "phone/processed/audio/to_send")
+	# $study_loc is also hardcoded pretty much throughout this pipeline - will want to replace with "data_root" variable for future release?
+	directory = os.path.join("$study_loc", study, OLID, "phone/processed/audio/to_send")
 	os.chdir(directory) # if this is called by pipeline or even the modular wrapping bash script the directory will definitely exist, so no need to try/catch here
 	
 	# loop through the WAV files in to_send, push them to TranscribeMe

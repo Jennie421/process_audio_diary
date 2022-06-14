@@ -14,7 +14,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d $data_loc/$study ]]; then
+	if [[ ! -d $study_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -72,7 +72,7 @@ if [ $auto_send_limit_bool = "Y" ] || [ $auto_send_limit_bool = "y" ]; then
 fi
 
 # now start going through patients for the upload
-cd $data_loc/"$study"
+cd $study_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID, that has phone audio data to send
 	if [[ ! -d $p/phone/processed/audio/to_send ]]; then # check for to_send folder
@@ -90,7 +90,7 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 
 	if [ -z "$(ls -A to_send)" ]; then # also check that to_send isn't empty
 		rm -rf to_send # if it is empty, clear it out!
-		cd $data_loc/"$study" # back out of pt folder before skipping
+		cd $study_loc/"$study" # back out of pt folder before skipping
 		continue
 	fi
 
@@ -103,10 +103,10 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
    		rm -rf to_send
 	else
 		echo ""
-   		echo "Warning: some diaries meant to be pushed to TranscribeMe failed to upload. Check $data_loc/${study}/${p}/phone/processed/audio/to_send for more info."
+   		echo "Warning: some diaries meant to be pushed to TranscribeMe failed to upload. Check $study_loc/${study}/${p}/phone/processed/audio/to_send for more info."
    		echo ""
 	fi
 
 	# back out of pt folder when done
-	cd $data_loc/"$study"
+	cd $study_loc/"$study"
 done

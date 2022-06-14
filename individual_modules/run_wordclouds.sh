@@ -14,7 +14,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d $data_loc/$study ]]; then
+	if [[ ! -d $study_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -36,10 +36,10 @@ fi
 
 # body:
 # actually start running the main computations
-cd $data_loc/"$study"
+cd $study_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID, that has previouly processed audio with some transcripts
-	if [[ ! -d $p/transcripts/csv ]]; then
+	if [[ ! -d $p/$transcripts_loc/csv ]]; then
 		continue
 	fi
 	cd "$p"/phone/processed/audio
@@ -51,5 +51,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	python "$func_root"/phone_transcript_wordclouds.py "$study" "$p"
 
 	# back out of folder before continuing to next patient
-	cd $data_loc/"$study"
+	cd $study_loc/"$study"
 done

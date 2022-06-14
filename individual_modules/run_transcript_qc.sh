@@ -14,7 +14,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d $data_loc/$study ]]; then
+	if [[ ! -d $study_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -36,16 +36,16 @@ fi
 
 # body:
 # actually start running the main computations
-cd $data_loc/"$study"
+cd $study_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID that has previous transcripts
-	if [[ ! -d $p/transcripts/csv ]]; then  # NOTE: CHANGE THIS TO VARIABLE SO DON'T NEED MANUL EDITING
+	if [[ ! -d $p/$transcripts_loc/csv ]]; then  # NOTE: CHANGE THIS TO VARIABLE SO DON'T NEED MANUL EDITING
 		continue
 	fi
-	cd "$p"/transcripts
+	cd "$p"/$transcripts_loc
 	# confirm there are csvs in the folder, not just that it exists
 	if [ -z "$(ls -A csv)" ]; then
-		cd $data_loc/"$study" # back out of folder before skipping over patient
+		cd $study_loc/"$study" # back out of folder before skipping over patient
 		continue
 	fi
 	
@@ -53,5 +53,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	python "$func_root"/phone_transcript_qc.py "$study" "$p"
 
 	# back out of folder for next loop
-	cd $data_loc/"$study"
+	cd $study_loc/"$study"
 done

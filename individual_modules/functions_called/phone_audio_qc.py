@@ -29,7 +29,7 @@ def diary_qc(study, OLID):
 	max_flats=[]
 
 	try:
-		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio/decrypted_files")
+		os.chdir("$study_loc/" + study + "/" + OLID + "/phone/processed/audio/decrypted_files")
 	except:
 		print("Problem with input arguments, or haven't decrypted any audio files yet for this patient") # should never reach this error if calling via bash module
 		return
@@ -91,7 +91,7 @@ def diary_qc(study, OLID):
 			max_flats.append(np.amax(spec_flat))
 		
 	# now prepare to save new CSV for this patient (or update existing CSV if there is one)
-	os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
+	os.chdir("$study_loc/" + study + "/" + OLID + "/phone/processed/audio")
 	
 	# convert RMS to decibels
 	ref_rms=float(2*(10**(-5)))

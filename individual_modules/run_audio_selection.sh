@@ -14,7 +14,7 @@ if [[ -z "${study}" ]]; then
 	read study
 
 	# sanity check provided answer, it should at least exist on PHOENIX
-	if [[ ! -d $data_loc/$study ]]; then
+	if [[ ! -d $study_loc/$study ]]; then
 		echo "invalid study id"
 		exit
 	fi
@@ -46,7 +46,7 @@ fi
 
 # body:
 # actually start running the main computations
-cd $data_loc/"$study"
+cd $study_loc/"$study"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID, that has phone audio data
 	if [[ ! -d $p/phone/processed/audio/decrypted_files ]]; then
@@ -56,7 +56,7 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# can also skip over the patient if there is no new decrypted audio
 	# (both this module and the steps that come after it in the main pipeline have no use for a patient with no newly processed audio)
 	if [ -z "$(ls -A decrypted_files)" ]; then	
-		cd $data_loc/"$study" # back out of pt folder before skipping
+		cd $study_loc/"$study" # back out of pt folder before skipping
    		continue
 	fi
 
@@ -70,5 +70,5 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	python "$func_root"/phone_audio_send_prep.py "$study" "$p" "$length_cutoff" "$db_cutoff"
 
 	# back out of pt folder when done
-	cd $data_loc/"$study"
+	cd $study_loc/"$study"
 done

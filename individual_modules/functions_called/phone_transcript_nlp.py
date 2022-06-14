@@ -11,13 +11,16 @@ from language_feature_functions import count_number_syllables, calculate_speakin
 
 chosen_keywords=["stress", "depress", "anx"] # hardcoded across all studies for now, really just an example for illustration - will count anything fully containing these letters so can get at variations via roots
 
-data_loc= "/n/home_fasse/jennieli"
+
+study_loc = "/n/home_fasse/jennieli/"
+transcripts_loc = "/phone/processed/audio/transcripts/transcript_data/"
+
 
 def diary_transcript_nlp(study, OLID):
 	print("Running Transcript Feature Extraction for " + OLID) # if calling from bash module, this will only print for patients that have phone transcript CSVs that have not been processed yet
     
 	try:
-		os.chdir(data_loc + "/" + study + "/" + OLID + "/transcripts/csv") # J modified 
+		os.chdir(study_loc + "/" + study + "/" + OLID + transcripts_loc + "/csv") # J modified 
 		
 	except: # this should only be possible to reach if the function was called directly, and not via the bash module.
 		print("No transcripts to process for input study/OLID - if this is unexpected, please ensure transcripts have been pulled and CSV formatting script has been run")
@@ -27,7 +30,8 @@ def diary_transcript_nlp(study, OLID):
 # 	audio_QC_path = glob.glob("../../" + study + "-" + OLID + "-phoneAudioQC-day1to*.csv")[0] # should only ever be one match if called from module
 
 # 	audio_QC_path = glob.glob("/n/home_fasse/jennieli/audio_qc/FRESH17/" + "FRESH_17_" + OLID + "_phoneAudioDiary_QC.csv")[0]
-	audio_QC_path = "/n/home_fasse/jennieli/audio_qc/FRESH17/" + "FRESH_17_" + OLID + "_phoneAudioDiary_QC.csv"
+	# NOTE: path modified according to Cony & Jennie's organization
+	audio_QC_path = "../../../" + study + "_" + OLID + "_phoneAudioDiary_QC.csv"
 
 	audio_QC = pd.read_csv(audio_QC_path)
 	
@@ -44,7 +48,7 @@ def diary_transcript_nlp(study, OLID):
 		if not filename.endswith(".csv"): # skip any non-csv files (and folders) in case they exist
 			continue
 
-		if os.path.isfile("../csv_with_features/" + filename): # also skip if it has already been processed
+		if os.path.isfile("../../NLP_features/csv_with_features/" + filename): # also skip if it has already been processed
 			continue
 
 		# load in CSV and clear any rows where there is a missing value (should always be a subject, timestamp, and text; code is written so metadata will always be filled so it should only filter out problems on part of transcript)
@@ -87,7 +91,7 @@ def diary_transcript_nlp(study, OLID):
 			continue
 
 		# save the specific transcript CSV
-		save_path = "../csv_with_features/" + filename
+		save_path = "../../NLP_features/csv_with_features/" + filename
 		cur_trans.to_csv(save_path, index=False)
 
 		cur_trans["filename"] = [filename for x in range(cur_trans.shape[0])] # need filename for the summary op to work
@@ -98,7 +102,7 @@ def diary_transcript_nlp(study, OLID):
 		return
 
 	# finally compute the summary stats for this pt
-	summary_save = "../../" + study + "_" + OLID + "_" + "phone_transcript_NLPFeaturesSummary.csv"
+	summary_save = "../../NLP_features/" + study + "_" + OLID + "_" + "phone_transcript_NLPFeaturesSummary.csv"
 	final_summary = summarize_transcript_stats(trans_dfs)
 	if os.path.isfile(summary_save):
 		old_df = pd.read_csv(summary_save)

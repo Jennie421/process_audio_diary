@@ -21,11 +21,11 @@ export repo_root
 study=DATA
 
 # modify data location 
-data_loc=/n/home_fasse/jennieli
-export data_loc 
+study_loc=/n/home_fasse/jennieli
+export study_loc 
 
 # sanity check that the study folder is real at least
-cd $data_loc
+cd $study_loc
 if [[ ! -d $study ]]; then
 	echo "invalid study id"
 	exit

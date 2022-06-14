@@ -22,24 +22,24 @@ export repo_root
 # # gather user settings, first asking which study the code should run on
 # # (in future will want to be able to read this from a config file so code can be run with no user intervention - hold up right now is password handling)
 # echo "Study of interest?"
-# echo "(validated options are BLS, DPBPD, DATA)"
+# echo "(validated option is FRESH_17)"
 # read study
 
 # modify data location 
-data_loc=/n/home_fasse/jennieli
-export data_loc 
+study_loc=/n/home_fasse/jennieli # where FRESH_17 is located 
+export study_loc 
 
-# transcripts loc relative to each px dir, not used
-transcripts_loc=/transcripts
+# transcripts loc relative to each px dir
+transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
 export transcripts_loc
 
 # sanity check that the study folder is real at least
-cd $data_loc
+cd $study_loc
 # if [[ ! -d $study ]]; then
 # 	echo "invalid study id"
 # 	exit
 # fi
-study=DATA
+study=FRESH_17
 cd "$study" # switch to study folder for first loop over patient list
 # make study an environment variable, for calling bash scripts throughout this script. will be unset at end
 export study
@@ -88,16 +88,16 @@ now=$(date +"%T")
 echo "Current time: ${now}"
 echo ""
 
-# # run transcript QC on all available transcripts for this study
-# echo "*************Running QC on all available transcripts for this study*************"
-# bash "$repo_root"/individual_modules/run_transcript_qc.sh
-# echo ""
+# run transcript QC on all available transcripts for this study
+echo "*************Running QC on all available transcripts for this study*************"
+bash "$repo_root"/individual_modules/run_transcript_qc.sh
+echo ""
 
 
-# # add current time for runtime tracking purposes
-# now=$(date +"%T")
-# echo "Current time: ${now}"
-# echo ""
+# add current time for runtime tracking purposes
+now=$(date +"%T")
+echo "Current time: ${now}"
+echo ""
 
 # # run DPDash formatting script to create new DPDash formatted audioQC and transcriptQC outputs from the raw outputs of those scripts
 # # (this will include updating the transcript availability column of audioQC as well as the obvious updates to transcriptQC on DPDash)

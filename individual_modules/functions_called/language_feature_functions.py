@@ -259,7 +259,7 @@ def calculate_wordtovec_transcript(transcript_df, calc_func=sentence_wordtovec_m
 	sentences = [t[0:-1] for t in transcript_df["text"].tolist()]
 	prev_sen_vector = None
 	for s in sentences:
-		metrics, vector = calc_func(s)
+		metrics, vector = calc_func(s, verbose=False)
 
 		if metrics is None:
 			mean_mags.append(np.nan)

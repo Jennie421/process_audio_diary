@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import datetime
 
-data_loc = "/n/home_fasse/jennieli"
+study_loc = "/n/home_fasse/jennieli"
 
 # don't need to worry about this pandas warning in below script, so supress it 
 pd.options.mode.chained_assignment = None
@@ -51,7 +51,7 @@ def dpdash_compile(study, OLID):
 
 	# navigate to folder of interest, load initial CSVs
 	try:
-		os.chdir(data_loc + "/" + study + "/" + OLID + "/transcripts")
+		os.chdir(study_loc + "/" + study + "/" + OLID + "/$transcripts_loc")
 		audio_metadata = pd.read_csv(study + "_" + OLID + "_phone_audio_ETFileMap.csv")
 		audio_qc_basic = pd.read_csv(study + "_" + OLID + "_phone_audioQC_output.csv")
 	except:

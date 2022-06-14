@@ -21,7 +21,7 @@ def create_eastern_time_filemap(study, OLID):
 	cur_recording_number = 1
 
 	try:
-		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/raw")
+		os.chdir("$study_loc/" + study + "/" + OLID + "/phone/raw")
 	except:
 		# either patient has no phone data, or something is wrong with the input - just exit if so
 		print("No raw phone data exists for input OLID " + OLID + ", continuing") # provide info on why function exited, in case called from outside pipeline
@@ -146,7 +146,7 @@ def create_eastern_time_filemap(study, OLID):
 		label = df_columns[i]
 		value = df_vals[i]
 		map_csv[label] = value
-	map_csv.to_csv("$data_loc/" + study + "/" + OLID + "/phone/processed/audio/" + study + "_" + OLID + "_phone_audio_ETFileMap.csv", index=False)
+	map_csv.to_csv("$study_loc/" + study + "/" + OLID + "/phone/processed/audio/" + study + "_" + OLID + "_phone_audio_ETFileMap.csv", index=False)
 
 if __name__ == '__main__':
     # Map command line arguments to function arguments.

@@ -13,7 +13,7 @@ from viz_helper_functions import distribution_plots
 def transcript_dist(study, OLID):
 	# switch to specific patient folder
 	try:
-		os.chdir("$data_loc/" + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir("$study_loc/" + study + "/" + OLID + "/phone/processed/audio")
 	except:
 		print("Problem with input arguments, or no processed audio diaries yet for this patient") # should never reach this error if calling via bash module
 		return

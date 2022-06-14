@@ -13,7 +13,9 @@ import pandas as pd
 import numpy as np 
 import sys
 
-data_loc = "/n/home_fasse/jennieli" # NOTE: HAVE TO MANULLY ADD 
+study_loc = "/n/home_fasse/jennieli" # NOTE: HAVE TO MANULLY ADD 
+transcripts_loc = "/phone/processed/audio/transcripts/transcript_data/"
+output_loc = "/phone/processed/audio/transcripts/"
 
 def diary_transcript_qc(study, OLID):
 	print("Running Transcript QC for " + OLID) # if calling from bash module, this will only print for patients that have phone transcript CSVs (whether new or not)
@@ -47,7 +49,7 @@ def diary_transcript_qc(study, OLID):
 	nS1=[] # should mainly only see 1 subject for these
 
 	try:
-		os.chdir(data_loc + "/" + study + "/" + OLID + "/transcripts/csv")
+		os.chdir(study_loc + "/" + study + "/" + OLID + transcripts_loc + "/csv")
 	except: # this should only be possible to reach if the function was called directly, and not via the bash module.
 		print("No transcripts to process for input study/OLID - if this is unexpected, please ensure transcripts have been pulled and CSV formatting script has been run")
 		return
@@ -154,8 +156,9 @@ def diary_transcript_qc(study, OLID):
 		print ("No available transcript CSVs for input OLID")
 		return
 		
-    # JL purpose: save qc output file in a different directory, to prevent error. 
-	os.chdir(data_loc + "/" + study + "/" + OLID + "/transcripts")
+    # save qc output file in a different directory, to prevent error. 
+	# NOTE: the output destination modified according to Cony & Jennie's new organization 
+	os.chdir(study_loc + "/" + study + "/" + OLID + output_loc)
 
 	# construct current CSV
 	values = [patients, fnames, nsubjs, nsens, nwords, minwordsper, maxwordsper, ninaud, nquest, nredact, nuhum, nfiller, nrestarts, nrepeats, ncommas, ndashes, fintimes, minspaces, maxspaces, minspacesweighted, maxspacesweighted, minspacesweightedabs, nS1]

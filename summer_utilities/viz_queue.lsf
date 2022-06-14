@@ -119,8 +119,8 @@ chmod 770 /data/sbdp/PHOENIX/PROTECTED/BLS/*/phone/processed/audio/*_transcriptQ
 chmod 770 /data/sbdp/PHOENIX/PROTECTED/BLS/*/phone/processed/audio/*-phoneTranscriptQC-day*.csv
 chmod -R 770 /data/sbdp/PHOENIX/PROTECTED/BLS/*/phone/processed/audio/heatmaps
 chmod -R 770 /data/sbdp/PHOENIX/PROTECTED/BLS/*/phone/processed/audio/wordclouds
-chmod -R 770 /data/sbdp/PHOENIX/PROTECTED/BLS/*/phone/processed/audio/transcripts/csv
-chmod -R 770 /data/sbdp/PHOENIX/PROTECTED/BLS/*/phone/processed/audio/transcripts/csv_with_features
+chmod -R 770 /data/sbdp/PHOENIX/PROTECTED/BLS/*/phone/processed/audio/$transcripts_loc/csv
+chmod -R 770 /data/sbdp/PHOENIX/PROTECTED/BLS/*/phone/processed/audio/$transcripts_loc/csv_with_features
 echo ""
 
 # add current time for runtime tracking purposes
