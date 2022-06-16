@@ -11,8 +11,9 @@ from language_feature_functions import count_number_syllables, calculate_speakin
 
 chosen_keywords=["stress", "depress", "anx"] # hardcoded across all studies for now, really just an example for illustration - will count anything fully containing these letters so can get at variations via roots
 
-
-study_loc = "/n/home_fasse/jennieli/"
+# NOTE: Modify the paths as needed. 
+# 		Should be consistent with definitions in "phone_transcript_processes.sh"
+study_loc = "/ncf/cnl03/PHOENIX/PROTECTED"
 transcripts_loc = "/phone/processed/audio/transcripts/transcript_data/"
 
 

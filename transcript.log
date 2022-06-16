@@ -15310,3 +15310,2273 @@ audio qc path is: ../../../FRESH_17_6YG55_phoneAudioDiary_QC.csv
 Current time: 15:29:07
 
 =============Script completed=============
+Current time: 15:00:05
+
+*************Converting newly pulled transcripts to CSV*************
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2BK68/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2BK68
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2EG95/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EG95
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 45: cd: 2EJ48//phone/processed/audio/transcripts/transcript_data/: No such file or directory
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EJ48
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2FB35/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2FB35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2XQ45/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2XQ45
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3BY45/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt
+
+Done converting new transcripts for 3BY45
+: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 45: cd: 3CK38//phone/processed/audio/transcripts/transcript_data/: No such file or directory
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3CK38
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3EF35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3HZ25/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3HZ25
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3JT35/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3JT35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KN45/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3KN45
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+mkdir: cannot create directory ‘csv’: Permission denied
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0001.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0002.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0003.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0004.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0005.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0006.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0007.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0008.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0009.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0010.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0011.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 95: csv/FRESH_17_3KS75_phoneAudioDiary_recording0012.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0012.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0012.csv: No such file or directory
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 119: csv/FRESH_17_3KS75_phoneAudioDiary_recording0012.csv: No such file or directory
+Current time: 09:53:22
+
+*************Converting newly pulled transcripts to CSV*************
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2BK68/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2BK68
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2EG95/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EG95
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 45: cd: 2EJ48//phone/processed/audio/transcripts/transcript_data/: No such file or directory
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EJ48
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2FB35/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2FB35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2XQ45/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2XQ45
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3BY45/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3BY45
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 45: cd: 3CK38//phone/processed/audio/transcripts/transcript_data/: No such file or directory
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3CK38
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/transcript_data
+Current time: 09:59:36
+
+*************Converting newly pulled transcripts to CSV*************
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2BK68/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2BK68
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2EG95/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EG95
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 45: cd: 2EJ48//phone/processed/audio/transcripts/transcript_data/: No such file or directory
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+
+
+Done converting new transcripts for 2EJ48
+grep: *.txt: No such file or directory
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2FB35/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2FB35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2XQ45/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2XQ45
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3BY45/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3BY45
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 45: cd: 3CK38//phone/processed/audio/transcripts/transcript_data/: No such file or directory
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17
+mkdir: cannot create directory ‘csv’: Permission denied
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3CK38
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3EF35_phoneAudioDiary_recording0035.txt:
+S1: 0:00:23.006 And, you know, it'll be good for, you know-- just it's a good experience to have and it'll hopefully be good for my résumé and, and, you know, it's, it's something to do.
+
+Current time: 10:01:59
+
+*************Converting newly pulled transcripts to CSV*************
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2BK68/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2BK68
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2EG95/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EG95
+no transcript for 2EJ48, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2FB35/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2FB35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2XQ45/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2XQ45
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3BY45/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3BY45
+no transcript for 3CK38, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3EF35_phoneAudioDiary_recording0035.txt:
+S1: 0:00:23.006 And, you know, it'll be good for, you know-- just it's a good experience to have and it'll hopefully be good for my résumé and, and, you know, it's, it's something to do.
+
+Done converting new transcripts for 3EF35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3HZ25/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3HZ25
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3JT35/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3JT35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KN45/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3KN45
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3MR58/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3MR58
+no transcript for 3MZ45, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3PK35/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3PK35
+no transcript for 3RQ98, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3RV48/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3RV48
+no transcript for 3XY75, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4EF58/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4EF58
+no transcript for 4EG95, skipping
+no transcript for 4GH88, skipping
+no transcript for 4HM48, skipping
+no transcript for 4JK55, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4NB88/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4NB88
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4SX38/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4SX38
+no transcript for 4TM95, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4WH78/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4WH78
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4XP98/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4XP98
+no transcript for 5CH55, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5EX58/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5EX58
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5PT78/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5PT78
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5SD58/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5SD58
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5TH28/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5TH28
+no transcript for 5VQ48, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5VT38/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5VT38
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5ZK55/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5ZK55
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6BN38/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6BN38
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6CQ38/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6CQ38
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6NH38/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6NH38
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6QF48/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6QF48
+no transcript for 6UB35, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6VQ88/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6VQ88
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6YG55/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0073.txt:
+S1 00:00:41.999 I didn’t drink.
+S1 00:00:43.229 I don’t feel pressured to drink either, which was really great, and I also didn’t have to be a parent to any of my friends, which I would not have minded, but, um, it was cool that that didn’t happen.
+S1 00:02:04.875 Um, other than that, yeah, I kinda just, like, wanted to hang out with guy-- not hang out with guys but, like, do things with guys this weekend, and I didn’t.
+S1 00:03:07.888 Um, and then I said, "Okay, is there room for three more?" 'cause I thought we were all planning on sitting together, and they were like, "No, I really don’t think so."
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0106.txt:
+S1 00:01:08.609 But at this point, I don’t really-- like, I care, but I know nothing's gonna change.
+
+Done converting new transcripts for 6YG55
+no transcript for 7BN55, skipping
+no transcript for 7BX85, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7EK65/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_7EK65_phoneAudioDiary_recording0184.txt:
+S1: 00:53.443 Um, obviously [inaudible] my résumé, and, like, I finally had, like, a finished version.
+
+Done converting new transcripts for 7EK65
+no transcript for 7EX35, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7MF65/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7MF65
+no transcript for 7MG45, skipping
+no transcript for 7PG88, skipping
+no transcript for 7QX68, skipping
+no transcript for 7UH48, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7VF65/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7VF65
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7XP88/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7XP88
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7ZW55/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7ZW55
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8AU38/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8AU38
+no transcript for 8DX45, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8EY75/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8EY75
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8GA95/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8GA95
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8GW68/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8GW68
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8MB75/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8MB75
+no transcript for 8NB65, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8NZ48/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8NZ48
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8QZ55/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8QZ55
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8RC95/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8RC95
+no transcript for 8RW55, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8TS58/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8TS58
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8VY68/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8VY68
+no transcript for 8XG48, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9AR68/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9AR68
+no transcript for 9DP35, skipping
+no transcript for 9GY98, skipping
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9RP78/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9RP78
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9SA35/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9SA35
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9TQ38/phone/processed/audio/transcripts/transcript_data
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9TQ38
+
+Current time: 10:22:51
+
+*************Running QC on all available transcripts for this study*************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+Running Transcript QC for 3EF35
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_3EF35_phone_audio_transcriptQC_output.csv'
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+Running Transcript QC for 3KS75
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_3KS75_phone_audio_transcriptQC_output.csv'
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+Running Transcript QC for 6YG55
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_6YG55_phone_audio_transcriptQC_output.csv'
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+Running Transcript QC for 7EK65
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_7EK65_phone_audio_transcriptQC_output.csv'
+
+Current time: 10:23:49
+
+*************Extracting NLP features for all available transcripts*************
+mkdir: cannot create directory ‘/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/NLP_features/’: Permission denied
+mkdir: cannot create directory ‘/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/NLP_features/csv_with_features’: No such file or directory
+ls: cannot access /ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/NLP_features/csv_with_features: No such file or directory
+Current working directory: /ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/transcript_data
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_nlp.py", line 10, in <module>
+    from language_feature_functions import count_number_syllables, calculate_speaking_rate, calculate_wordtovec_transcript, calculate_sentiment, count_keywords, summarize_transcript_stats
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/language_feature_functions.py", line 46, in <module>
+    g = KeyedVectors.load_word2vec_format(word2vec_model_path, binary=True) # this can be slow to load, so that will be upfront to importing this file
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1630, in load_word2vec_format
+    return _load_word2vec_format(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1909, in _load_word2vec_format
+    _word2vec_read_binary(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1804, in _word2vec_read_binary
+    processed_words, chunk = _add_bytes_to_kv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1790, in _add_bytes_to_kv
+    _add_word_to_kv(kv, counts, word, vector, vocab_size)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1770, in _add_word_to_kv
+    kv.set_vecattr(word, 'count', word_count)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 331, in set_vecattr
+    self.expandos[attr][index] = val
+KeyboardInterrupt
+Current time: 10:30:58
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2BK68
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EG95
+no transcript for 2EJ48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2FB35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2XQ45
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3BY45
+no transcript for 3CK38, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3EF35_phoneAudioDiary_recording0035.txt:
+S1: 0:00:23.006 And, you know, it'll be good for, you know-- just it's a good experience to have and it'll hopefully be good for my résumé and, and, you know, it's, it's something to do.
+
+Done converting new transcripts for 3EF35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3HZ25
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3JT35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt
+
+Done converting new transcripts for 3KN45
+: No such file or directory
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3MR58
+no transcript for 3MZ45, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3PK35
+no transcript for 3RQ98, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3RV48
+no transcript for 3XY75, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4EF58
+no transcript for 4EG95, skipping
+no transcript for 4GH88, skipping
+no transcript for 4HM48, skipping
+no transcript for 4JK55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4NB88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4SX38
+no transcript for 4TM95, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4WH78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4XP98
+no transcript for 5CH55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5EX58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5PT78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5SD58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5TH28
+no transcript for 5VQ48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5VT38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5ZK55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6BN38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6CQ38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6NH38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6QF48
+no transcript for 6UB35, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6VQ88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0073.txt:
+S1 00:00:41.999 I didn’t drink.
+S1 00:00:43.229 I don’t feel pressured to drink either, which was really great, and I also didn’t have to be a parent to any of my friends, which I would not have minded, but, um, it was cool that that didn’t happen.
+S1 00:02:04.875 Um, other than that, yeah, I kinda just, like, wanted to hang out with guy-- not hang out with guys but, like, do things with guys this weekend, and I didn’t.
+S1 00:03:07.888 Um, and then I said, "Okay, is there room for three more?" 'cause I thought we were all planning on sitting together, and they were like, "No, I really don’t think so."
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0106.txt:
+S1 00:01:08.609 But at this point, I don’t really-- like, I care, but I know nothing's gonna change.
+
+Done converting new transcripts for 6YG55
+no transcript for 7BN55, skipping
+no transcript for 7BX85, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_7EK65_phoneAudioDiary_recording0184.txt:
+S1: 00:53.443 Um, obviously [inaudible] my résumé, and, like, I finally had, like, a finished version.
+
+Done converting new transcripts for 7EK65
+no transcript for 7EX35, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7MF65
+no transcript for 7MG45, skipping
+no transcript for 7PG88, skipping
+no transcript for 7QX68, skipping
+no transcript for 7UH48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7VF65
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7XP88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7ZW55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8AU38
+no transcript for 8DX45, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8EY75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8GA95
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8GW68
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8MB75
+no transcript for 8NB65, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8NZ48
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8QZ55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8RC95
+no transcript for 8RW55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8TS58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8VY68
+no transcript for 8XG48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9AR68
+no transcript for 9DP35, skipping
+no transcript for 9GY98, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9RP78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9SA35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9TQ38
+
+Current time: 10:31:17
+
+*************Running QC on all available transcripts for this study*************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 2EJ48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3CK38, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3MZ45, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3RQ98, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3XY75, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4EG95, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4GH88, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4HM48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4JK55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4TM95, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 5CH55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 5VQ48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 6UB35, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7BN55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7BX85, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7EX35, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7MG45, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7PG88, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7QX68, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7UH48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8DX45, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8NB65, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8RW55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8XG48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 9DP35, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 9GY98, skipping: command not found
+
+Current time: 10:31:19
+
+=============Script completed=============
+Current time: 10:33:30
+
+*************Running QC on all available transcripts for this study*************
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2BK68/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2EG95/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 2EJ48, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2FB35/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2XQ45/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3BY45/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3CK38, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3HZ25/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3JT35/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KN45/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3MR58/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3MZ45, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3PK35/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3RQ98, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3RV48/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3XY75, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4EF58/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4EG95, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4GH88, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4HM48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4JK55, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4NB88/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4SX38/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4TM95, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4WH78/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4XP98/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 5CH55, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5EX58/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5PT78/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5SD58/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5TH28/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 5VQ48, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5VT38/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5ZK55/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6BN38/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6CQ38/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6NH38/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6QF48/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 6UB35, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6VQ88/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7BN55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7BX85, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7EX35, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7MF65/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7MG45, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7PG88, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7QX68, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7UH48, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7VF65/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7XP88/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7ZW55/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8AU38/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8DX45, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8EY75/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8GA95/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8GW68/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8MB75/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8NB65, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8NZ48/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8QZ55/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8RC95/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8RW55, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8TS58/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8VY68/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8XG48, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9AR68/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 9DP35, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 9GY98, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9RP78/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9SA35/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9TQ38/phone/processed/audio/transcripts/transcript_data
+
+Current time: 10:33:33
+
+=============Script completed=============
+Current time: 10:34:12
+
+*************Running QC on all available transcripts for this study*************
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2BK68/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2EG95/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 2EJ48, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2FB35/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/2XQ45/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3BY45/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3CK38, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 48: no csv for 3EF35, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3HZ25/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3JT35/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KN45/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 48: no csv for 3KS75, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3MR58/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3MZ45, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3PK35/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3RQ98, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3RV48/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3XY75, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4EF58/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4EG95, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4GH88, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4HM48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4JK55, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4NB88/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4SX38/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4TM95, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4WH78/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/4XP98/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 5CH55, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5EX58/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5PT78/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5SD58/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5TH28/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 5VQ48, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5VT38/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/5ZK55/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6BN38/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6CQ38/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6NH38/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6QF48/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 6UB35, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6VQ88/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 48: no csv for 6YG55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7BN55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7BX85, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 48: no csv for 7EK65, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7EX35, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7MF65/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7MG45, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7PG88, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7QX68, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 7UH48, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7VF65/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7XP88/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7ZW55/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8AU38/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8DX45, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8EY75/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8GA95/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8GW68/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8MB75/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8NB65, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8NZ48/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8QZ55/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8RC95/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8RW55, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8TS58/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/8VY68/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 8XG48, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9AR68/phone/processed/audio/transcripts/transcript_data
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 9DP35, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 9GY98, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9RP78/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9SA35/phone/processed/audio/transcripts/transcript_data
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/9TQ38/phone/processed/audio/transcripts/transcript_data
+
+Current time: 10:34:13
+
+=============Script completed=============
+Current time: 10:36:00
+
+*************Running QC on all available transcripts for this study*************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 2EJ48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3CK38, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/transcript_data
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+Running Transcript QC for 3EF35
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_3EF35_phone_audio_transcriptQC_output.csv'
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+Running Transcript QC for 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_3KS75_phone_audio_transcriptQC_output.csv'
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3MZ45, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3RQ98, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 3XY75, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4EG95, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4GH88, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4HM48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4JK55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 4TM95, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 5CH55, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 5VQ48, skipping: command not found
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 43: no csv for 6UB35, skipping: command not found
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6YG55/phone/processed/audio/transcripts/transcript_data
+Running Transcript QC for 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 63, in diary_transcript_qc
+    cur_trans = pd.read_csv(filename)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles
+    self.handles = get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/codecs.py", line 309, in __init__
+    def __init__(self, errors='strict'):
+KeyboardInterrupt
+Current time: 10:36:33
+
+*************Running QC on all available transcripts for this study*************
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/transcript_data
+Running Transcript QC for 3EF35
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_3EF35_phone_audio_transcriptQC_output.csv'
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+Running Transcript QC for 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_3KS75_phone_audio_transcriptQC_output.csv'
+/ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6YG55/phone/processed/audio/transcripts/transcript_data
+Running Transcript QC for 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 65, in diary_transcript_qc
+    cur_trans.dropna(inplace=True)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/frame.py", line 5951, in dropna
+    count = agg_obj.count(axis=agg_axis)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/frame.py", line 9724, in count
+    return result.astype("int64")
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 5815, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/internals/managers.py", line 418, in astype
+    return self.apply("astype", dtype=dtype, copy=copy, errors=errors)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/internals/managers.py", line 332, in apply
+    result_blocks = extend_blocks(applied, result_blocks)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/internals/blocks.py", line 2009, in extend_blocks
+    if isinstance(result, list):
+KeyboardInterrupt
+Current time: 10:37:05
+
+*************Running QC on all available transcripts for this study*************
+running QC for 3EF35
+Running Transcript QC for 3EF35
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_3EF35_phone_audio_transcriptQC_output.csv'
+running QC for 3KS75
+Running Transcript QC for 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_3KS75_phone_audio_transcriptQC_output.csv'
+running QC for 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+Running Transcript QC for 6YG55
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_6YG55_phone_audio_transcriptQC_output.csv'
+running QC for 7EK65
+Running Transcript QC for 7EK65
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 179, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 175, in diary_transcript_qc
+    new_csv.to_csv(output_path,index=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'FRESH_17_7EK65_phone_audio_transcriptQC_output.csv'
+
+Current time: 10:37:41
+
+=============Script completed=============
+Current time: 11:03:38
+
+*************Running QC on all available transcripts for this study*************
+Running Transcript QC for 3EF35
+Running Transcript QC for 3KS75
+Running Transcript QC for 6YG55
+Running Transcript QC for 7EK65
+
+Current time: 11:04:22
+
+=============Script completed=============
+Current time: 11:07:12
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2BK68
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EG95
+no transcript for 2EJ48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2FB35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2XQ45
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3BY45
+no transcript for 3CK38, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3EF35_phoneAudioDiary_recording0035.txt:
+S1: 0:00:23.006 And, you know, it'll be good for, you know-- just it's a good experience to have and it'll hopefully be good for my résumé and, and, you know, it's, it's something to do.
+
+Done converting new transcripts for 3EF35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+Done converting new transcripts for 3HZ25
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3JT35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3KN45
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3MR58
+no transcript for 3MZ45, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3PK35
+no transcript for 3RQ98, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3RV48
+no transcript for 3XY75, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+Done converting new transcripts for 4EF58
+
+no transcript for 4EG95, skipping
+no transcript for 4GH88, skipping
+no transcript for 4HM48, skipping
+no transcript for 4JK55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4NB88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+Done converting new transcripts for 4SX38
+
+no transcript for 4TM95, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4WH78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4XP98
+no transcript for 5CH55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5EX58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5PT78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5SD58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5TH28
+no transcript for 5VQ48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5VT38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5ZK55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6BN38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6CQ38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6NH38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6QF48
+no transcript for 6UB35, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6VQ88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0073.txt:
+S1 00:00:41.999 I didn’t drink.
+S1 00:00:43.229 I don’t feel pressured to drink either, which was really great, and I also didn’t have to be a parent to any of my friends, which I would not have minded, but, um, it was cool that that didn’t happen.
+S1 00:02:04.875 Um, other than that, yeah, I kinda just, like, wanted to hang out with guy-- not hang out with guys but, like, do things with guys this weekend, and I didn’t.
+S1 00:03:07.888 Um, and then I said, "Okay, is there room for three more?" 'cause I thought we were all planning on sitting together, and they were like, "No, I really don’t think so."
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0106.txt:
+S1 00:01:08.609 But at this point, I don’t really-- like, I care, but I know nothing's gonna change.
+
+Done converting new transcripts for 6YG55
+no transcript for 7BN55, skipping
+no transcript for 7BX85, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_7EK65_phoneAudioDiary_recording0184.txt:
+S1: 00:53.443 Um, obviously [inaudible] my résumé, and, like, I finally had, like, a finished version.
+
+Done converting new transcripts for 7EK65
+no transcript for 7EX35, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7MF65
+no transcript for 7MG45, skipping
+no transcript for 7PG88, skipping
+no transcript for 7QX68, skipping
+no transcript for 7UH48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7VF65
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7XP88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7ZW55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8AU38
+no transcript for 8DX45, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8EY75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8GA95
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8GW68
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8MB75
+no transcript for 8NB65, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8NZ48
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8QZ55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8RC95
+no transcript for 8RW55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8TS58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8VY68
+no transcript for 8XG48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9AR68
+no transcript for 9DP35, skipping
+no transcript for 9GY98, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9RP78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9SA35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9TQ38
+
+Current time: 11:07:31
+
+*************Running QC on all available transcripts for this study*************
+Running Transcript QC for 3EF35
+Running Transcript QC for 3KS75
+Running Transcript QC for 6YG55
+Running Transcript QC for 7EK65
+
+Current time: 11:08:08
+
+*************Extracting NLP features for all available transcripts*************
+Current working directory: /ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3EF35/phone/processed/audio/transcripts/transcript_data
+
+Running Transcript Feature Extraction for 3EF35
+Current working directory: /ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+
+Running Transcript Feature Extraction for 3KS75
+Current working directory: /ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/6YG55/phone/processed/audio/transcripts/transcript_data
+
+Running Transcript Feature Extraction for 6YG55
+Current working directory: /ncf/cnl03/PHOENIX/PROTECTED/FRESH_17/7EK65/phone/processed/audio/transcripts/transcript_data
+
+Running Transcript Feature Extraction for 7EK65
+
+Current time: 11:26:58
+
+=============Script completed=============
+Current time: 13:36:03
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2BK68
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EG95
+no transcript for 2EJ48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2FB35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+Done converting new transcripts for 2XQ45
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3BY45
+no transcript for 3CK38, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3EF35_phoneAudioDiary_recording0035.txt:
+S1: 0:00:23.006 And, you know, it'll be good for, you know-- just it's a good experience to have and it'll hopefully be good for my résumé and, and, you know, it's, it's something to do.
+
+Done converting new transcripts for 3EF35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3HZ25
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3JT35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3KN45
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3MR58
+no transcript for 3MZ45, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3PK35
+no transcript for 3RQ98, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+
+
+Done converting new transcripts for 3RV48
+no transcript for 3XY75, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4EF58
+no transcript for 4EG95, skipping
+no transcript for 4GH88, skipping
+no transcript for 4HM48, skipping
+no transcript for 4JK55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4NB88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4SX38
+no transcript for 4TM95, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4WH78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 4XP98
+no transcript for 5CH55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5EX58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5PT78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5SD58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5TH28
+no transcript for 5VQ48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5VT38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 5ZK55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6BN38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6CQ38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6NH38
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6QF48
+no transcript for 6UB35, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 6VQ88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0073.txt:
+S1 00:00:41.999 I didn’t drink.
+S1 00:00:43.229 I don’t feel pressured to drink either, which was really great, and I also didn’t have to be a parent to any of my friends, which I would not have minded, but, um, it was cool that that didn’t happen.
+S1 00:02:04.875 Um, other than that, yeah, I kinda just, like, wanted to hang out with guy-- not hang out with guys but, like, do things with guys this weekend, and I didn’t.
+S1 00:03:07.888 Um, and then I said, "Okay, is there room for three more?" 'cause I thought we were all planning on sitting together, and they were like, "No, I really don’t think so."
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0106.txt:
+S1 00:01:08.609 But at this point, I don’t really-- like, I care, but I know nothing's gonna change.
+
+Done converting new transcripts for 6YG55
+no transcript for 7BN55, skipping
+no transcript for 7BX85, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_7EK65_phoneAudioDiary_recording0184.txt:
+S1: 00:53.443 Um, obviously [inaudible] my résumé, and, like, I finally had, like, a finished version.
+
+Done converting new transcripts for 7EK65
+no transcript for 7EX35, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7MF65
+no transcript for 7MG45, skipping
+no transcript for 7PG88, skipping
+no transcript for 7QX68, skipping
+no transcript for 7UH48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7VF65
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7XP88
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 7ZW55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8AU38
+no transcript for 8DX45, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8EY75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8GA95
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8GW68
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8MB75
+no transcript for 8NB65, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt
+
+Done converting new transcripts for 8NZ48
+: No such file or directory
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8QZ55
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8RC95
+no transcript for 8RW55, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8TS58
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 8VY68
+no transcript for 8XG48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9AR68
+no transcript for 9DP35, skipping
+no transcript for 9GY98, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9RP78
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9SA35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 9TQ38
+
+Current time: 13:36:34
+
+*************Running QC on all available transcripts for this study*************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 12, in <module>
+    import pandas as pd 
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/__init__.py", line 11, in <module>
+    __import__(dependency)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/__init__.py", line 156, in <module>
+    from . import random
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/random/__init__.py", line 179, in <module>
+    from . import _pickle
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/random/_pickle.py", line 2, in <module>
+    from ._philox import Philox
+  File "<frozen importlib._bootstrap>", line 398, in parent
+KeyboardInterrupt

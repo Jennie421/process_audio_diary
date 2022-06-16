@@ -13,7 +13,9 @@ import pandas as pd
 import numpy as np 
 import sys
 
-study_loc = "/n/home_fasse/jennieli" # NOTE: HAVE TO MANULLY ADD 
+# NOTE: Modify the paths as needed. 
+# 		Should be consistent with definitions in "phone_transcript_processes.sh"
+study_loc = "/ncf/cnl03/PHOENIX/PROTECTED" 
 transcripts_loc = "/phone/processed/audio/transcripts/transcript_data/"
 output_loc = "/phone/processed/audio/transcripts/"
 

@@ -8,6 +8,11 @@ The current version of this repository matches what is used internally for Baker
 Note all supplemental utility scripts described in the internal lab AV code guide for summer 2022 can be found in the new subfolder summer_utilities. As we will not be collecting new audio diaries over the summer, these scripts can assist in running any backlog processing in a more efficient manner. For more information on when/how to use, see the mentioned document. 
 
 
+## Jennie's notes:
+The paths in some scripts have not been adapted. Will cause error. 
+
+
+
 ### Table of Contents
 1. [Setup](#setup)
 2. [Primary Pipeline](#pipeline)

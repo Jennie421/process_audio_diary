@@ -36,14 +36,14 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 		continue
 	fi
  	# some patients may not yet have any transcripts available, check for this too
-	if [[ ! -d "$p/$transcript_loc" ]]; then 
+	if [[ ! -d "$p"/$transcripts_loc ]]; then 
+		echo "no transcript for $p, skipping"
 		continue
 	fi
 	# now that patient confirmed, get started
 
-## J
+	# Jennie modified: using variable to replace path name (a string)
 	cd "$p"/$transcripts_loc
-	echo $PWD
 	
 	if [[ ! -d csv ]]; then # make csv subfolder if this is the first transcript conversion for this patient
 		mkdir csv 

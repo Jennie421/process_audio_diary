@@ -10,7 +10,7 @@ exec 2> >(tee -ia transcript.log >&2)
 
 # hard code at the top the list of email recipients for now, just listing 3 main addresses
 # (giving my Harvard one because mail command seems more finicky with sending to my partners address?)
-email_list="cvidal@g.harvard.edu, jennieli@college.harvard.edu" #"mennis2@partners.org,ELIEBENTHAL@MCLEAN.HARVARD.EDU,jtbaker@partners.org"
+# email_list="cvidal@g.harvard.edu, jennieli@college.harvard.edu" #"mennis2@partners.org,ELIEBENTHAL@MCLEAN.HARVARD.EDU,jtbaker@partners.org"
 
 # start by getting the absolute path to the directory this script is in, which will be the top level of the repo
 # this way script will work even if the repo is downloaded to a new location, rather than relying on hard coded paths to where I put the repo. 
@@ -25,21 +25,23 @@ export repo_root
 # echo "(validated option is FRESH_17)"
 # read study
 
-# modify data location 
-study_loc=/n/home_fasse/jennieli # where FRESH_17 is located 
+# NOTE: instead of reading from user input, the study name is defined here. 
+study=FRESH_17
+
+# NOTE: the location of the study
+study_loc=/ncf/cnl03/PHOENIX/PROTECTED  # /n/home_fasse/jennieli # where FRESH_17 is located 
 export study_loc 
 
-# transcripts loc relative to each px dir
+# NOTE: the location of transcripts relative to each participant's directory
 transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
 export transcripts_loc
 
 # sanity check that the study folder is real at least
 cd $study_loc
-# if [[ ! -d $study ]]; then
-# 	echo "invalid study id"
-# 	exit
-# fi
-study=FRESH_17
+if [[ ! -d $study ]]; then
+	echo "invalid study id"
+	exit
+fi
 cd "$study" # switch to study folder for first loop over patient list
 # make study an environment variable, for calling bash scripts throughout this script. will be unset at end
 export study
