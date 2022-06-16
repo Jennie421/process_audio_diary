@@ -19,7 +19,7 @@ print("Current working directory: {0}".format(cwd))
 print()
 
 
-# J modified
+# NOTE: Must be modified based on the actual location of the model
 word2vec_model_path = '/n/home_fasse/jennieli/NLP_models/GoogleNews-vectors-negative300.bin' 
 
 

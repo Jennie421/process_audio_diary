@@ -7,11 +7,26 @@ The current version of this repository matches what is used internally for Baker
 
 Note all supplemental utility scripts described in the internal lab AV code guide for summer 2022 can be found in the new subfolder summer_utilities. As we will not be collecting new audio diaries over the summer, these scripts can assist in running any backlog processing in a more efficient manner. For more information on when/how to use, see the mentioned document. 
 
+---
+### Jennie's notes 22/06/16:
+Some scripts have not been adapted and will cause errors. Below are files used in transcript analysis which are already modified correctly: 
+- phone_transcript_processes.sh
+- individual_modules/run_transcript_csv_conversion.h
+- individual_modules/run_transcript_qc.sh
+- individual_modules/run_transcript_nlp.sh
+- individual_modules/functions_called/phone_transcript_qc.py
+- individual_modules/functions_called/phone_transcript_nlp.py
+- individual_modules/functions_called/language_feature_functions.py 
 
-## Jennie's notes:
-The paths in some scripts have not been adapted. Will cause error. 
+Users must modify path-related commands according to the orgnization of their data. Examples of variables:
+- study_loc
+- transcripts_loc
+- output_loc
+- csv_with_features_path (in run_transcript_nlp.sh)
+- audio_QC_path (in phone_transcript_nlp.py)
+- word2vec_model_path (in language_feature_functions.py)
 
-
+---
 
 ### Table of Contents
 1. [Setup](#setup)
@@ -30,14 +45,29 @@ All necessary Python (3.9) dependencies can be found in the setup/audio_process.
 
 	conda env create -f audio_process.yml
 
+__JL 22/06/16:__
+Conda cannot be installed on the cluster. Instead, you can load miniconda3 by running: 
+
+	module load centos6/0.0.1-fasrc01
+	module load ncf/1.0.0-fasrc01
+	module load miniconda3/4.5.12-ncf
+
 To activate the environment, which should be done each time before running the code, use:
 	
 	conda activate audio_process
+
+__JL 22/06/16:__
+If get an error when activating conda environment, try `conda init bash` and restart the terminal.
+
 
 Note that before the first time running on a new machine, it may be necessary to start Python (in the activated conda environment) and enter the following two commands, in order for the NLP features script to work:
 
 	import nltk
 	nltk.download('cmudict')
+
+__JL 22/06/16:__
+Type `python` to start Python. Enter the two commands. Type `quit()` to close Python and continue. 
+
 
 Similarly, a handful of the required packages are not conda installable, so that before the first the run the following should be entered on the command line (in the activated conda environment):
 
@@ -46,11 +76,27 @@ Similarly, a handful of the required packages are not conda installable, so that
 	pip install vaderSentiment
 	pip install wordcloud
 
+__JL 22/06/16:__
+If encounter the error "Could not install packages due to an OSError, Proxy URL had no scheme...", fix it by running: 
+
+	export http_proxy=http://rcproxy.rc.fas.harvard.edu:3128
+	export https_proxy=http://rcproxy.rc.fas.harvard.edu:3128
+
+
 It will also be necessary to install the lab encryption model for a first run, if the raw files need to be decrypted. To do so, enter the following command after activating the environment:
 
 	pip install cryptease
 	
 Other dependencies are OpenSMILE (2.3.0) and ffmpeg (4.3.2), as well as the ability to run bash scripts and a working mail command - the latter two should be available on any standard Linux server. 
+
+
+__Useful tips JL 22/06/16:__  
+1. The lines of commands in the dot/hidden file `.bashrc` will be executed every time you log onto the server. 
+2. Examples of command you can add (at the end) of .bashrc file are: 
+	+ export http_proxy=http://rcproxy.rc.fas.harvard.edu:3128
+	+ export https_proxy=http://rcproxy.rc.fas.harvard.edu:3128
+	+ conda activate audio_process
+	+ cd process_audio_diary  
 
 
 ### Primary Pipeline <a name="pipeline"></a>
@@ -115,18 +161,20 @@ There is also a run_email_writer.sh module called by the main pipeline, but that
 
 
 ##### Transcript Processing Details <a name="transcript"></a>
+
+__JL 22/06/16:__
+Only sections relevant to FRESH_17 analysis are explained here. For documentation of the original code please visit github page [https://github.com/dptools/process_audio_diary]
+
+
 To initiate the transcript side of the pipeline, navigate to the repository folder and run:
 
 	bash phone_transcript_preprocess.sh
 
-The script will then prompt for study name and TranscribeMe account password. It expects that the audio side pipeline has been run with auto transcription on recently, and new transcripts are now returned by TranscribeMe - if there are no new transcripts available to pull it will recognize this and exit. If the later steps of the pipeline need to be run on older transcripts or other transcripts sent outside the scope of the automatic push code, individual modules used in the pipeline can be called separately as needed. Logging from the main script is both printed to the console and (for now) saved in the file "transcript.log" newly created for each run under the folder from which the pipeline was called. A summary of the new transcripts is also emailed. 
-
 <details>
 	<summary>The transcript side of the pipeline completes the following core tasks for each patient in the study:</summary>
 
-* Checks the TranscribeMe server for new txt files available matching the expected processed study day naming convention corresponding to the audio file names in pending_audio. It then pulls any of these transcripts that it can, placing them in the phone/processed/audio/$transcripts_loc subfolder. Upon succesful pull the script will delete the raw decrypted audio from both the TranscribeMe server and the pending_audio folder on PHOENIX, as well as moving the transcript txt file to the appropriate study archive subfolder on the TranscribeMe server. It utilizies the phone_transcribeme_sftp_pull.py helper.
-* Converts any new transcripts found under phone/processed/audio/$transcripts_loc to a CSV, placing it in the csv subfolder of that folder. 
-* Runs QC on all existing phone diary transcripts, resulting in a newly updated transcript QC output CSV found in the patient's phone/processed/audio folder.  This occurs via calling the phone_transcript_qc.py helper. The primary features computed are: 
+1. Converts any new transcripts found under phone/processed/audio/$transcripts_loc to a CSV, placing it in the csv subfolder of that folder. 
+2. Runs QC on all existing phone diary transcripts, resulting in a newly updated transcript QC output CSV found in the patient's phone/processed/audio folder.  This occurs via calling the phone_transcript_qc.py helper. The primary features computed are: 
 	* The number of subjects (different speakers identified by TranscribeMe, for this should usually be 1)
 	* The number of sentences and the number of words, as well as the minimum and maximum number of words found in a sentence
 	* The number of occurences of [inaudible] and [redacted] markers, as well as questionable transcriptions where the word is surrounded by a question mark and brackets to denote the transcriber's uncertainty
@@ -138,14 +186,44 @@ The script will then prompt for study name and TranscribeMe account password. It
 	* The smallest and largest number of seconds that occurs between two sentence timestamps in this transcript
 	* The smallest and largest number of seconds that occurs between two sentence timestamps in this transcript, when weighted by the number of words in the intervening sentence. The smallest absolute value is also included as occasionally a negative time is found between timestamps
 	* The number of sentences spoken by subject 1 (which should be the vast majority of the sentences even if there were additional subjects identified)
-* Merges the current DPDash-formatted audio QC CSV with the current transcriptQC output CSV and adds some additional metadata columns, to prepare and save a new up to date DPDash formatted CSV for the transcript QC. The phone_diary_dpdash_compile.py helper is utilized here, as the same script performs both the audio QC formatting and then the transcript QC formatting where applicable. For BLS and DPBPD we have already set up DPDash to display these CSVs as they are updated.
-* Computes NLP features for each transcript and then summarizes them for the patient, using phone_transcript_nlp.py with the help of language_feature_functions.py. Enhanced transcript CSVs with sentence-level feature columns are saved under a new subfolder of the patient's transcript folder called "csv_with_features", and a file called "[study]\_[OLID]\_phone\_transcript\_NLPFeaturesSummary.csv" is saved in the top level of the patient's phone/processed/audio folder. Sentence-level features are summarized via mean, standard deviation, min, and max, and include:
+3. Computes NLP features for each transcript and then summarizes them for the patient, using phone_transcript_nlp.py with the help of language_feature_functions.py. Enhanced transcript CSVs with sentence-level feature columns are saved under a new subfolder of the patient's transcript folder called "csv_with_features", and a file called "[study]\_[OLID]\_phone\_transcript\_NLPFeaturesSummary.csv" is saved in the top level of the patient's phone/processed/audio folder. Sentence-level features are summarized via mean, standard deviation, min, and max, and include:
 	* Coherence and word uncommonness scores using Google Wav2Vec
 	* Sentiment scores from the VADER package
 	* Number of syllables and associated speech rate (syllables/second) using the NLTK package and TranscribeMe's provided timestamps
 	* Counts of any specified keywords
-* Compiles and sends an email to the lab (again currently just myself, Justin, and Einat) with information on which pending transcripts were succesfully pulled and processed, and which were not yet available from TranscribeMe. It will also include information on any errors encountered during processing that will require some manual intervention. 
-</details>
+</details> 
+
+<details>
+	<summary>
+		Useful Notes JL 22/06/16 
+	</summary>
+
+__Orgnization Structure of Files__
+
+![Organization](Audio_Dirary_Transcript_Analysis_Organization.png)
+
+Based on the design, here are definitions for path-related variables: 
+- study_loc=/ncf/cnl03/PHOENIX/PROTECTED
+- transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
+- word2vec_model_path = '/n/home_fasse/jennieli/NLP_models/GoogleNews-vectors-negative300.bin' 
+   
+__The NLP model needs to be downloaded.__  
+Download google drive file (https://code.google.com/archive/p/word2vec/) to local pc and upload to RC using the command: 
+
+	scp [local file] [username@fasselogin:~/foldername]
+
+Alternatively, you can try: 
+
+	gdown [link of google drive download page] 
+
+But download might be restricted. Be sure the link is for download page not preview page. 
+
+Then, in phone_transcript_nlp.py, the path to the model should be modified accordingly.. 
+
+__CSV Conversion and ASCII Error:__  
+If encountered error "Found transcript that is not ASCII encoded...", it is likely to be caused by subtle inconsistency in symbols like quotation marks. Find the specific text and fix manully. 
+</details> 
+
 
 <details>
 	<summary>The standalone bash modules in individual_modules corresponding to each of the above steps are:</summary>
