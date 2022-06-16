@@ -163,7 +163,7 @@ There is also a run_email_writer.sh module called by the main pipeline, but that
 ##### Transcript Processing Details <a name="transcript"></a>
 
 __JL 22/06/16:__
-Only sections relevant to FRESH_17 analysis are explained here. For documentation of the original code please visit github page [https://github.com/dptools/process_audio_diary]
+Only sections relevant to FRESH_17 analysis are explained here. For documentation of the original code please visit [github page here](https://github.com/dptools/process_audio_diary)
 
 
 To initiate the transcript side of the pipeline, navigate to the repository folder and run:
@@ -192,6 +192,20 @@ To initiate the transcript side of the pipeline, navigate to the repository fold
 	* Number of syllables and associated speech rate (syllables/second) using the NLTK package and TranscribeMe's provided timestamps
 	* Counts of any specified keywords
 </details> 
+
+
+<details>
+	<summary>The standalone bash modules in individual_modules corresponding to each of the above steps are:</summary>
+
+* run_transcription_pull.sh
+* run_transcript_csv_conversion.sh
+* run_transcript_qc.sh
+* run_dpdash_format.sh
+* run_transcript_nlp.sh
+
+The email for this side of the pipeline is simpler logic than the audio/push side, and so is just built into the main pipeline bash script instead of warranting its own module. 
+</details>
+
 
 <details>
 	<summary>
@@ -223,19 +237,6 @@ Then, in phone_transcript_nlp.py, the path to the model should be modified accor
 __CSV Conversion and ASCII Error:__  
 If encountered error "Found transcript that is not ASCII encoded...", it is likely to be caused by subtle inconsistency in symbols like quotation marks. Find the specific text and fix manully. 
 </details> 
-
-
-<details>
-	<summary>The standalone bash modules in individual_modules corresponding to each of the above steps are:</summary>
-
-* run_transcription_pull.sh
-* run_transcript_csv_conversion.sh
-* run_transcript_qc.sh
-* run_dpdash_format.sh
-* run_transcript_nlp.sh
-
-The email for this side of the pipeline is simpler logic than the audio/push side, and so is just built into the main pipeline bash script instead of warranting its own module. 
-</details>
 
 
 ##### Visualization Generation Details <a name="viz"></a>
