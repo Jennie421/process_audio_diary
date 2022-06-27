@@ -11,16 +11,21 @@ from viz_helper_functions import generate_horizontal_heatmap
 # don't need to worry about this pandas warning in below script, so supress it 
 pd.options.mode.chained_assignment = None
 
+# NOTE: Modify the paths in `phone_transcript_processes.sh`
+study_loc = os.environ['study_loc']
+
+combined_qc_loc = "/phone/processed/audio/transcripts" # file that combines audio and transcript QC 
+
 def diary_qc_heatmap(study, OLID, wipe=False):
 	# switch to specific patient folder
 	try:
-		os.chdir("$study_loc/" + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir(study_loc + study + "/" + OLID + combined_qc_loc)
 	except:
 		print("Problem with input arguments") # should never reach this error if calling via bash module
 		return
 
 	# load current QC file
-	cur_QC_path = glob.glob(study + "-" + OLID + "-phoneAudioQC-day1to*.csv")[0] # should only ever be one match if called from module
+	cur_QC_path = glob.glob(study + "_" + OLID + "_audiotranscriptQCmerged.csv")[0] # should only ever be one match if called from module
 	cur_QC = pd.read_csv(cur_QC_path)
 
 	# prep to fill in empty days
@@ -39,6 +44,9 @@ def diary_qc_heatmap(study, OLID, wipe=False):
 	days_full_df["hack"] = ["hack" for x in days_full] # add a second column so pandas thinks the upcoming join is real
 	full_QC = days_full_df.merge(cur_QC, on="day", how="left")
 
+	full_QC.to_csv("/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/visualizations/heatmaps/full_qc.csv")
+
+
 	# get weekday of day 1 for spacing of the thick bars
 	weekday_list = cur_QC["weekday"].tolist()
 	first_weekday = weekday_list[0] # first need weekday of first available day
@@ -51,53 +59,74 @@ def diary_qc_heatmap(study, OLID, wipe=False):
 		weekday_one = 7 - adjusted_offset # go backwards the additional remaining day
 	# dpdash considers saturday 1 and friday 7, but really we want monday to have an offset of 0 and sunday an offset of 6 (as initial line would come 6 in in that case)
 	weekday_offset = (weekday_one + 4) % 7
+	
+	
+	select_features = ["length_minutes","overall_db","mean_flatness",
+						"num_sentences","num_words","num_inaudible",
+						"num_questionable","num_redacted","min_timestamp_space_per_word"] 
+	final_QC = full_QC[select_features]
+	# NOTE: Used combined csv directly, no need to repeat audio and transcript separately 
 
 	# select features to use in heatmaps (days will already be in order)
 	# note again these are hard-coded right now!
-	select_features = ["length(minutes)","overall_db","mean_flatness","number_of_pauses","total_speech_minutes"]
-	full_QC = full_QC[select_features]
+	# select_features = ["length_minutes","overall_db","mean_flatness","number_of_pauses","total_speech_minutes"]
+	# full_QC = full_QC[select_features]
 
-	# now also load transcript QC to do similarly (if it exists) otherwise make blank df
-	# load current QC file
-	try:
-		cur_QC_path_trans = glob.glob(study + "-" + OLID + "-phoneTranscriptQC-day1to*.csv")[0] # won't be a match unless there are transcripts for this patient
-		cur_QC_trans = pd.read_csv(cur_QC_path_trans)
-	except:
-		cur_QC_trans = pd.DataFrame()
+	# # now also load transcript QC to do similarly (if it exists) otherwise make blank df
+	# # load current QC file
+	# try:
+	# 	cur_QC_path_trans = glob.glob(study + "_" + OLID + "_phone_audio_transcriptQC_output.csv")[0] # won't be a match unless there are transcripts for this patient
+	# 	cur_QC_trans = pd.read_csv(cur_QC_path_trans)
+	# except:
+	# 	cur_QC_trans = pd.DataFrame()
 
 	# setup features to use from transcript QC (note again these are hard coded right now)
-	select_features_trans = ["num_sentences","num_words","num_inaudible","num_questionable","num_redacted","min_timestamp_space_per_word"]
+	# select_features_trans = ["num_sentences","num_words","num_inaudible","num_questionable","num_redacted","min_timestamp_space_per_word"]
 
-	if cur_QC_trans.empty: # if couldn't load a real df earlier means no transcripts, fill the select columns with NaNs
-		full_QC_trans = pd.DataFrame()
-		for tfeat in select_features_trans:
-			full_QC_trans[tfeat] = [np.nan for x in range(len(days_full))]
-	else:
-		full_QC_trans = days_full_df.merge(cur_QC_trans, on="day", how="left") # use same day list as audio here because transcripts available must be a subset
-		full_QC_trans = full_QC_trans[select_features_trans]
+	# if cur_QC_trans.empty: # if couldn't load a real df earlier means no transcripts, fill the select columns with NaNs
+	# 	full_QC_trans = pd.DataFrame()
+	# 	for tfeat in select_features_trans:
+	# 		full_QC_trans[tfeat] = [np.nan for x in range(len(days_full))]
+	# else:
+	# 	full_QC_trans = days_full_df.merge(cur_QC_trans, on="day", how="left") # use same day list as audio here because transcripts available must be a subset
+	# 	full_QC_trans = full_QC_trans[select_features_trans]
 
-	# concatenate the feature columns for the two to get final df to work from
-	final_QC = pd.concat([full_QC, full_QC_trans], axis=1) 
+	# # concatenate the feature columns for the two to get final df to work from
+	# final_QC = pd.concat([full_QC, full_QC_trans], axis=1) 
 
 	# now actually make heatmaps
 	# chose settings with some manual iteration, this will be another hardcoded thing to revist
 	# set up unimodal features to be only white to red by including negative in the bound
 	# may require additional adjustments as we test
 	# also name the features on the plot to make clear what the ranges are
-	abs_col_bounds_list=[(0.0,4.0),(20,100),(-0.1,0.1),(0,75),(0.0,4.0),(0,35),(0,400),(-4,4),(-4,4),(-6,6),(-0.0075,0.0075)] 
+	# abs_col_bounds_list=[(0.0,4.0),(20,100),(-0.1,0.1),(0,75),(0.0,4.0),(0,35),(0,400),(-4,4),(-4,4),(-6,6),(-0.0075,0.0075)] 
+	# features_with_ranges = ["Audio Length (0 to 4 minutes)", "Volume (20 to 100 db)", "Spectral Flatness (-0.1 to 0.1)", 
+	# 						"Number of Pauses (0 to 75)", "Speech Length (0 to 4 miuntes)", 
+	# 						"Sentence Count (0 to 35)", "Word Count (0 to 400)", 
+	# 						"Inaudible Count (-4 to 4)", "Questionable Count (-4 to 4)", "Redacted Count (-6 to 6)",
+	# 						"Quickest Sentence (-0.0075 to 0.0075 minutes/word)"]
+	
+	# NOTE: aligned with features 
+	abs_col_bounds_list=[(0.0,4.0),(20,100),(-0.1,0.1),
+						(0,35),(0,400),(-4,4),
+						(-4,4),(-6,6),(-0.0075,0.0075)] 
 	features_with_ranges = ["Audio Length (0 to 4 minutes)", "Volume (20 to 100 db)", "Spectral Flatness (-0.1 to 0.1)", 
-							"Number of Pauses (0 to 75)", "Speech Length (0 to 4 miuntes)", 
-							"Sentence Count (0 to 35)", "Word Count (0 to 400)", 
-							"Inaudible Count (-4 to 4)", "Questionable Count (-4 to 4)", "Redacted Count (-6 to 6)",
-							"Quickest Sentence (-0.0075 to 0.0075 minutes/word)"]
-	for i in range(num_splits): # loop through sections to make the heatmaps
-		out_path = "heatmaps/" + study + "-" + OLID + "-phoneDiaryQC-featureProgression-days" + str(i*91 + 1) + "to" + str((i+1)*91) + ".png" # output name again hardcoded (per patient/study) for now
-		if (not wipe) and (i < num_splits - 1) and (os.path.exists(out_path)):
-			# the last of the split may need to be updated due to new diaries, but assume by default that there will never be old data filled in from before the most recent day, so don't need to actually recreate those heatmaps. 
-			# should speed up function a bit on subsequent runs
-			continue	
-		cur_slice = final_QC.iloc[i*91:(i+1)*91, :]
-		generate_horizontal_heatmap(cur_slice, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=i*91, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges)
+							"Sentence Count (0 to 35)", "Word Count (0 to 400)", "Inaudible Count (-4 to 4)", 
+							"Questionable Count (-4 to 4)", "Redacted Count (-6 to 6)", "Quickest Sentence (-0.0075 to 0.0075 minutes/word)"]
+	
+	out_path = "visualizations/heatmaps/" + study + "-" + OLID + "-phoneDiaryQC-featureProgression-days" + ".png" # output name again hardcoded (per patient/study) for now
+	generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges, cap_max_min=False)
+	
+	# for i in range(num_splits): # loop through sections to make the heatmaps
+	# 	out_path = "visualizations/heatmaps/" + study + "-" + OLID + "-phoneDiaryQC-featureProgression-days" + str(i*91 + 1) + "to" + str((i+1)*91) + ".png" # output name again hardcoded (per patient/study) for now
+	# 	# NOTE: all plots will be over-written
+	# 	# if (not wipe) and (i < num_splits - 1) and (os.path.exists(out_path)):
+	# 	# 	# the last of the split may need to be updated due to new diaries, but assume by default that there will never be old data filled in from before the most recent day, so don't need to actually recreate those heatmaps. 
+	# 	# 	# should speed up function a bit on subsequent runs
+	# 	# 	continue	
+	# 	print("on slice" + str(i))
+	# 	cur_slice = final_QC.iloc[i*91:(i+1)*91, :]
+	# 	generate_horizontal_heatmap(cur_slice, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=i*91, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges)
 	
 if __name__ == '__main__':
     # Map command line arguments to function arguments.

@@ -5,10 +5,14 @@ import pandas as pd
 import sys
 from viz_helper_functions import transcript_wordcloud
 
+# NOTE: Modify the paths in `phone_transcript_processes.sh`
+study_loc = os.environ['study_loc']
+transcripts_loc = os.environ['transcripts_loc']
+
 def transcript_wordclouds(study, OLID):
 	# switch to specific patient folder - transcript CSVs
 	try:
-		os.chdir("$study_loc/" + study + "/" + OLID + "/$transcripts_loc/csv")
+		os.chdir(study_loc + study + "/" + OLID + transcripts_loc + "csv")
 	except:
 		print("Problem with input arguments") # should never reach this error if calling via bash module
 		return

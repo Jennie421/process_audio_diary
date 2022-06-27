@@ -11,10 +11,9 @@ from language_feature_functions import count_number_syllables, calculate_speakin
 
 chosen_keywords=["stress", "depress", "anx"] # hardcoded across all studies for now, really just an example for illustration - will count anything fully containing these letters so can get at variations via roots
 
-# NOTE: Modify the paths as needed. 
-# 		Should be consistent with definitions in "phone_transcript_processes.sh"
-study_loc = "/ncf/cnl03/PHOENIX/PROTECTED"
-transcripts_loc = "/phone/processed/audio/transcripts/transcript_data/"
+# NOTE: Modify the paths in `phone_transcript_processes.sh`
+study_loc = os.environ['study_loc']
+transcripts_loc = os.environ['transcripts_loc']
 
 
 def diary_transcript_nlp(study, OLID):
@@ -29,8 +28,6 @@ def diary_transcript_nlp(study, OLID):
 
 	# load audio QC for this pt to get the diary file lengths - necessary for getting speech rate of final sentence
 # 	audio_QC_path = glob.glob("../../" + study + "-" + OLID + "-phoneAudioQC-day1to*.csv")[0] # should only ever be one match if called from module
-
-# 	audio_QC_path = glob.glob("/n/home_fasse/jennieli/audio_qc/FRESH17/" + "FRESH_17_" + OLID + "_phoneAudioDiary_QC.csv")[0]
 	# NOTE: path modified according to Cony & Jennie's organization
 	audio_QC_path = "../../../" + study + "_" + OLID + "_phoneAudioDiary_QC.csv"
 

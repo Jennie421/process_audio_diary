@@ -25,16 +25,24 @@ export repo_root
 # echo "(validated option is FRESH_17)"
 # read study
 
-# NOTE: instead of reading from user input, the study name is defined here. 
-study=FRESH_17
+# NOTE: take command line argument as study name variable 
+# E.g. bash phone_transcript_preprocess.sh FRESH_17 
+study=$1
 
 # NOTE: the location of the study
-study_loc=/ncf/cnl03/PHOENIX/PROTECTED  # /n/home_fasse/jennieli # where FRESH_17 is located 
+# study_loc=/ncf/cnl03/PHOENIX/PROTECTED  
+study_loc=/n/home_fasse/jennieli/ # where FRESH_17 is located 
 export study_loc 
 
 # NOTE: the location of transcripts relative to each participant's directory
 transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
 export transcripts_loc
+
+model_path=$repo_root/NLP_models/GoogleNews-vectors-negative300.bin
+export model_path
+
+audio_qc_loc=/phone/processed/audio/
+export audio_qc_loc
 
 # sanity check that the study folder is real at least
 cd $study_loc
@@ -140,4 +148,5 @@ echo ""
 # script wrap up - unset environment variables so doesn't mess with future scripts
 unset study
 unset repo_root
+unset model_path
 echo "=============Script completed============="

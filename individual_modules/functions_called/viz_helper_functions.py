@@ -15,6 +15,7 @@ import inflect
 import re
 import math
 import copy
+import seaborn as sns
 
 # ignore Unicode warning in inflect package
 import warnings
@@ -38,7 +39,8 @@ def distribution_plots(dist_df, pdf_save_path, ignore_list=[], bins_list=None, r
 		cur_dist = dist_df[col]
 		fig = plt.figure(1)
 		if bins_list is not None:
-			plt.hist(cur_dist.dropna(),bins=bins_list[count],range=ranges_list[count])
+			plt.hist(cur_dist.dropna(),bins=bins_list[count],range=ranges_list[count]) 
+			# plt.hist(cur_dist.dropna()) # NOTE not providing ranges_list in study wide plots
 			count = count + 1
 		else:
 			plt.hist(cur_dist.dropna())
@@ -86,8 +88,10 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 		input_df.fillna(nan_color[0],inplace=True)
 		GB_input_dfs[0].fillna(nan_color[1],inplace=True)
 		GB_input_dfs[1].fillna(nan_color[2],inplace=True)
-	else: # otherwise fill the NaNs with a value that will clearly be outside of the bounds. defaults to -10000 but if for some reason this is a viable value then will need to specify a different input for that
-		input_df.fillna(nan_fill,inplace=True)
+	
+	# else: # otherwise fill the NaNs with a value that will clearly be outside of the bounds. defaults to -10000 but if for some reason this is a viable value then will need to specify a different input for that
+		# input_df.fillna(nan_fill,inplace=True) # NOTE: this is where "-10000" comes from
+	
 	# prepare plot
 	fig,ax = plt.subplots(figsize=fig_size)
 	# "normal" heatmap case, which will then either be colored relative to distribution or using provided absolute bounds
@@ -108,8 +112,24 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 				input_df.loc[(input_df[label] != nan_fill) & (input_df[label] <= min_bound), [label]] = min_bound + eps
 				input_df.loc[(input_df[label] != nan_fill) & (input_df[label] >= max_bound), [label]] = max_bound - eps
 			# display current feature on the heatmap, masking rest
-			ax.matshow(input_df.mask(((input_df == input_df) | input_df.isnull()) & (input_df.columns != label)).transpose(), cmap=colormap, vmin=min_bound, vmax=max_bound)
+			# ax.matshow(input_df.mask(((input_df == input_df) | input_df.isnull()) & (input_df.columns != label)).transpose(), cmap=colormap, vmin=min_bound, vmax=max_bound)
 			count_labels = count_labels + 1
+		
+		#NOTE: generate df_info 
+		abs_col_bounds_list=[(0.0,4.0),(20,100),(-0.1,0.1),
+							(0,35),(0,400),(-4,4),
+							(-4,4),(-6,6),(-0.0075,0.0075)] 
+		var_names = input_df.columns
+
+		#NOTE: generate df_info 
+		df_info = pd.DataFrame()
+		for range_pair, label in zip(abs_col_bounds_list, var_names):
+			df_info[label] = list(range_pair)
+
+		df_norm = (input_df - df_info.iloc[0])/(df_info.iloc[1]-df_info.iloc[0])
+		df_plot = (df_norm - df_norm.min())/(df_norm.max()-df_norm.min())
+		sns.heatmap(df_plot.T, mask=df_plot.T.isnull(), cmap='RdBu_r', cbar=False).set_facecolor('xkcd:black') # NOTE: `set_facecolor` is so that NA values are more obvious, not necessary
+
 	elif len(GB_input_dfs) != 0: # this is an R/G/B heatmap as described above, input dfs should be taken as already containing the R, G, and B color values on 0-1 scale, so just need to be plotted appropriately
 		ax.imshow(np.dstack((input_df.values.transpose(), GB_input_dfs[0].values.transpose(), GB_input_dfs[1].values.transpose())),origin='upper',interpolation='nearest',aspect='equal')
 	else: # otherwise it is a heatmap with discrete colormap, so the input dataframe then contains the indices corresponding to the color in the colormap that each square should be

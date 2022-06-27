@@ -45,12 +45,19 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	cd "$p"/phone/processed/audio
 
 	# make a heatmaps subfolder if it doesn't already exist
-	if [[ ! -d heatmaps ]]; then
-		mkdir heatmaps
+	# if [[ ! -d heatmaps ]]; then
+	# 	mkdir heatmaps
+	# fi
+
+	# Cony & Jennie's organization 
+	if [[ ! -d transcripts/visualizations/heatmaps/ ]]; then
+		mkdir transcripts/visualizations/heatmaps/
 	fi
 
 	# check that there is an audio QC CSV to use, if so run the heatmap generation script (for audio and transcript combined!)
-	if [[ -n $(shopt -s nullglob; echo *-phoneAudioQC-day*.csv) ]]; then
+	# the combined file is in "/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/FRESH_17_3KS75_merged.csv"
+	cd transcripts
+	if [[ -n $(shopt -s nullglob; echo *_audiotranscriptQCmerged.csv) ]]; then
 		echo "on participant ${p}"
 		python "$func_root"/phone_diary_qc_heatmaps.py "$study" "$p"
 	fi

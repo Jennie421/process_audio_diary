@@ -43,8 +43,9 @@ for p in *; do # loop over all patients in the specified study folder on PHOENIX
 		continue
 	fi
 	cd "$p"/phone/processed/audio
-	if [[ ! -d wordclouds ]]; then
-		mkdir wordclouds # create output folder if there isn't already
+	# NOTE: Cony & Jennie's organization
+	if [[ ! -d transcripts/visualizations/wordclouds ]]; then
+		mkdir transcripts/visualizations/wordclouds # create output folder if there isn't already
 	fi
 	
 	# run the function - it will loop through the transcripts csv folder and create wordcloud pngs for any transcripts that don't already have

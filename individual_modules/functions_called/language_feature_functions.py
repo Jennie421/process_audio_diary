@@ -19,8 +19,8 @@ print("Current working directory: {0}".format(cwd))
 print()
 
 
-# NOTE: Must be modified based on the actual location of the model
-word2vec_model_path = '/n/home_fasse/jennieli/NLP_models/GoogleNews-vectors-negative300.bin' 
+# NOTE: based on the actual location of the model
+word2vec_model_path = os.environ['model_path']
 
 
 # you may also consider using a different model or training your own, and point to it here. 

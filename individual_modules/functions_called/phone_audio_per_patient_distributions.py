@@ -6,7 +6,7 @@ import numpy as np
 import glob
 import sys
 from viz_helper_functions import distribution_plots
-
+# import  datetime as dt
 # note that this function adds to the study distribution by concatenation and then dropping duplicates
 # this will work well except in the case that new features are added - will need to rerun from scratch if so
 # (can always change file name if don't want to lose previously compiled distribution in this case)
@@ -14,33 +14,75 @@ from viz_helper_functions import distribution_plots
 # in the future (perhaps before generalized release) could improve efficiency by checking if file is in the distribution already instead of always going through each one
 # this will be particularly relevant for the OpenSMILE summaries, which do take a bit of time to run
 
+# NOTE: Modify the paths in `phone_transcript_processes.sh`
+study_loc = os.environ['study_loc']
+audio_qc_loc = os.environ['audio_qc_loc']
+
+
 def audio_dist(study, OLID):
 	# switch to specific patient folder
 	try:
-		os.chdir("$study_loc/" + study + "/" + OLID + "/phone/processed/audio")
+		# os.chdir(study_loc + study + "/" + OLID + "/phone/processed/audio")
+		os.chdir(study_loc + study + "/" + OLID + audio_qc_loc) # NOTE: variable inplace of hardcoded string
 	except:
 		print("Problem with input arguments, or no processed audio for this patient yet") # should never reach this error if calling via bash module
 		return
 
+
+	# JL: MERGE 
+	# # approach 1 
+	data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezone_corrected.csv") 
+	data1.rename(columns={"file_name": "filename"}, inplace=True) # NOTE: rename file_name to filename
+	data1.replace({'weekday': {"Mon":0, "Tue":1, "Wed":2, "Thu":3, "Fri":4, "Sat":5, "Sun":6}}, inplace=True) # NOTE: convert weekday to int
+	# print(data1["assigned_date"].dt.dayofweek)
+	data1.to_csv("data1.csv")
+	data2 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_QC.csv")
+
+	# using merge function by setting how='left'
+	merged = pd.merge(data2, data1, on=['filename'], how='left')
+
+	# approach 2
+	# data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezone_corrected.csv") 
+	# data2 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_QC.csv")
+
+	# data1['renamed_decrypted_file_path'] = data1.apply(lambda row: row.renamed_decrypted_file_path.split('/')[-1], axis=1)
+	# data1 = data1.rename(columns={'renamed_decrypted_file_path': 'filename'})
+	# merged = pd.merge(data2, data1, on=['filename'], how='left')
+
+	# add column "transcript_name"
+	merged['transcript_name'] = merged.apply(lambda row: row.filename.split(".")[0] + ".csv", axis=1)
+
+	# # add column "subject_ID"
+	# merged['subject_ID'] = merged.apply(lambda row: OLID, axis=1)
+
+	merged.to_csv(study + "_" + OLID + '_audioQCmerged.csv', index=False)
+
 	# load current QC file
-	cur_QC_path = glob.glob(study + "-" + OLID + "-phoneAudioQC-day1to*.csv")[0] # should only ever be one match if called from module
+	# cur_QC_path = glob.glob(study + "-" + OLID + "-phoneAudioQC-day1to*.csv")[0] # should only ever be one match if called from module
+	cur_QC_path = study + "_" + OLID + "_audioQCmerged.csv"
 	cur_QC = pd.read_csv(cur_QC_path)
 	# requires audio QC file to do the core work here, so not a big deal if it crashes on a given patient for not having one
 
 	# before doing QC preprocessing prep a filemap for OpenSMILE portion later
-	filemap = cur_QC[["filename", "day", "ET_hour_int_formatted"]]
+	# filemap = cur_QC[["filename", "day", "ET_hour_int_formatted"]]
+	# NOTE: JL 
+	filemap = cur_QC[["filename", "day", "hours_until_submission"]]
 	# also one for the VAD-filtered OpenSMILE
-	filemap_filtered = cur_QC[["filtered_opensmile_name", "day", "ET_hour_int_formatted"]]
+	# filemap_filtered = cur_QC[["filtered_opensmile_name", "day", "ET_hour_int_formatted"]]
+	# filemap_filtered = cur_QC[["filtered_opensmile_name"]]
 
 	# remove extraneous metadata from the QC spreadsheet - just want enough to identify each row uniquely, don't need easy path back to filenames or dates
 	# note again these are hard-coded right now! audio features will be same as those found in DPDash
-	select_features = ["day","patient","ET_hour_int_formatted","length(minutes)","overall_db","amplitude_stdev","mean_flatness",
-					   "total_speech_minutes","number_of_pauses","max_pause_seconds","pause_db","pause_flatness"]
+	# select_features = ["day","patient","ET_hour_int_formatted","length(minutes)","overall_db","amplitude_stdev","mean_flatness",
+	# 				   "total_speech_minutes","number_of_pauses","max_pause_seconds","pause_db","pause_flatness"]
+	# NOTE: removed some features we don't have
+	select_features = ["day","subject","hours_until_submission","length_minutes","overall_db","amplitude_stdev","mean_flatness"]
 	cur_QC = cur_QC[select_features]
 
 	print("Preparing audio feature distributions for " + OLID)
 	# create patient-specific distribution PDF for the QC features
-	pdf_out_path = study + "-" + OLID + "-phoneAudioQC-distributionPlots.pdf" # output name again hardcoded (per patient/study) for now
+	dist_plot_loc = "transcripts/visualizations/distributions/"
+	pdf_out_path = dist_plot_loc + study + "-" + OLID + "-phoneAudioQC-distributionPlots.pdf" # output name again hardcoded (per patient/study) for now
 	try:
 		os.remove(pdf_out_path) # pdf writer can have problems with overwriting automatically, so intentionally delete if there is a preexisting PDF with this name
 		# distribution continually updates so can't just skip if there is already an output!
@@ -48,19 +90,22 @@ def audio_dist(study, OLID):
 		pass
 	# chose bin settings with manual iteration, since automatic generation wasn't showing details we want. this will be another hardcoded thing to revisit
 	# may need to further update bins as well based on closer look at results, particularly for the newer VAD features
-	distribution_plots(cur_QC, pdf_out_path, ignore_list=["day","patient"], bins_list=[24,16,20,20,20,16,20,20,20,20], 
+	# NOTE 
+	distribution_plots(cur_QC, pdf_out_path, ignore_list=["day","subject"], bins_list=[24,16,20,20,20,16,20,20,20,20], 
 					   ranges_list=[(4,27),(0.0,4.0),(0.0,100.0),(0.0,0.2),(0.0,0.1),(0.0,4.0),(0,200),(0.0,10.0),(0.0,100.0),(0.0,0.1)])
 
 	# now do the combining with existing df
 	# path to study wide distribution we will add to - currently hard coded!
 	# also assuming this folder structure for Distributions is pre-existing
-	dist_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioQC-distribution.csv"
-	
+	# dist_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioQC-distribution.csv"
+	dist_path = study_loc + "/Distributions/" + study + "-phoneAudioQC-distribution.csv"
+
 	# load study-wide distribution and concatentate
 	try:
 		cur_dist = pd.read_csv(dist_path)
 		cur_dist = pd.concat([cur_dist, cur_QC], ignore_index=True, sort=False) # add sort = False to prevent future warning
-		cur_dist.drop_duplicates(subset=["day","patient","ET_hour_int_formatted"], inplace=True)
+		# cur_dist.drop_duplicates(subset=["day","patient","ET_hour_int_formatted"], inplace=True)
+		cur_dist.drop_duplicates(subset=["day","subject","hours_until_submission"], inplace=True) # NOTE
 		cur_dist.reset_index(drop=True, inplace=True)
 	except:
 		# if this is the first patient ever being processed for this study then can just set to be cur_QC
@@ -103,7 +148,8 @@ def audio_dist(study, OLID):
 		match_df = filemap[filemap["filename"] == name_match]
 		try:
 			cur_day = match_df["day"].tolist()[0]
-			cur_time = match_df["ET_hour_int_formatted"].tolist()[0]
+			# cur_time = match_df["ET_hour_int_formatted"].tolist()[0]
+			cur_time = match_df["hours_until_submission"].tolist()[0] # NOTE
 		except:
 			continue # no match, expect this currently for multiple submissions
 
@@ -163,20 +209,21 @@ def audio_dist(study, OLID):
 		os.remove(pdf_out_path_OS) # pdf writer can have problems with overwriting automatically, so intentionally delete if there is a preexisting PDF with this name
 	except:
 		pass
-	distribution_plots(pt_df, pdf_out_path_OS, ignore_list=["day","patient","ET_hour_int_formatted"], bins_list=[24,10,12,20,10,10,16,10,10,6,10,10,25,25,30,30,10,10,16,7,16,7,24,12,16,8,12,6,24,10,12,6,32,16,12,6],
+	# NOTE 
+	distribution_plots(pt_df, pdf_out_path_OS, ignore_list=["day","subject","hours_until_submission"], bins_list=[24,10,12,20,10,10,16,10,10,6,10,10,25,25,30,30,10,10,16,7,16,7,24,12,16,8,12,6,24,10,12,6,32,16,12,6],
 					   ranges_list=[(0.0,6.0),(0.0,2.5),(-40,20),(0,20),(0,50),(0,20),(-0.2,0.2),(0.0,0.1),(-0.05,0.05),(0.0,0.03),(0,50),(0,25),(0.0,0.25),(0.0,0.5),(0.0,3.0),(0.0,3.0),(-10,10),(0,10),(-40,40),(0,70),(-40,40),(0,70),
 					   				(0,1200),(0,600),(0,1600),(0,800),(-250,50),(0,150),(0,2400),(0,1000),(-250,50),(0,150),(0,3200),(0,1600),(-250,50),(0,150)])
 	# use hard-coded bin limits so that the per patient summaries will all use the same bins (as well as the study-wide) -> also matching between raw and pause filtered!
 
 	# finally do the combining with existing df
 	# path to study wide distribution we will add to - currently hard coded!
-	dist_path_OS = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioOpenSMILESummary-distribution.csv"
-	
+	# dist_path_OS = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioOpenSMILESummary-distribution.csv"
+	dist_path_OS = study_loc + "/Distributions/" + study + "-phoneAudioOpenSMILESummary-distribution.csv"
 	# load study-wide distribution and concatentate
 	try:
 		cur_dist_OS = pd.read_csv(dist_path_OS)
 		cur_dist_OS = pd.concat([cur_dist_OS, pt_df], ignore_index=True)
-		cur_dist_OS.drop_duplicates(subset=["day","patient","ET_hour_int_formatted"], inplace=True)
+		cur_dist_OS.drop_duplicates(subset=["day","subject","hours_until_submission"], inplace=True)
 		cur_dist_OS.reset_index(drop=True, inplace=True)
 	except:
 		# if this is the first patient ever being processed for this study then can just set to be pt_df
@@ -218,7 +265,7 @@ def audio_dist(study, OLID):
 		# but keep in try/catch anyway to be safe
 		try:
 			cur_day = match_df["day"].tolist()[0]
-			cur_time = match_df["ET_hour_int_formatted"].tolist()[0]
+			cur_time = match_df["hours_until_submission"].tolist()[0] #NOTE
 		except:
 			continue
 
@@ -279,20 +326,23 @@ def audio_dist(study, OLID):
 		os.remove(pdf_out_path_OS) # pdf writer can have problems with overwriting automatically, so intentionally delete if there is a preexisting PDF with this name
 	except:
 		pass
-	distribution_plots(pt_df, pdf_out_path_OS, ignore_list=["day","patient","ET_hour_int_formatted"], bins_list=[24,10,12,20,10,10,16,10,10,6,10,10,25,25,30,30,10,10,16,7,16,7,24,12,16,8,12,6,24,10,12,6,32,16,12,6],
+
+	# NOTE 
+	distribution_plots(pt_df, pdf_out_path_OS, ignore_list=["day","subject","hours_until_submission"], bins_list=[24,10,12,20,10,10,16,10,10,6,10,10,25,25,30,30,10,10,16,7,16,7,24,12,16,8,12,6,24,10,12,6,32,16,12,6],
 					   ranges_list=[(0.0,6.0),(0.0,2.5),(-40,20),(0,20),(0,50),(0,20),(-0.2,0.2),(0.0,0.1),(-0.05,0.05),(0.0,0.03),(0,50),(0,25),(0.0,0.25),(0.0,0.5),(0.0,3.0),(0.0,3.0),(-10,10),(0,10),(-40,40),(0,70),(-40,40),(0,70),
 					   				(0,1200),(0,600),(0,1600),(0,800),(-250,50),(0,150),(0,2400),(0,1000),(-250,50),(0,150),(0,3200),(0,1600),(-250,50),(0,150)])
 	# use hard-coded bin limits so that the per patient summaries will all use the same bins (as well as the study-wide) -> also matching between raw and pause filtered!
 
 	# finally do the combining with existing df
 	# path to study wide distribution we will add to - currently hard coded!
-	dist_path_OS = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioFilteredOpenSMILESummary-distribution.csv"
-	
+	# dist_path_OS = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioFilteredOpenSMILESummary-distribution.csv"
+	dist_path_OS = study_loc + "/Distributions/" + study + "-phoneAudioFilteredOpenSMILESummary-distribution.csv"
+
 	# load study-wide distribution and concatentate
 	try:
 		cur_dist_OS = pd.read_csv(dist_path_OS)
 		cur_dist_OS = pd.concat([cur_dist_OS, pt_df], ignore_index=True)
-		cur_dist_OS.drop_duplicates(subset=["day","patient","ET_hour_int_formatted"], inplace=True)
+		cur_dist_OS.drop_duplicates(subset=["day","subject","hours_until_submission"], inplace=True)
 		cur_dist_OS.reset_index(drop=True, inplace=True)
 	except:
 		# if this is the first patient ever being processed for this study then can just set to be pt_df

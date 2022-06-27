@@ -13,10 +13,9 @@ import pandas as pd
 import numpy as np 
 import sys
 
-# NOTE: Modify the paths as needed. 
-# 		Should be consistent with definitions in "phone_transcript_processes.sh"
-study_loc = "/ncf/cnl03/PHOENIX/PROTECTED" 
-transcripts_loc = "/phone/processed/audio/transcripts/transcript_data/"
+# NOTE: Modify the paths in `phone_transcript_processes.sh`
+study_loc = os.environ['study_loc']
+transcripts_loc = os.environ['transcripts_loc']
 output_loc = "/phone/processed/audio/transcripts/"
 
 def diary_transcript_qc(study, OLID):

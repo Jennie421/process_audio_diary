@@ -163,12 +163,12 @@ There is also a run_email_writer.sh module called by the main pipeline, but that
 ##### Transcript Processing Details <a name="transcript"></a>
 
 __JL 22/06/16:__
-Only sections relevant to FRESH_17 analysis are explained here. For documentation of the original code please visit [github page here](https://github.com/dptools/process_audio_diary)
+Only sections relevant to FRESH_17 analysis are explained here. For documentation of the original code please visit [github page here](https://github.com/dptools/process_audio_diary).
 
 
 To initiate the transcript side of the pipeline, navigate to the repository folder and run:
 
-	bash phone_transcript_preprocess.sh
+	bash phone_transcript_preprocess.sh FRESH_17
 
 <details>
 	<summary>The transcript side of the pipeline completes the following core tasks for each patient in the study:</summary>
@@ -219,8 +219,7 @@ __Orgnization Structure of Files__
 Based on the design, here are definitions for path-related variables: 
 - study_loc=/ncf/cnl03/PHOENIX/PROTECTED
 - transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
-- word2vec_model_path = '/n/home_fasse/jennieli/NLP_models/GoogleNews-vectors-negative300.bin' 
-   
+
 __The NLP model needs to be downloaded.__  
 Download google drive file (https://code.google.com/archive/p/word2vec/) to local pc and upload to RC using the command: 
 

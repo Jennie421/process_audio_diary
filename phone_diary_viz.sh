@@ -18,11 +18,14 @@ export repo_root
 # echo "Study of interest?"
 # echo "(validated options are BLS, DPBPD, DATA)"
 # read study
-study=DATA
+study=FRESH_17
 
 # modify data location 
 study_loc=/n/home_fasse/jennieli
 export study_loc 
+
+transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
+export transcripts_loc
 
 # sanity check that the study folder is real at least
 cd $study_loc
@@ -47,20 +50,20 @@ echo ""
 
 # start with distributions - per patient and for the overall study
 # feature distributions (OpenSMILE and NLP) also generated here, including doing OpenSMILE summary operation
-echo "*******************Generating QC and feature distributions with histograms*******************"
-bash "$repo_root"/individual_modules/run_distribution_plots.sh
-echo ""
-
-# add current time for runtime tracking purposes
-now=$(date +"%T")
-echo "Current time: ${now}"
-echo ""
-
-# # create heatmaps to see progression of select audio and transcript QC features over time per patient (each diary one block)
-# # (could also propose alternative dot plots?)
-# echo "*******************Generating QC heatmaps for each patient*******************"
-# bash "$repo_root"/individual_modules/run_heatmap_plots.sh
+# echo "*******************Generating QC and feature distributions with histograms*******************"
+# bash "$repo_root"/individual_modules/run_distribution_plots.sh
 # echo ""
+
+# # add current time for runtime tracking purposes
+# now=$(date +"%T")
+# echo "Current time: ${now}"
+# echo ""
+
+# create heatmaps to see progression of select audio and transcript QC features over time per patient (each diary one block)
+# (could also propose alternative dot plots?)
+echo "*******************Generating QC heatmaps for each patient*******************"
+bash "$repo_root"/individual_modules/run_heatmap_plots.sh
+echo ""
 
 # # add current time for runtime tracking purposes
 # now=$(date +"%T")

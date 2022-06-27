@@ -40,39 +40,51 @@ cd $study_loc/"$study"
 echo "Looping through patients"
 for p in *; do # loop over all patients in the specified study folder on PHOENIX
 	# first check that it is truly an OLID, that has previouly processed audio
-# 	if [[ ! -d $p/phone/processed/audio ]]; then
-# 		continue
-# 	fi
-# 	cd "$p"/phone/processed/audio
-	cd "$p"
-
+	if [[ ! -d $p/phone/processed/audio ]]; then
+		continue
+	fi
+	cd "$p"/phone/processed/audio
+	echo $PWD
+	
 	# make output folders for per-file OpenSMILE distribution PDFs
 	if [[ -d opensmile_feature_extraction ]]; then
 		if [[ ! -d opensmile_feature_extraction/per_diary_distribution_plots ]]; then
 			mkdir opensmile_feature_extraction/per_diary_distribution_plots
+			echo "MADE DIRECTOY"
 		fi
 	fi
 	if [[ -d opensmile_features_filtered ]]; then
 		if [[ ! -d opensmile_features_filtered/per_diary_distribution_plots ]]; then
 			mkdir opensmile_features_filtered/per_diary_distribution_plots
+			echo "MADE DIRECTOY 2"
 		fi
+	fi
+
+	# Cony & Jennie's organization 
+	if [[ ! -d transcripts/visualizations/distributions/ ]]; then
+		mkdir transcripts/visualizations/
+		mkdir transcripts/visualizations/distributions/
 	fi
 
 	# check that there is an audio qc CSV to use, if so run the audio distribution compile script (works on QC and also OpenSMILE if available)
 	# (this script updates the study-wide distribution and generates a PDF of histograms for current patient)
-	if [[ -n $(shopt -s nullglob; echo *-phoneAudioQC-day*.csv) ]]; then
+	# NOTE: JL the names of QC files are changed
+	if [[ -n $(shopt -s nullglob; echo *_phoneAudioDiary_QC.csv) ]]; then
 		python "$func_root"/phone_audio_per_patient_distributions.py "$study" "$p"
+		echo "AUDIO QC DONE"
 	fi
 
 	# now do analogously for the transcript QC, and transcript NLP if available
-	if [[ -n $(shopt -s nullglob; echo *-phoneTranscriptQC-day*.csv) ]]; then
+	cd transcripts
+	if [[ -n $(shopt -s nullglob; echo *_phone_audio_transcriptQC_output.csv) ]]; then
 		python "$func_root"/phone_transcript_per_patient_distributions.py "$study" "$p"
+		echo "TRANSCRIPT QC DONE"
 	fi
 
 	# back out of folder before continuing to next patient
 	cd $study_loc/"$study"
 done
 
-# once done with loop over patients create study-wide distribution PDFs
-echo "Generating study-wide plots"
-python "$func_root"/phone_diary_total_distributions.py "$study"
+# # once done with loop over patients create study-wide distribution PDFs
+# echo "Generating study-wide plots"
+# python "$func_root"/phone_diary_total_distributions.py "$study"

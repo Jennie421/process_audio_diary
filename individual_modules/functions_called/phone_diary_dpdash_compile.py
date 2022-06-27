@@ -51,7 +51,7 @@ def dpdash_compile(study, OLID):
 
 	# navigate to folder of interest, load initial CSVs
 	try:
-		os.chdir(study_loc + "/" + study + "/" + OLID + "/$transcripts_loc")
+		os.chdir(study_loc + "/" + study + "/" + OLID + $transcripts_loc)
 		audio_metadata = pd.read_csv(study + "_" + OLID + "_phone_audio_ETFileMap.csv")
 		audio_qc_basic = pd.read_csv(study + "_" + OLID + "_phone_audioQC_output.csv")
 	except:
