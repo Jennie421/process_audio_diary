@@ -22,7 +22,6 @@ audio_qc_loc = os.environ['audio_qc_loc']
 def audio_dist(study, OLID):
 	# switch to specific patient folder
 	try:
-		# os.chdir(study_loc + study + "/" + OLID + "/phone/processed/audio")
 		os.chdir(study_loc + study + "/" + OLID + audio_qc_loc) # NOTE: variable inplace of hardcoded string
 	except:
 		print("Problem with input arguments, or no processed audio for this patient yet") # should never reach this error if calling via bash module
@@ -30,30 +29,18 @@ def audio_dist(study, OLID):
 
 
 	# JL: MERGE 
-	# # approach 1 
-	data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezone_corrected.csv") 
-	data1.rename(columns={"file_name": "filename"}, inplace=True) # NOTE: rename file_name to filename
-	data1.replace({'weekday': {"Mon":0, "Tue":1, "Wed":2, "Thu":3, "Fri":4, "Sat":5, "Sun":6}}, inplace=True) # NOTE: convert weekday to int
-	# print(data1["assigned_date"].dt.dayofweek)
-	data1.to_csv("data1.csv")
+	data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezoneCorrected.csv") 
+	# data1.rename(columns={"file_name": "filename"}, inplace=True) # NOTE: rename file_name to filename
+	# data1.replace({'weekday': {"Mon":0, "Tue":1, "Wed":2, "Thu":3, "Fri":4, "Sat":5, "Sun":6}}, inplace=True) # NOTE: convert weekday to int
+	data1['weekday_num'] = data1['weekday_num'].apply(lambda x: x - 1)
+
 	data2 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_QC.csv")
 
 	# using merge function by setting how='left'
-	merged = pd.merge(data2, data1, on=['filename'], how='left')
-
-	# approach 2
-	# data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezone_corrected.csv") 
-	# data2 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_QC.csv")
-
-	# data1['renamed_decrypted_file_path'] = data1.apply(lambda row: row.renamed_decrypted_file_path.split('/')[-1], axis=1)
-	# data1 = data1.rename(columns={'renamed_decrypted_file_path': 'filename'})
-	# merged = pd.merge(data2, data1, on=['filename'], how='left')
+	merged = pd.merge(data1, data2, on=['filename'], how='left')
 
 	# add column "transcript_name"
-	merged['transcript_name'] = merged.apply(lambda row: row.filename.split(".")[0] + ".csv", axis=1)
-
-	# # add column "subject_ID"
-	# merged['subject_ID'] = merged.apply(lambda row: OLID, axis=1)
+	merged['transcript_name'] = merged.apply(lambda row: str(row.filename).split(".")[0] + ".csv", axis=1)
 
 	merged.to_csv(study + "_" + OLID + '_audioQCmerged.csv', index=False)
 

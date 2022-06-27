@@ -12,9 +12,8 @@ from viz_helper_functions import distribution_plots
 
 # NOTE: Modify the paths in `phone_transcript_processes.sh`
 study_loc = os.environ['study_loc']
-
-transcript_qc_loc = "/phone/processed/audio/transcripts/"
-NLP_loc = "/phone/processed/audio/transcripts/NLP_features/"
+transcript_qc_loc = os.environ['transcript_qc_loc']
+NLP_loc = os.environ['NLP_loc']
 
 def transcript_dist(study, OLID):
 	# switch to specific patient folder

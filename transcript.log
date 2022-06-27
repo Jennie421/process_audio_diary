@@ -17580,3 +17580,666 @@ Traceback (most recent call last):
     from ._philox import Philox
   File "<frozen importlib._bootstrap>", line 398, in parent
 KeyboardInterrupt
+Current time: 11:24:38
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2BK68
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2EG95
+no transcript for 2EJ48, skipping
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2FB35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 2XQ45
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3BY45
+no transcript for 3CK38, skipping
+Done converting new transcripts for 3EF35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3HZ25
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3JT35
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of *.txt:
+grep: *.txt: No such file or directory
+
+
+Done converting new transcripts for 3KN45
+Done converting new transcripts for 3KS75
+phone_transcript_preprocess.sh: line 33: study_loc: command not found
+Current time: 11:27:47
+
+*************Converting newly pulled transcripts to CSV*************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 29: cd: /FRESH_17: No such file or directory
+phone_transcript_preprocess.sh: line 33: study_loc: command not found
+Current time: 11:30:02
+
+*************Converting newly pulled transcripts to CSV*************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 29: cd: /FRESH_17: No such file or directory
+phone_transcript_preprocess.sh: line 33: study_loc: command not found
+Current time: 11:30:46
+
+*************Converting newly pulled transcripts to CSV*************
+/n/home_fasse/jennieli/FRESH_17
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 31: cd: /FRESH_17: No such file or directory
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_csv_conversion.sh: line 134: cd: /FRESH_17: No such file or directory
+
+Current time: 11:32:00
+
+*************Running QC on all available transcripts for this study*************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 39: cd: /FRESH_17: No such file or directory
+Running Transcript QC for 3KS75
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_qc.sh: line 56: cd: /FRESH_17: No such file or directory
+
+Current time: 11:32:14
+
+*************Extracting NLP features for all available transcripts*************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_nlp.sh: line 39: cd: /FRESH_17: No such file or directory
+mkdir: cannot create directory ‘/FRESH_17/3KS75/phone/processed/audio/transcripts/NLP_features/’: No such file or directory
+mkdir: cannot create directory ‘/FRESH_17/3KS75/phone/processed/audio/transcripts/NLP_features/csv_with_features’: No such file or directory
+ls: cannot access /FRESH_17/3KS75/phone/processed/audio/transcripts/NLP_features/csv_with_features: No such file or directory
+Current working directory: /n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_nlp.py", line 10, in <module>
+    from language_feature_functions import count_number_syllables, calculate_speaking_rate, calculate_wordtovec_transcript, calculate_sentiment, count_keywords, summarize_transcript_stats
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/language_feature_functions.py", line 46, in <module>
+    g = KeyedVectors.load_word2vec_format(word2vec_model_path, binary=True) # this can be slow to load, so that will be upfront to importing this file
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1630, in load_word2vec_format
+    return _load_word2vec_format(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1909, in _load_word2vec_format
+    _word2vec_read_binary(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1804, in _word2vec_read_binary
+    processed_words, chunk = _add_bytes_to_kv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1790, in _add_bytes_to_kv
+    _add_word_to_kv(kv, counts, word, vector, vocab_size)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 1770, in _add_word_to_kv
+    kv.set_vecattr(word, 'count', word_count)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/gensim/models/keyedvectors.py", line 329, in set_vecattr
+    self.allocate_vecattrs(attrs=[attr], types=[type(val)])
+KeyboardInterrupt
+Current time: 11:35:54
+
+*************Converting newly pulled transcripts to CSV*************
+/n/home_fasse/jennieli/FRESH_17
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0073.txt:
+S1 00:00:41.999 I didn’t drink.
+S1 00:00:43.229 I don’t feel pressured to drink either, which was really great, and I also didn’t have to be a parent to any of my friends, which I would not have minded, but, um, it was cool that that didn’t happen.
+S1 00:02:04.875 Um, other than that, yeah, I kinda just, like, wanted to hang out with guy-- not hang out with guys but, like, do things with guys this weekend, and I didn’t.
+S1 00:03:07.888 Um, and then I said, "Okay, is there room for three more?" 'cause I thought we were all planning on sitting together, and they were like, "No, I really don’t think so."
+
+Done converting new transcripts for 6YG55
+
+Current time: 11:36:01
+
+*************Running QC on all available transcripts for this study*************
+Running Transcript QC for 3KS75
+Running Transcript QC for 6YG55
+
+Current time: 11:36:31
+
+*************Extracting NLP features for all available transcripts*************
+Current working directory: /n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+
+Running Transcript Feature Extraction for 3KS75
+Current working directory: /n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio/transcripts/transcript_data
+
+Running Transcript Feature Extraction for 6YG55
+
+Current time: 11:44:39
+
+=============Script completed=============
+Current time: 23:15:09
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+Done converting new transcripts for 6YG55
+
+Current time: 23:15:11
+
+*************Running QC on all available transcripts for this study*************
+Running Transcript QC for 3KS75
+Running Transcript QC for 6YG55
+
+Current time: 23:15:33
+
+*************Extracting NLP features for all available transcripts*************
+
+Current time: 23:15:33
+
+=============Script completed=============
+Current time: 23:16:13
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+Done converting new transcripts for 6YG55
+
+Current time: 23:16:14
+
+*************Running QC on all available transcripts for this study*************
+Running Transcript QC for 3KS75
+Running Transcript QC for 6YG55
+
+Current time: 23:16:24
+
+*************Extracting NLP features for all available transcripts*************
+Current working directory: /n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_nlp.py", line 10, in <module>
+    from language_feature_functions import count_number_syllables, calculate_speaking_rate, calculate_wordtovec_transcript, calculate_sentiment, count_keywords, summarize_transcript_stats
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/language_feature_functions.py", line 23, in <module>
+    word2vec_model_path = os.environ['model_path']
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'model_path'
+
+Current time: 23:16:28
+
+=============Script completed=============
+Current time: 23:17:09
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+Done converting new transcripts for 6YG55
+
+Current time: 23:17:10
+
+*************Running QC on all available transcripts for this study*************
+Running Transcript QC for 3KS75
+Running Transcript QC for 6YG55
+
+Current time: 23:17:20
+
+*************Extracting NLP features for all available transcripts*************
+Current working directory: /n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+
+Running Transcript Feature Extraction for 3KS75
+
+Current time: 23:21:26
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+Current time: 14:18:33
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+Done converting new transcripts for 6YG55
+
+Current time: 14:18:37
+
+*************Running QC on all available transcripts for this study*************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 180, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 64, in diary_transcript_qc
+Running Transcript QC for 3KS75
+    cur_trans = pd.read_csv(filename)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles
+    self.handles = get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/codecs.py", line 309, in __init__
+    def __init__(self, errors='strict'):
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name
+Current time: 14:43:50
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0003.txt:
+S1 00:01:30.343 I'm surprised I didn’t have one as well 'cause I just really didn't enjoy my classes, and that was what I was looking forward to, but I'm hoping things get better.
+
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_6YG55_phoneAudioDiary_recording0073.txt:
+S1 00:00:41.999 I didn’t drink.
+S1 00:00:43.229 I don’t feel pressured to drink either, which was really great, and I also didn’t have to be a parent to any of my friends, which I would not have minded, but, um, it was cool that that didn’t happen.
+S1 00:02:04.875 Um, other than that, yeah, I kinda just, like, wanted to hang out with guy-- not hang out with guys but, like, do things with guys this weekend, and I didn’t.
+S1 00:03:07.888 Um, and then I said, "Okay, is there room for three more?" 'cause I thought we were all planning on sitting together, and they were like, "No, I really don’t think so."
+
+Done converting new transcripts for 6YG55
+
+Current time: 14:43:56
+
+*************Running QC on all available transcripts for this study*************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 12, in <module>
+    import pandas as pd 
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/__init__.py", line 50, in <module>
+    from pandas.core.api import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/api.py", line 29, in <module>
+    from pandas.core.arrays import Categorical
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.base import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/arrays/base.py", line 60, in <module>
+    from pandas.core import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/ops/__init__.py", line 32, in <module>
+    from pandas.core.ops.array_ops import (  # noqa:F401
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/ops/array_ops.py", line 48, in <module>
+    import pandas.core.computation.expressions as expressions
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/computation/expressions.py", line 19, in <module>
+    from pandas.core.computation.check import NUMEXPR_INSTALLED
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/computation/check.py", line 3, in <module>
+    ne = import_optional_dependency("numexpr", errors="warn")
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/compat/_optional.py", line 115, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numexpr/__init__.py", line 50, in <module>
+    from . import version
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 941, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name
+Current time: 14:44:15
+
+*************Converting newly pulled transcripts to CSV*************
+Enter command in the formmat: bash script_name.sh study_name subject_id
+Current time: 16:47:28
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Current time: 16:47:31
+
+*************Running QC on all available transcripts for this study*************
+Running Transcript QC for 3KS75
+
+Current time: 16:47:47
+
+*************Extracting NLP features for all available transcripts*************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_nlp.sh: line 72: continue: only meaningful in a `for', `while', or `until' loop
+Current working directory: /n/home_fasse/jennieli/FRESH_17
+
+Running Transcript Feature Extraction for 3KS75
+No available transcript CSVs for input3KS75
+
+Current time: 16:50:41
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name subject_id
+Current time: 16:55:10
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Current time: 16:55:13
+
+*************Running QC on all available transcripts for this study*************
+Running Transcript QC for 3KS75
+
+Current time: 16:55:28
+
+*************Extracting NLP features for all available transcripts*************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_transcript_nlp.sh: line 72: continue: only meaningful in a `for', `while', or `until' loop
+Current working directory: /n/home_fasse/jennieli/FRESH_17
+
+Running Transcript Feature Extraction for 3KS75
+FRESH_17_3KS75_phoneAudioDiary_recording0001.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0002.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0003.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0004.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0005.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0006.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0007.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0008.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0009.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0010.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0011.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0012.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0013.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0014.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0015.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0016.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0017.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0018.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0019.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0020.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0021.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0022.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0023.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0024.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0025.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0026.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0027.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0028.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0029.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0030.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0031.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0032.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0033.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0034.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0035.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0036.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0037.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0038.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0039.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0040.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0041.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0042.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0043.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0044.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0045.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0046.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0047.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0048.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0049.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0050.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0051.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0052.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0053.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0054.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0055.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0056.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0057.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0058.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0059.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0060.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0061.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0062.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0063.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0064.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0065.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0066.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0067.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0068.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0069.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0070.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0071.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0072.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0073.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0074.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0075.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0076.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0077.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0078.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0079.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0080.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0081.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0082.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0083.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0084.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0085.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0086.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0087.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0088.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0089.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0090.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0091.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0092.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0093.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0094.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0095.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0096.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0097.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0098.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0099.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0100.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0101.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0102.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0103.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0104.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0105.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0106.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0107.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0108.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0109.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0110.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0111.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0112.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0113.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0114.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0115.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0116.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0117.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0118.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0119.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0120.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0121.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0122.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0123.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0124.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0125.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0126.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0127.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0128.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0129.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0130.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0131.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0132.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0133.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0134.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0135.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0136.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0137.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0138.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0139.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0140.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0141.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0142.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0143.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0144.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0145.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0146.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0147.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0148.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0149.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0150.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0151.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0152.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0153.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0154.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0155.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0156.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0157.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0158.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0159.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0160.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0161.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0162.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0163.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0164.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0165.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0166.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0167.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0168.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0169.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0170.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0171.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0172.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0173.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0174.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0175.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0176.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0177.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0178.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0179.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0180.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0181.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0182.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0183.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0184.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0185.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0186.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0187.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0188.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0189.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0190.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0191.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0192.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0193.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0194.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0195.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0196.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0197.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0198.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0199.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0200.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0201.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0202.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0203.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0204.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0205.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0206.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0207.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0208.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0209.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0210.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0211.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0212.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0214.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0215.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0216.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0217.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0218.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0219.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0220.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0221.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0222.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0223.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0224.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0225.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0226.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0227.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0228.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0229.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0230.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0231.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0232.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0233.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0234.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0235.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0236.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0237.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0238.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0239.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0240.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0241.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0242.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0243.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0244.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0245.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0246.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0247.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0248.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0249.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0250.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0251.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0252.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0253.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0254.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0255.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0256.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0257.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0258.csv
+FRESH_17_3KS75_phoneAudioDiary_recording0259.csv
+No available transcript CSVs for input3KS75
+
+Current time: 16:58:06
+
+=============Script completed=============

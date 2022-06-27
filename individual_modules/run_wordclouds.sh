@@ -37,20 +37,23 @@ fi
 # body:
 # actually start running the main computations
 cd $study_loc/"$study"
-for p in *; do # loop over all patients in the specified study folder on PHOENIX
-	# first check that it is truly an OLID, that has previouly processed audio with some transcripts
-	if [[ ! -d $p/$transcripts_loc/csv ]]; then
-		continue
-	fi
-	cd "$p"/phone/processed/audio
-	# NOTE: Cony & Jennie's organization
-	if [[ ! -d transcripts/visualizations/wordclouds ]]; then
-		mkdir transcripts/visualizations/wordclouds # create output folder if there isn't already
-	fi
-	
-	# run the function - it will loop through the transcripts csv folder and create wordcloud pngs for any transcripts that don't already have
-	python "$func_root"/phone_transcript_wordclouds.py "$study" "$p"
 
-	# back out of folder before continuing to next patient
-	cd $study_loc/"$study"
-done
+# first check that it is truly an OLID, that has previouly processed audio with some transcripts
+if [[ ! -d $p/$transcripts_loc/csv ]]; then
+	continue
+fi
+cd "$p"/phone/processed/audio
+
+# NOTE: Cony & Jennie's organization
+if [[ ! -d transcripts/visualizations/ ]]; then
+	mkdir transcripts/visualizations/
+fi
+if [[ ! -d transcripts/visualizations/wordclouds ]]; then
+	mkdir transcripts/visualizations/wordclouds # create output folder if there isn't already
+fi
+
+# run the function - it will loop through the transcripts csv folder and create wordcloud pngs for any transcripts that don't already have
+python "$func_root"/phone_transcript_wordclouds.py "$study" "$p"
+
+# back out of folder before continuing to next patient
+cd $study_loc/"$study"

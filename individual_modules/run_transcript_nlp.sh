@@ -37,44 +37,43 @@ fi
 # body:
 # actually start running the main computations
 cd $study_loc/"$study"
-for p in *; do # loop over all patients in the specified study folder on PHOENIX
-	# first check that it is truly an OLID that has previous transcripts
-	if [[ ! -d $p/$transcripts_loc/csv ]]; then
-		continue
-	fi
-	cd "$p"/$transcripts_loc
-	# confirm there are csvs in the folder, not just that it exists
-	if [ -z "$(ls -A csv)" ]; then
-		cd $study_loc/"$study" # back out of folder before skipping over patient
-		continue
-	fi
+
+# first check that it is truly an OLID that has previous transcripts
+if [[ ! -d $p/$transcripts_loc/csv ]]; then
+	continue
+fi
+cd "$p"/$transcripts_loc
+# confirm there are csvs in the folder, not just that it exists
+if [ -z "$(ls -A csv)" ]; then
+	cd $study_loc/"$study" # back out of folder before skipping over patient
+	continue
+fi
 
 
-	# setup folder for the individual transcript outputs
-	# NOTE: path modified according to Cony & Jennie's organization 
-	if [[ ! -d $study_loc/"$study"/"$p"/phone/processed/audio/transcripts/NLP_features/ ]]; then
-		mkdir $study_loc/"$study"/"$p"/phone/processed/audio/transcripts/NLP_features/
-	fi
+# setup folder for the individual transcript outputs
+# NOTE: path modified according to Cony & Jennie's organization 
+if [[ ! -d $study_loc/"$study"/"$p"/phone/processed/audio/transcripts/NLP_features/ ]]; then
+	mkdir $study_loc/"$study"/"$p"/phone/processed/audio/transcripts/NLP_features/
+fi
 
-	csv_with_features_path=$study_loc/"$study"/"$p"/phone/processed/audio/transcripts/NLP_features/csv_with_features
-	export csv_with_features_path
+csv_with_features_path=$study_loc/"$study"/"$p"/phone/processed/audio/transcripts/NLP_features/csv_with_features
+export csv_with_features_path
 
-	# setup folder for the individual transcript outputs
-	if [[ ! -d $csv_with_features_path ]]; then
-		mkdir $csv_with_features_path
-	fi
+# setup folder for the individual transcript outputs
+if [[ ! -d $csv_with_features_path ]]; then
+	mkdir $csv_with_features_path
+fi
 
-	# check if all CSVs so far have been processed - if so don't actually run!
-	# (note this means that if new features are added old outputs will need to be cleared and code ran from the start again)
-	new_files=$(diff <(ls -1a csv) <(ls -1a $csv_with_features_path))
-	if [[ -z "${new_files}" ]]; then # if diff of file names of these directories is empty
-		cd $study_loc/"$study" # back out of folder before skipping over patient
-		continue
-	fi
-	
-	# now run script on this patient
-	python "$func_root"/phone_transcript_nlp.py "$study" "$p"
+# check if all CSVs so far have been processed - if so don't actually run!
+# (note this means that if new features are added old outputs will need to be cleared and code ran from the start again)
+new_files=$(diff <(ls -1a csv) <(ls -1a $csv_with_features_path))
+if [[ -z "${new_files}" ]]; then # if diff of file names of these directories is empty
+	cd $study_loc/"$study" # back out of folder before skipping over patient
+	continue
+fi
 
-	# back out of folder for next loop
-	cd $study_loc/"$study"
-done
+# now run script on this patient
+python "$func_root"/phone_transcript_nlp.py "$study" "$p"
+
+# back out of folder for next loop
+cd $study_loc/"$study"

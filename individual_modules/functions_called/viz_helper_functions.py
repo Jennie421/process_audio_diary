@@ -97,33 +97,39 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 	# "normal" heatmap case, which will then either be colored relative to distribution or using provided absolute bounds
 	if len(GB_input_dfs) == 0 and (distribution_df is not None or len(abs_col_bounds_list)>0):
 		# loop through features
-		count_labels = 0
-		for label in input_df.columns:
-			if distribution_df is not None: # distribution relative heatmap
-				prop_dist = distribution_df[label].tolist() # please ensure corresponding columns in the distribution df and the input df are named identically
-				prop_mean = np.nanmean(prop_dist) # get the mean and standard deviation for this feature
-				prop_std = np.nanstd(prop_dist)
-				min_bound = prop_mean - rel_col_std_bounds * prop_std # set bounds using that and the specified max/min standard deviation (defaults to 3)
-				max_bound = prop_mean + rel_col_std_bounds * prop_std
-			else: # otherwise it is a heatmap where explicit max/min bounds have been provided for each feature
-				min_bound = abs_col_bounds_list[count_labels][0]
-				max_bound = abs_col_bounds_list[count_labels][1]
-			if cap_max_min: # cap any values above max or below min instead of letting them fill in as NaN
-				input_df.loc[(input_df[label] != nan_fill) & (input_df[label] <= min_bound), [label]] = min_bound + eps
-				input_df.loc[(input_df[label] != nan_fill) & (input_df[label] >= max_bound), [label]] = max_bound - eps
-			# display current feature on the heatmap, masking rest
-			# ax.matshow(input_df.mask(((input_df == input_df) | input_df.isnull()) & (input_df.columns != label)).transpose(), cmap=colormap, vmin=min_bound, vmax=max_bound)
-			count_labels = count_labels + 1
+
+		# NOTE: below is for cap min and max. 
+		# count_labels = 0
+		# for label in input_df.columns:
+		# 	if distribution_df is not None: # distribution relative heatmap
+		# 		prop_dist = distribution_df[label].tolist() # please ensure corresponding columns in the distribution df and the input df are named identically
+		# 		prop_mean = np.nanmean(prop_dist) # get the mean and standard deviation for this feature
+		# 		prop_std = np.nanstd(prop_dist)
+		# 		min_bound = prop_mean - rel_col_std_bounds * prop_std # set bounds using that and the specified max/min standard deviation (defaults to 3)
+		# 		max_bound = prop_mean + rel_col_std_bounds * prop_std
+		# 	else: # otherwise it is a heatmap where explicit max/min bounds have been provided for each feature
+		# 		min_bound = abs_col_bounds_list[count_labels][0]
+		# 		max_bound = abs_col_bounds_list[count_labels][1]
+		# 	# NOTE: do we want to cap max and mmin? Now set to FALSE, no use min_bound, max_bound. 
+		# 	if cap_max_min: # cap any values above max or below min instead of letting them fill in as NaN
+		# 		input_df.loc[(input_df[label] != nan_fill) & (input_df[label] <= min_bound), [label]] = min_bound + eps
+		# 		input_df.loc[(input_df[label] != nan_fill) & (input_df[label] >= max_bound), [label]] = max_bound - eps
+		# 	# display current feature on the heatmap, masking rest
+		# 	# ax.matshow(input_df.mask(((input_df == input_df) | input_df.isnull()) & (input_df.columns != label)).transpose(), cmap=colormap, vmin=min_bound, vmax=max_bound)
+		# 	count_labels = count_labels + 1
+
+		# NOTE: get true min and max instead of preset values. 
+		abs_col_bounds_list = []
+		for feature_min, feature_max, idx in zip (input_df.min(axis=0), input_df.max(axis=0), range(len(features_rename))):
+			abs_col_bounds_list.append((feature_min, feature_max))
+			if str(feature_min)[::-1].find('.') > 4: # If the decimal place of min/max value is longer than 3, round up to 3
+				features_rename[idx] = features_rename[idx] + '(' + str(round(feature_min, 3)) + ', ' + str(round(feature_max,3)) + ')'
+			else:
+				features_rename[idx] = features_rename[idx] + '(' + str(feature_min) + ', ' + str(feature_max) + ')' # Add ranges to labels
 		
 		#NOTE: generate df_info 
-		abs_col_bounds_list=[(0.0,4.0),(20,100),(-0.1,0.1),
-							(0,35),(0,400),(-4,4),
-							(-4,4),(-6,6),(-0.0075,0.0075)] 
-		var_names = input_df.columns
-
-		#NOTE: generate df_info 
 		df_info = pd.DataFrame()
-		for range_pair, label in zip(abs_col_bounds_list, var_names):
+		for range_pair, label in zip(abs_col_bounds_list, input_df.columns):
 			df_info[label] = list(range_pair)
 
 		df_norm = (input_df - df_info.iloc[0])/(df_info.iloc[1]-df_info.iloc[0])
@@ -134,6 +140,7 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 		ax.imshow(np.dstack((input_df.values.transpose(), GB_input_dfs[0].values.transpose(), GB_input_dfs[1].values.transpose())),origin='upper',interpolation='nearest',aspect='equal')
 	else: # otherwise it is a heatmap with discrete colormap, so the input dataframe then contains the indices corresponding to the color in the colormap that each square should be
 		ax.imshow(input_df.values.transpose(), cmap=colormap)
+	
 	# add annotations to graph - label features by default, make sure input dataframe columns are appropriate for this. 
 	if label_features:
 		if len(input_df.columns) == len(features_rename): # if a list of strings is provided that matches the included columns, use those to label instead
@@ -142,29 +149,29 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 			plt.yticks(range(len(input_df.columns)), input_df.columns, fontsize=12)
 	else:
 		plt.yticks([])
-	if label_time: # labels columns once per vertical cluster bar
-		plt.xticks(range((time_bars_index_space - time_bars_offset - 1), input_df.shape[0], time_bars_index_space), [str(y + time_nums_offset) for y in range((time_bars_index_space - time_bars_offset), input_df.shape[0]+1, time_bars_index_space)], fontsize=10)
-		ax.xaxis.set_tick_params(labelbottom=True, labeltop=False)
-	else:
-		plt.xticks([])
+	# if label_time: # labels columns once per vertical cluster bar
+	# 	plt.xticks(range((time_bars_index_space - time_bars_offset - 1), input_df.shape[0], time_bars_index_space), [str(y + time_nums_offset) for y in range((time_bars_index_space - time_bars_offset), input_df.shape[0]+1, time_bars_index_space)], fontsize=10)
+	# 	ax.xaxis.set_tick_params(labelbottom=True, labeltop=False)
+	# else:
+	# 	plt.xticks([])
 	# add small grid lines while removing the ticks on the outside of the graph
-	ticks1 = np.arange(0.5+x_ticks_add_offset,input_df.shape[0]-0.5) # 0.5 offset so not in middle of square
-	ticks2 = np.arange(0.5+y_ticks_add_offset,len(input_df.columns)-0.5) # may require additional small offset depending on dimensions of df, see optional add_offset inputs for tweaking
-	ax.set_xticks(ticks1, minor=True)
-	ax.set_yticks(ticks2, minor=True)
-	ax.xaxis.set_tick_params(width=0,which="both")
-	ax.yaxis.set_tick_params(width=0,which="both")
-	ax.grid(color='w', linestyle='-', linewidth=minors_width, which="minor")
+	# ticks1 = np.arange(0.5+x_ticks_add_offset,input_df.shape[0]-0.5) # 0.5 offset so not in middle of square
+	# ticks2 = np.arange(0.5+y_ticks_add_offset,len(input_df.columns)-0.5) # may require additional small offset depending on dimensions of df, see optional add_offset inputs for tweaking
+	# ax.set_xticks(ticks1, minor=True)
+	# ax.set_yticks(ticks2, minor=True)
+	# ax.xaxis.set_tick_params(width=0,which="both")
+	# ax.yaxis.set_tick_params(width=0,which="both")
+	# ax.grid(color='w', linestyle='-', linewidth=minors_width, which="minor")
 	if flip_y_label: # put the text on the right instead of the left if this arg is set
 		ax.yaxis.set_tick_params(labelright=True, labelleft=False)
 	# add thicker vertical lines to denote bins of time - defaults to every 7 to specify weeks, offset allows weekdays to be consistent
-	thicker = np.arange((time_bars_index_space - time_bars_offset) - 0.52,len(range(input_df.shape[0]))-0.5,time_bars_index_space)
-	for n in thicker:
-		plt.axvline(x=n, linewidth=bars_width, color='w')
-	for n in cluster_bars_index: # add thicker horizontal lines to denote any feature clusters, if provided
-		plt.axhline(y=n+0.48, linewidth=bars_width, color='w')
+	# thicker = np.arange((time_bars_index_space - time_bars_offset) - 0.52,len(range(input_df.shape[0]))-0.5,time_bars_index_space)
+	# for n in thicker:
+	# 	plt.axvline(x=n, linewidth=bars_width, color='w')
+	# for n in cluster_bars_index: # add thicker horizontal lines to denote any feature clusters, if provided
+	# 	plt.axhline(y=n+0.48, linewidth=bars_width, color='w')
 	if title is not None: # add title if provided
-		plt.title(title, fontsize=10)
+		plt.title(title, fontsize=14)
 	if x_axis_title is not None: # add x title, defaults to "Study Day"
 		plt.xlabel(x_axis_title, fontsize=12)
 	ax.set_axisbelow(True)

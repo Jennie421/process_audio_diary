@@ -19,16 +19,13 @@ repo_root=$(dirname $full_path)
 # export the path to the repo for scripts called by this script to also use - will unset at end
 export repo_root
 
-# # gather user settings, first asking which study the code should run on
-# # (in future will want to be able to read this from a config file so code can be run with no user intervention - hold up right now is password handling)
-# echo "Study of interest?"
-# echo "(validated option is FRESH_17)"
-# read study
-
+# gather user settings, first asking which study the code should run on - this is only setting currently for the viz side
+echo "Enter command in the formmat: bash script_name.sh study_name subject_id"
 # NOTE: take command line argument as study name variable 
 # E.g. bash phone_transcript_preprocess.sh FRESH_17 
 study=$1
-
+p=$2
+export p
 # NOTE: the location of the study
 # study_loc=/ncf/cnl03/PHOENIX/PROTECTED  
 study_loc=/n/home_fasse/jennieli/ # where FRESH_17 is located 
@@ -41,8 +38,6 @@ export transcripts_loc
 model_path=$repo_root/NLP_models/GoogleNews-vectors-negative300.bin
 export model_path
 
-audio_qc_loc=/phone/processed/audio/
-export audio_qc_loc
 
 # sanity check that the study folder is real at least
 cd $study_loc
@@ -148,5 +143,7 @@ echo ""
 # script wrap up - unset environment variables so doesn't mess with future scripts
 unset study
 unset repo_root
+unset transcript_loc
 unset model_path
+unset patient
 echo "=============Script completed============="

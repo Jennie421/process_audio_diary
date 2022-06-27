@@ -37,31 +37,30 @@ fi
 # body:
 # actually start running the main computations
 cd $study_loc/"$study"
-for p in *; do # loop over all patients in the specified study folder on PHOENIX
-	# first check that it is truly an OLID, that has previouly processed audio
-	if [[ ! -d $p/phone/processed/audio ]]; then
-		continue
-	fi
-	cd "$p"/phone/processed/audio
 
-	# make a heatmaps subfolder if it doesn't already exist
-	# if [[ ! -d heatmaps ]]; then
-	# 	mkdir heatmaps
-	# fi
+# first check that it is truly an OLID, that has previouly processed audio
+if [[ ! -d $p/phone/processed/audio ]]; then
+	continue
+fi
+cd "$p"/phone/processed/audio
 
-	# Cony & Jennie's organization 
-	if [[ ! -d transcripts/visualizations/heatmaps/ ]]; then
-		mkdir transcripts/visualizations/heatmaps/
-	fi
 
-	# check that there is an audio QC CSV to use, if so run the heatmap generation script (for audio and transcript combined!)
-	# the combined file is in "/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/FRESH_17_3KS75_merged.csv"
-	cd transcripts
-	if [[ -n $(shopt -s nullglob; echo *_audiotranscriptQCmerged.csv) ]]; then
-		echo "on participant ${p}"
-		python "$func_root"/phone_diary_qc_heatmaps.py "$study" "$p"
-	fi
+# Cony & Jennie's organization 
+if [[ ! -d transcripts/visualizations/ ]]; then
+	mkdir transcripts/visualizations/
+fi
+# make a heatmaps subfolder if it doesn't already exist
+if [[ ! -d transcripts/visualizations/heatmaps/ ]]; then
+	mkdir transcripts/visualizations/heatmaps/
+fi
 
-	# back out of folder before continuing to next patient
-	cd $study_loc/"$study"
-done
+# check that there is an audio QC CSV to use, if so run the heatmap generation script (for audio and transcript combined!)
+# the combined file is in "/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/FRESH_17_3KS75_merged.csv"
+cd transcripts
+if [[ -n $(shopt -s nullglob; echo *_audiotranscriptQCmerged.csv) ]]; then
+	echo "on participant ${p}"
+	python "$func_root"/phone_diary_qc_heatmaps.py "$study" "$p"
+fi
+
+# back out of folder before continuing to next patient
+cd $study_loc/"$study"

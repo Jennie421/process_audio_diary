@@ -13,19 +13,31 @@ repo_root=$(dirname $full_path)
 # export the path to the repo for scripts called by this script to also use - will unset at end
 export repo_root
 
-# # gather user settings, first asking which study the code should run on - this is only setting currently for the viz side
-# # (in future will want to be able to read this from a config file so code can be run with no user intervention - hold up right now is password handling)
-# echo "Study of interest?"
-# echo "(validated options are BLS, DPBPD, DATA)"
-# read study
-study=FRESH_17
+# gather user settings, first asking which study the code should run on - this is only setting currently for the viz side
+echo "Enter command in the formmat: bash script_name.sh study_name subject_id"
+# NOTE: take command line argument as study name variable 
+study=$1
+p=$2
+export p
 
 # modify data location 
-study_loc=/n/home_fasse/jennieli
+study_loc=/n/home_fasse/jennieli/
 export study_loc 
 
 transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
 export transcripts_loc
+
+audio_qc_loc=/phone/processed/audio/
+export audio_qc_loc
+
+combined_qc_loc=/phone/processed/audio/transcripts/ # file that combines audio and transcript QC 
+export combined_qc_loc
+
+transcript_qc_loc=/phone/processed/audio/transcripts/
+export transcript_qc_loc
+
+NLP_loc=/phone/processed/audio/transcripts/NLP_features/
+export NLP_loc
 
 # sanity check that the study folder is real at least
 cd $study_loc
@@ -94,4 +106,7 @@ echo ""
 # script wrap up - unset environment variables so doesn't mess with future scripts
 unset study
 unset repo_root
+unset study_loc
+unset transcript_loc
+unset audio_qc_loc
 echo "=============Script completed============="

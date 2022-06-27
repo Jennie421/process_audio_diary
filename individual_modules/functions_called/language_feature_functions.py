@@ -126,6 +126,7 @@ def calculate_speaking_rate(transcript_df_with_syls, audio_length=None, inplace=
 # 		# if there is an hour placeholder will hit this except block, can go from there
 # 		speech_times = [float(s[0:2])*60*60 + float(s[3:5])*60 + float(s[6:-1]) for s in speech_times_raw]
 	
+	# NOTE JL improved time conversion method 
 	def str2float(s):
 		s_list = s.split(":")
 		if len(s_list) == 3: 

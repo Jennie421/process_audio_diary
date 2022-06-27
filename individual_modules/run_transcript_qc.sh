@@ -37,21 +37,20 @@ fi
 # body:
 # actually start running the main computations
 cd $study_loc/"$study"
-for p in *; do # loop over all patients in the specified study folder on PHOENIX
-	# first check that it is truly an OLID that has previous transcripts
-	if [[ ! -d $p/$transcripts_loc/csv ]]; then  # NOTE: CHANGE THIS TO VARIABLE SO DON'T NEED MANUL EDITING
-		continue
-	fi
-	cd "$p"/$transcripts_loc
-	# confirm there are csvs in the folder, not just that it exists
-	if [ -z "$(ls -A csv)" ]; then
-		cd $study_loc/"$study" # back out of folder before skipping over patient
-		continue
-	fi
-	
-	# now run script on this patient
-	python "$func_root"/phone_transcript_qc.py "$study" "$p"
 
-	# back out of folder for next loop
-	cd $study_loc/"$study"
-done
+# first check that it is truly an OLID that has previous transcripts
+if [[ ! -d $p/$transcripts_loc/csv ]]; then  # NOTE: CHANGE THIS TO VARIABLE SO DON'T NEED MANUL EDITING
+	continue
+fi
+cd "$p"/$transcripts_loc
+# confirm there are csvs in the folder, not just that it exists
+if [ -z "$(ls -A csv)" ]; then
+	cd $study_loc/"$study" # back out of folder before skipping over patient
+	continue
+fi
+
+# now run script on this patient
+python "$func_root"/phone_transcript_qc.py "$study" "$p"
+
+# back out of folder for next loop
+cd $study_loc/"$study"

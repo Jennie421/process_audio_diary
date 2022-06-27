@@ -1,89 +1,1923 @@
-Study of interest?
-(validated options are BLS, DPBPD, DATA)
 
 Beginning script - diary visualization generation for:
-DATA
+FRESH_17
 
-Current time: 10:10:27
-
-Generating QC and feature distributions with histograms
-Looping through patients
-Generating study-wide plots
-Traceback (most recent call last):
-  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_total_distributions.py", line 4, in <module>
-    import pandas as pd
-ModuleNotFoundError: No module named 'pandas'
-
-Current time: 10:10:28
-
-Generating QC heatmaps for each patient
-
-Current time: 10:10:28
-
-Generating sentiment-colored wordclouds for each available transcript
-/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 45: cd: 3KS75/phone/processed/audio: No such file or directory
-Traceback (most recent call last):
-  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 4, in <module>
-    import pandas as pd
-ModuleNotFoundError: No module named 'pandas'
-/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 45: cd: 6YG55/phone/processed/audio: No such file or directory
-Traceback (most recent call last):
-  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 4, in <module>
-    import pandas as pd
-ModuleNotFoundError: No module named 'pandas'
-
-Current time: 10:10:28
-
-Creating study-wide correlation matrices
-Traceback (most recent call last):
-  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_correlations.py", line 4, in <module>
-    import pandas as pd
-ModuleNotFoundError: No module named 'pandas'
-
-Current time: 10:10:28
-
-Script completed
-Study of interest?
-(validated options are BLS, DPBPD, DATA)
-
-Beginning script - diary visualization generation for:
-DATA
-
-Current time: 10:29:02
+Current time: 10:48:39
 
 *******************Generating QC and feature distributions with histograms*******************
 Looping through patients
-Generating study-wide plots
-Matplotlib is building the font cache; this may take a moment.
-no audio QC for this study yet
-no transcript QC for this study yet
-no OpenSMILE results summary for this study yet
-no filtered OpenSMILE results summary for this study yet
-no transcript NLP for this study yet
-No distribution info for this study yet, exiting
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Preparing audio feature distributions for 3KS75
+No OpenSMILE results yet for 3KS75, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+phone_diary_viz.sh: line 52: lots.sh: command not found
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 112, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
 
-Current time: 10:29:28
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 117, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 80, in diary_qc_heatmap
+    full_QC_trans = days_full_df.merge(cur_QC_trans, on="day", how="left") # use same day list as audio here because transcripts available must be a subset
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/frame.py", line 9186, in merge
+    return merge(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/reshape/merge.py", line 107, in merge
+    op = _MergeOperation(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/reshape/merge.py", line 700, in __init__
+    ) = self._get_merge_keys()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/reshape/merge.py", line 1092, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 1779, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'day'
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+Current time: 10:50:20
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 11:01:54
 
 *******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 116, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
 
-Current time: 10:29:28
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 121, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 107, in diary_qc_heatmap
+    cur_slice = final_QC.iloc[i*91:(i+1)*91, :]
+NameError: name 'final_QC' is not defined
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+Current time: 11:02:07
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 11:06:17
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Preparing audio feature distributions for 3KS75
+No OpenSMILE results yet for 3KS75, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+Current time: 11:07:48
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+Current time: 11:08:23
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 11:45:14
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Preparing audio feature distributions for 3KS75
+No OpenSMILE results yet for 3KS75, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+Current time: 11:46:59
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+Current time: 11:47:34
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:01:17
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+Current time: 12:01:42
 
 *******************Generating sentiment-colored wordclouds for each available transcript*******************
-/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 45: cd: 3KS75/phone/processed/audio: No such file or directory
 Problem with input arguments
-/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 45: cd: 6YG55/phone/processed/audio: No such file or directory
 Problem with input arguments
 
-Current time: 10:29:38
+Current time: 12:01:50
 
-*******************Creating study-wide correlation matrices*******************
-No audio QC data yet to correlate, continuing
-No transcript QC data yet to correlate, continuing
-No OpenSMILE data yet to correlate, continuing
-No pause-removed OpenSMILE data yet to correlate, continuing
-No transcript NLP data yet to correlate, continuing
-No key features distribution yet to correlate, continuing
+=============Script completed=============
 
-Current time: 10:29:47
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:03:22
+
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Problem with input arguments
+Problem with input arguments
+
+Current time: 12:03:36
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:03:46
+
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: line 40:  7548 Terminated              python "$func_root"/phone_transcript_wordclouds.py "$study" "$p"
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:34:05
+
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Generating transcript wordclouds for 3KS75
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0237.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0235.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0103.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0238.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0028.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0001.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0120.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0100.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0119.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0088.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0236.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0002.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0102.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0050.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0234.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0104.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0233.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0018.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0029.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0027.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0030.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0251.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0101.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0105.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0087.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0259.csv
+Function crashed on FRESH_17_3KS75_phoneAudioDiary_recording0019.csv
+Generating transcript wordclouds for 6YG55
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0222.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0069.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0098.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0001.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0209.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0212.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0181.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0068.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0102.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0101.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0131.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0217.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0129.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0210.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0221.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0130.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0211.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0255.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0257.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0256.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0070.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0097.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0002.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0100.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0007.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0218.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0220.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0067.csv
+Function crashed on FRESH_17_6YG55_phoneAudioDiary_recording0099.csv
+
+Current time: 12:58:59
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:20:53
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 4, in <module>
+    import pandas as pd
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/__init__.py", line 50, in <module>
+    from pandas.core.api import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/api.py", line 29, in <module>
+    from pandas.core.arrays import Categorical
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.base import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/arrays/base.py", line 60, in <module>
+    from pandas.core import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/ops/__init__.py", line 32, in <module>
+    from pandas.core.ops.array_ops import (  # noqa:F401
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/ops/array_ops.py", line 48, in <module>
+    import pandas.core.computation.expressions as expressions
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/computation/expressions.py", line 19, in <module>
+    from pandas.core.computation.check import NUMEXPR_INSTALLED
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/computation/check.py", line 3, in <module>
+    ne = import_optional_dependency("numexpr", errors="warn")
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/compat/_optional.py", line 115, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numexpr/__init__.py", line 36, in <module>
+    from numexpr.necompiler import NumExpr, disassemble, evaluate, re_evaluate
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numexpr/necompiler.py", line 18, in <module>
+    from numexpr.utils import CacheDict
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numexpr/utils.py", line 11, in <module>
+    import logging
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1414, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1386, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1532, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 156, in _path_isfile
+  File "<frozen importlib._bootstrap_external>", line 148, in _path_is_mode_type
+  File "<frozen importlib._bootstrap_external>", line 142, in _path_stat
+KeyboardInterrupt
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:27:32
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+getting here!!!
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:37:01
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+getting here!!!
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:38:20
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+plotting......
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:41:15
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 129, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 134, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 120, in diary_qc_heatmap
+    print("on slice " + i)
+TypeError: can only concatenate str (not "int") to str
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:01:23
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 9, in <module>
+    from viz_helper_functions import generate_horizontal_heatmap
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 18, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 9, in <module>
+    from viz_helper_functions import generate_horizontal_heatmap
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 18, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:03:49
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/matrix.py:198: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/matrix.py:203: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+on slice 2
+plotting......
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:10:25
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice 2
+plotting......
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:15:29
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice 2
+plotting......
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 129, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 134, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 121, in diary_qc_heatmap
+    generate_horizontal_heatmap(cur_slice, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=i*91, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 121, in generate_horizontal_heatmap
+    df_norm = (input_df.values.transpose() - df_info.iloc[0])/(df_info.iloc[1]-df_info.iloc[0])
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 2032, in __array_ufunc__
+    return arraylike.array_ufunc(self, ufunc, method, *inputs, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/arraylike.py", line 253, in array_ufunc
+    result = maybe_dispatch_ufunc_to_dunder_op(self, ufunc, method, *inputs, **kwargs)
+  File "pandas/_libs/ops_dispatch.pyx", line 91, in pandas._libs.ops_dispatch.maybe_dispatch_ufunc_to_dunder_op
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/ops/common.py", line 69, in new_method
+    return method(self, other)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/arraylike.py", line 104, in __rsub__
+    return self._arith_method(other, roperator.rsub)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/series.py", line 5526, in _arith_method
+    result = ops.arithmetic_op(lvalues, rvalues, op)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/ops/array_ops.py", line 224, in arithmetic_op
+    res_values = _na_arithmetic_op(left, right, op)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/ops/array_ops.py", line 166, in _na_arithmetic_op
+    result = func(left, right)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/computation/expressions.py", line 239, in evaluate
+    return _evaluate(op, op_str, a, b)  # type: ignore[misc]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/computation/expressions.py", line 128, in _evaluate_numexpr
+    result = _evaluate_standard(op, op_str, a, b)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/computation/expressions.py", line 69, in _evaluate_standard
+    return op(a, b)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/roperator.py", line 13, in rsub
+    return right - left
+ValueError: operands could not be broadcast together with shapes (9,91) (9,) 
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:16:24
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 129, in <module>
+on slice 2
+plotting......
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 134, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 121, in diary_qc_heatmap
+    generate_horizontal_heatmap(cur_slice, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=i*91, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 125, in generate_horizontal_heatmap
+    sns.heatmap(df_plot.values.transpose(), annot=df_norm, cmap=colormap, vmin=min_bound, vmax=max_bound)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/_decorators.py", line 46, in inner_f
+    return f(**kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/matrix.py", line 540, in heatmap
+    plotter = _HeatMapper(data, vmin, vmax, cmap, center, robust, annot, fmt,
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/matrix.py", line 173, in __init__
+    raise ValueError(err)
+ValueError: `data` and `annot` must have same shape.
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:16:48
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice 2
+plotting......
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:19:12
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice 2
+plotting......
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:23:03
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice 2
+plotting......
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:24:32
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice 0
+plotting......
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:27:01
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice 0
+plotting......
+adding labels with range......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:30:32
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 4, in <module>
+    import pandas as pd
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/__init__.py", line 11, in <module>
+    __import__(dependency)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/__init__.py", line 145, in <module>
+    from . import core
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/core/__init__.py", line 76, in <module>
+    from . import defchararray as char
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 941, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+KeyboardInterrupt
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:32:29
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 4, in <module>
+    import pandas as pd
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/compat/__init__.py", line 15, in <module>
+    from pandas.compat.numpy import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/compat/numpy/__init__.py", line 7, in <module>
+    from pandas.util.version import Version
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/__init__.py", line 1, in <module>
+    from pandas.util._decorators import (  # noqa
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly  # noqa
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+  File "pandas/_libs/hashtable.pyx", line 1, in init pandas._libs.hashtable
+  File "pandas/_libs/missing.pyx", line 1, in init pandas._libs.missing
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/_libs/tslibs/__init__.py", line 31, in <module>
+    from pandas._libs.tslibs.conversion import (
+  File "pandas/_libs/tslibs/conversion.pyx", line 63, in init pandas._libs.tslibs.conversion
+  File "pandas/_libs/tslibs/parsing.pyx", line 39, in init pandas._libs.tslibs.parsing
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/dateutil/parser/__init__.py", line 2, in <module>
+    from ._parser import parse, parser, parserinfo, ParserError
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/dateutil/parser/_parser.py", line 45, in <module>
+    from decimal import Decimal
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/decimal.py", line 3, in <module>
+    from _decimal import *
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/abc.py", line 110, in register
+    def register(cls, subclass):
+KeyboardInterrupt
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:39:31
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice 0
+plotting......
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 18:38:58
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 128, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 133, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 120, in diary_qc_heatmap
+    generate_horizontal_heatmap(cur_slice, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=i*91, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 126, in generate_horizontal_heatmap
+    df_norm = (df - df_info.iloc[0])/(df_info.iloc[1]-df_info.iloc[0])
+NameError: name 'df' is not defined
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 18:39:57
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:08:08
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice0
+plotting...
+on slice1
+plotting...
+on slice2
+plotting...
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:13:27
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice0
+plotting...
+on slice1
+plotting...
+on slice2
+plotting...
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:16:01
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice1
+plotting...
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:21:20
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on slice0
+plotting...
+on slice1
+plotting...
+on slice2
+plotting...
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:54:35
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 132, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 137, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 112, in diary_qc_heatmap
+    out_path = "visualizations/heatmaps/" + study + "-" + OLID + "-phoneDiaryQC-featureProgression-days" + str(i*91 + 1) + "to" + str((i+1)*91) + ".png" # output name again hardcoded (per patient/study) for now
+NameError: name 'i' is not defined
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:59:12
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 132, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 137, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 113, in diary_qc_heatmap
+    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=i*91, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges)
+NameError: name 'i' is not defined
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 11:00:54
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+plotting...
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 13:42:22
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+plotting...
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 13:52:27
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:47:22
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:49:06
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:51:02
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:53:13
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 135, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 140, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 116, in diary_qc_heatmap
+    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges, cap_max_min=False)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 93, in generate_horizontal_heatmap
+    input_df.fillna(inplace=True)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/frame.py", line 5171, in fillna
+    return super().fillna(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 6313, in fillna
+    value, method = validate_fillna_kwargs(value, method)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_validators.py", line 370, in validate_fillna_kwargs
+    raise ValueError("Must specify a fill 'value' or 'method'.")
+ValueError: Must specify a fill 'value' or 'method'.
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:03:48
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 135, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 140, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 116, in diary_qc_heatmap
+    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges, cap_max_min=False)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 130, in generate_horizontal_heatmap
+    sns.heatmap(df_plot.T, mask=df_plot.isnull(), cmap='RdBu_r', cbar=False)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/_decorators.py", line 46, in inner_f
+    return f(**kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/matrix.py", line 540, in heatmap
+    plotter = _HeatMapper(data, vmin, vmax, cmap, center, robust, annot, fmt,
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/matrix.py", line 111, in __init__
+    plot_data = np.ma.masked_where(np.asarray(mask), plot_data)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/ma/core.py", line 1929, in masked_where
+    raise IndexError("Inconsistent shape between the condition and the input"
+IndexError: Inconsistent shape between the condition and the input (got (282, 282) and (9, 273))
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:04:35
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:08:57
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:14:41
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:32:13
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Preparing audio feature distributions for 3KS75
+No OpenSMILE results yet for 3KS75, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 4, in <module>
+    import pandas as pd
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/__init__.py", line 11, in <module>
+    __import__(dependency)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/__init__.py", line 145, in <module>
+    from . import core
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/core/__init__.py", line 70, in <module>
+    from . import numerictypes as nt
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 941, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:36:27
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_distribution_plots.sh: line 87: syntax error near unexpected token `done'
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_distribution_plots.sh: line 87: `done'
+
+Current time: 10:36:28
+
+*******************Generating QC heatmaps for each patient*******************
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_heatmap_plots.sh: line 69: syntax error near unexpected token `done'
+/n/home_fasse/jennieli/process_audio_diary/individual_modules/run_heatmap_plots.sh: line 69: `done'
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:42:04
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Preparing audio feature distributions for 3KS75
+No OpenSMILE results yet for 3KS75, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+Current time: 10:44:03
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 10:59:23
+
+*******************Generating QC heatmaps for each patient*******************
+Problem with study day numbering for subject 6YG55, exiting
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 11:01:43
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 6YG55
+Problem with study day numbering for subject 6YG55, exiting
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 11:09:45
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 136, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 141, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 11:50:56
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 136, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 141, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:00:41
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 139, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 144, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 120, in diary_qc_heatmap
+    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], label_time=True, features_rename=features_with_ranges, cap_max_min=False)
+NameError: name 'features_with_ranges' is not defined
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 139, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 144, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:01:13
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 139, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 144, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:10:47
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+[(0.98, 3.08), (52.425, 76.706), (0.00067, 0.0776), (6.0, 30.0), (96.0, 499.0), (0.0, 25.0), (0.0, 6.0), (0.0, 2.0), (4.999999999999449e-05, 0.0066254385964912)]
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 139, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 144, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:17:24
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 140, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 145, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 67, in diary_qc_heatmap
+    final_QC.to_csv('/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/visualizations/heatmaps')
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+IsADirectoryError: [Errno 21] Is a directory: '/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/visualizations/heatmaps'
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 140, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 145, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:17:54
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 140, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 145, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 12:35:47
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 140, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 145, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:19:12
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 346, in <module>
+    audio_dist(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 33, in audio_dist
+    data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezoneCorrected.csv.csv") 
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles
+    self.handles = get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'FRESH_17_3KS75_phoneAudioDiary_fileMetadata_timezoneCorrected.csv.csv'
+AUDIO QC DONE
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_per_patient_distributions.py", line 160, in <module>
+    transcript_dist(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_per_patient_distributions.py", line 37, in transcript_dist
+    audioQCmerged = pd.read_csv("../" + study + "_" + OLID + "_audioQCmerged.csv")
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles
+    self.handles = get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../FRESH_17_3KS75_audioQCmerged.csv'
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 346, in <module>
+    audio_dist(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 33, in audio_dist
+    data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezoneCorrected.csv.csv") 
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles
+    self.handles = get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'FRESH_17_6YG55_phoneAudioDiary_fileMetadata_timezoneCorrected.csv.csv'
+AUDIO QC DONE
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_per_patient_distributions.py", line 7, in <module>
+    from viz_helper_functions import distribution_plots
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 5, in <module>
+    import matplotlib.pyplot as plt
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/pyplot.py", line 43, in <module>
+    from matplotlib.figure import Figure, figaspect
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/figure.py", line 18, in <module>
+    from matplotlib import docstring, projections
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/projections/__init__.py", line 1, in <module>
+    from .. import axes, docstring
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/axes/__init__.py", line 1, in <module>
+    from ._subplots import *
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/axes/_subplots.py", line 6, in <module>
+    from matplotlib.axes._axes import Axes
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/axes/_axes.py", line 71, in <module>
+    class Axes(_AxesBase):
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/axes/_axes.py", line 4317, in Axes
+    def scatter(self, x, y, s=None, c=None, marker=None, cmap=None, norm=None,
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/__init__.py", line 1434, in _preprocess_data
+    new_sig = sig.replace(parameters=params)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/inspect.py", line 2902, in replace
+    return type(self)(parameters,
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/inspect.py", line 2814, in __init__
+    name = param.name
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/inspect.py", line 2565, in name
+    @property
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:20:03
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Preparing audio feature distributions for 3KS75
+No OpenSMILE results yet for 3KS75, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+Current time: 14:22:10
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 141, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 146, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 122, in diary_qc_heatmap
+    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], label_time=True, features_rename=feature_labels, cap_max_min=False)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 153, in generate_horizontal_heatmap
+    plt.xticks(range((time_bars_index_space - time_bars_offset - 1), input_df.shape[0], time_bars_index_space), [str(y + time_nums_offset) for y in range((time_bars_index_space - time_bars_offset), input_df.shape[0]+1, time_bars_index_space)], fontsize=10)
+TypeError: 'float' object cannot be interpreted as an integer
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 141, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 146, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 38, in diary_qc_heatmap
+    num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
+ValueError: cannot convert float NaN to integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:27:51
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 347, in <module>
+    audio_dist(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 35, in audio_dist
+    data1['weekday_num'] = df['weekday_num'].apply(lambda x: x - 1)
+NameError: name 'df' is not defined
+AUDIO QC DONE
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_per_patient_distributions.py", line 7, in <module>
+    from viz_helper_functions import distribution_plots
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 18, in <module>
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/__init__.py", line 2, in <module>
+    from .rcmod import *  # noqa: F401,F403
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/rcmod.py", line 7, in <module>
+    from . import palettes
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/palettes.py", line 9, in <module>
+    from .utils import desaturate, get_color_cycle
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/utils.py", line 10, in <module>
+    from scipy import stats
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/__init__.py", line 391, in <module>
+    from .stats import *
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/stats.py", line 180, in <module>
+    from . import distributions
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/distributions.py", line 11, in <module>
+    from . import _continuous_distns
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/_continuous_distns.py", line 2509, in <module>
+    genextreme = genextreme_gen(name='genextreme')
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py", line 1703, in __init__
+    self._construct_doc(docdict, dct.get(self.name))
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py", line 796, in _construct_doc
+    self.__doc__ = doccer.docformat(self.__doc__, tempdict)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/_lib/doccer.py", line 48, in docformat
+    lines = docstring.expandtabs().splitlines()
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:28:20
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 347, in <module>
+    audio_dist(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 43, in audio_dist
+    merged['transcript_name'] = merged.apply(lambda row: row.filename.split(".")[0] + ".csv", axis=1)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/frame.py", line 8736, in apply
+    return op.apply()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/apply.py", line 688, in apply
+    return self.apply_standard()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/apply.py", line 812, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/apply.py", line 828, in apply_series_generator
+    results[i] = self.f(v)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 43, in <lambda>
+    merged['transcript_name'] = merged.apply(lambda row: row.filename.split(".")[0] + ".csv", axis=1)
+AttributeError: 'float' object has no attribute 'split'
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_per_patient_distributions.py", line 160, in <module>
+    transcript_dist(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_per_patient_distributions.py", line 76, in transcript_dist
+    distribution_plots(cur_QC, pdf_out_path, ignore_list=["OLID","day","hours_until_submission"], 
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 52, in distribution_plots
+    pdf.savefig(fig,bbox_inches="tight")
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/backends/backend_pdf.py", line 2541, in savefig
+    figure.savefig(self, format="pdf", **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/figure.py", line 2311, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2210, in print_figure
+    result = print_method(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 1639, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/backends/backend_pdf.py", line 2593, in print_pdf
+    self.figure.draw(renderer)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/artist.py", line 41, in draw_wrapper
+    return draw(artist, renderer, *args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/figure.py", line 1863, in draw
+    mimage._draw_list_compositing_images(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/image.py", line 131, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/artist.py", line 41, in draw_wrapper
+    return draw(artist, renderer, *args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/cbook/deprecation.py", line 411, in wrapper
+    return func(*inner_args, **inner_kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/axes/_base.py", line 2750, in draw
+    self.stale = False
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/artist.py", line 213, in stale
+    @stale.setter
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:30:15
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Preparing audio feature distributions for 3KS75
+No OpenSMILE results yet for 3KS75, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+Current time: 14:32:38
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 141, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 146, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 122, in diary_qc_heatmap
+    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], label_time=True, features_rename=feature_labels, cap_max_min=False)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 153, in generate_horizontal_heatmap
+    plt.xticks(range((time_bars_index_space - time_bars_offset - 1), input_df.shape[0], time_bars_index_space), [str(y + time_nums_offset) for y in range((time_bars_index_space - time_bars_offset), input_df.shape[0]+1, time_bars_index_space)], fontsize=10)
+TypeError: 'float' object cannot be interpreted as an integer
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 141, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 146, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 122, in diary_qc_heatmap
+    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], label_time=True, features_rename=feature_labels, cap_max_min=False)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 153, in generate_horizontal_heatmap
+    plt.xticks(range((time_bars_index_space - time_bars_offset - 1), input_df.shape[0], time_bars_index_space), [str(y + time_nums_offset) for y in range((time_bars_index_space - time_bars_offset), input_df.shape[0]+1, time_bars_index_space)], fontsize=10)
+TypeError: 'float' object cannot be interpreted as an integer
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:37:20
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 9, in <module>
+    from viz_helper_functions import generate_horizontal_heatmap
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 155
+    else:
+    ^
+IndentationError: expected an indented block
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 9, in <module>
+    from viz_helper_functions import generate_horizontal_heatmap
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 155
+    else:
+    ^
+IndentationError: expected an indented block
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:37:58
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:40:46
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:41:41
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:44:22
+
+*******************Generating QC and feature distributions with histograms*******************
+Looping through patients
+/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio
+Preparing audio feature distributions for 3KS75
+No OpenSMILE results yet for 3KS75, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3KS75
+TRANSCRIPT QC DONE
+/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+Current time: 14:46:46
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:48:00
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:50:44
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:55:46
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 139, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 144, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 39, in diary_qc_heatmap
+    print("last day = " + last_day)
+TypeError: can only concatenate str (not "int") to str
+on participant 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 9, in <module>
+    from viz_helper_functions import generate_horizontal_heatmap
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 11, in <module>
+    from wordcloud import WordCloud, STOPWORDS
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/__init__.py", line 1, in <module>
+    from .wordcloud import (WordCloud, STOPWORDS, random_color_func,
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 22, in <module>
+    from xml.sax import saxutils
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/xml/sax/saxutils.py", line 6, in <module>
+    import os, urllib.parse, urllib.request
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/urllib/request.py", line 88, in <module>
+    import http.client
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 941, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:56:21
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+last day = 276
+last day stretch = 364
+on participant 6YG55
+last day = 270
+last day stretch = 273
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 14:57:42
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:06:57
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 15:08:35
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:44:43
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 9, in <module>
+    from viz_helper_functions import generate_horizontal_heatmap
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 18, in <module>
+    import seaborn as sns
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/__init__.py", line 2, in <module>
+    from .rcmod import *  # noqa: F401,F403
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/rcmod.py", line 7, in <module>
+    from . import palettes
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/palettes.py", line 10, in <module>
+    from .colors import xkcd_rgb, crayons
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 941, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:45:26
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
+on participant 6YG55
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17
+
+Current time: 16:46:26
+
+*******************Generating QC heatmaps for each patient*******************
+on participant 3KS75
 
 =============Script completed=============
