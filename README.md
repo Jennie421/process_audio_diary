@@ -209,7 +209,7 @@ The email for this side of the pipeline is simpler logic than the audio/push sid
 
 <details>
 	<summary>
-		Useful Notes JL 22/06/16 
+		Important Notes JL 22/06/27 
 	</summary>
 
 __Orgnization Structure of Files__
@@ -221,7 +221,8 @@ Based on the design, here are definitions for path-related variables:
 - transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
 
 __The NLP model needs to be downloaded.__  
-Download google drive file (https://code.google.com/archive/p/word2vec/) to local pc and upload to RC using the command: 
+Create a new folder in this repo called "NLP_models". 
+Download google drive file (https://code.google.com/archive/p/word2vec/) to local pc and upload to `NLP_models` using the command: 
 
 	scp [local file] [username@fasselogin:~/foldername]
 
