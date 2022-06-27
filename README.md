@@ -221,8 +221,8 @@ Based on the design, here are definitions for path-related variables:
 - transcripts_loc=/phone/processed/audio/transcripts/transcript_data/
 
 __The NLP model needs to be downloaded.__  
-Create a new folder in this repo called "NLP_models". 
-Download google drive file (https://code.google.com/archive/p/word2vec/) to local pc and upload to `NLP_models` using the command: 
+Create a new folder in this repo called `NLP_models`.   
+Download google drive file (https://drive.google.com/drive/u/0/folders/1CvMxoDiLmRhKoVQtzS4VXmQqN9iPAOJe) to local pc and upload to `NLP_models` using the command: 
 
 	scp [local file] [username@fasselogin:~/foldername]
 
@@ -230,9 +230,9 @@ Alternatively, you can try:
 
 	gdown [link of google drive download page] 
 
-But download might be restricted. Be sure the link is for download page not preview page. 
+Be sure the link is for download page not preview page. 
 
-Then, in phone_transcript_nlp.py, the path to the model should be modified accordingly.. 
+The model is too big for git repository, thus the file is listed in `.gitignore` to prevent being pushed.  
 
 __CSV Conversion and ASCII Error:__  
 If encountered error "Found transcript that is not ASCII encoded...", it is likely to be caused by subtle inconsistency in symbols like quotation marks. Find the specific text and fix manully. 
