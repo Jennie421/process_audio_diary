@@ -137,7 +137,6 @@ def calculate_speaking_rate(transcript_df_with_syls, audio_length=None, inplace=
 		return time
 	
 	speech_times = [ str2float(s) for s in speech_times_raw]
-	# print(speech_times)  # to check if the time conversion is correct 
 	
 	speech_differences = [speech_times[j] - speech_times[i] for i,j in zip(range(len(speech_times)-1), range(1,len(speech_times)))]
 	if audio_length is not None:

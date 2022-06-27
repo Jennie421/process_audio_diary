@@ -43,7 +43,6 @@ def diary_transcript_nlp(study, OLID):
 	cur_files = os.listdir(".")
 	cur_files.sort() # go in order, although can also always sort CSV later.
 	for filename in cur_files:
-		print(filename)
 		if not filename.endswith(".csv"): # skip any non-csv files (and folders) in case they exist
 			continue
 
