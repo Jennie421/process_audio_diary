@@ -16,6 +16,7 @@ import re
 import math
 import copy
 import seaborn as sns
+from matplotlib.patches import Rectangle
 
 # ignore Unicode warning in inflect package
 import warnings
@@ -56,7 +57,12 @@ def distribution_plots(dist_df, pdf_save_path, ignore_list=[], bins_list=None, r
 
 # create heatmap from input dataframe, save figure at save_path
 # for coloring, should provide either absolute bounds using abs_col_bounds_list or a distribution for each feature (matching column name) with distribution_df. can also provide GB_input_dfs instead if want an RGB heatmap
-def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_df=None, abs_col_bounds_list=[], GB_input_dfs=[], colormap=copy.copy(cm.get_cmap("bwr")), nan_color="grey", property_reorder_name=None, rel_col_std_bounds=3, cluster_bars_index=[], time_bars_offset=0, time_nums_offset=0, time_bars_index_space=7, x_axis_title="Study Day", title=None, label_features=True, features_rename=[], label_time=False, flip_y_label=False, fig_size=(30,5), x_ticks_add_offset=-0.02, y_ticks_add_offset=-0.02, cap_max_min=True,  minors_width=1, bars_width=5, nan_fill=-10000):
+def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_df=None, abs_col_bounds_list=[], 
+								GB_input_dfs=[], colormap=copy.copy(cm.get_cmap("bwr")), nan_color="grey", property_reorder_name=None, 
+								rel_col_std_bounds=3, cluster_bars_index=[], time_bars_offset=0, time_nums_offset=0, time_bars_index_space=7, 
+								x_axis_title="Study Day", title=None, label_features=True, features_rename=[], label_time=False, flip_y_label=False, 
+								fig_size=(30,5), x_ticks_add_offset=-0.02, y_ticks_add_offset=-0.02, cap_max_min=True, minors_width=1, bars_width=5, nan_fill=-10000,
+								x_axis_label=None, late_submission=None):
 	for dc in drop_cols:
 		input_df.drop(columns=dc,inplace=True)
 	plt.rcParams["axes.grid"] = False
@@ -92,13 +98,16 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 	# else: # otherwise fill the NaNs with a value that will clearly be outside of the bounds. defaults to -10000 but if for some reason this is a viable value then will need to specify a different input for that
 		# input_df.fillna(nan_fill,inplace=True) # NOTE: this is where "-10000" comes from
 	
+	# if "late_submission" in input_df.columns:
+	# 	late_submission = input_df['late_submission']
+	# 	input_df.drop("late_submission", inplace=True, axis=1)
+
 	# prepare plot
 	fig,ax = plt.subplots(figsize=fig_size)
 	# "normal" heatmap case, which will then either be colored relative to distribution or using provided absolute bounds
 	if len(GB_input_dfs) == 0 and (distribution_df is not None or len(abs_col_bounds_list)>0):
+		# NOTE: below is for cap min and max. Condition is not correct. 
 		# loop through features
-
-		# NOTE: below is for cap min and max. 
 		# count_labels = 0
 		# for label in input_df.columns:
 		# 	if distribution_df is not None: # distribution relative heatmap
@@ -120,6 +129,7 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 
 		# NOTE: get true min and max instead of preset values. 
 		abs_col_bounds_list = []
+		# Generate abs_col_bounds_list, and add ranges to feature labels. 
 		for feature_min, feature_max, idx in zip (input_df.min(axis=0), input_df.max(axis=0), range(len(features_rename))):
 			abs_col_bounds_list.append((feature_min, feature_max))
 			if str(feature_min)[::-1].find('.') > 4: # If the decimal place of min/max value is longer than 3, round up to 3
@@ -144,7 +154,8 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 	# add annotations to graph - label features by default, make sure input dataframe columns are appropriate for this. 
 	if label_features:
 		if len(input_df.columns) == len(features_rename): # if a list of strings is provided that matches the included columns, use those to label instead
-			plt.yticks(range(len(input_df.columns)), features_rename, fontsize=10) # likely to be longer, make font a bit smaller
+			# center the ticks
+			plt.yticks(np.arange(0.5, len(input_df.columns), step=1), features_rename, fontsize=10) # likely to be longer, make font a bit smaller	
 		else:
 			plt.yticks(range(len(input_df.columns)), input_df.columns, fontsize=12)
 	else:
@@ -174,7 +185,15 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 		plt.title(title, fontsize=14)
 	if x_axis_title is not None: # add x title, defaults to "Study Day"
 		plt.xlabel(x_axis_title, fontsize=12)
+
 	ax.set_axisbelow(True)
+
+	# Color the days where `late_submission`==1 as grey. 
+	if late_submission is not None:
+		for i, is_late in enumerate(late_submission):
+			if is_late:
+				ax.add_patch(Rectangle((i, 0), 1, len(features_rename), fill=True, facecolor='grey'))
+		
 	plt.savefig(save_path, bbox_inches="tight")  
 	plt.close("all")
 

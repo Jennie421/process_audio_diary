@@ -25,17 +25,20 @@ def transcript_wordclouds(study, OLID):
 		except:
 			print("Problem loading " + transcript_path)
 			continue
-		out_path = "../../wordclouds/" + transcript_path.split(".")[0] + "_wordcloud.png"
+		out_path = "../../visualizations/wordclouds/" + transcript_path.split(".")[0] + "_wordcloud.png"
+		title = OLID + transcript_path.split(".")[0].split('_')[-1]
+		
 		if not os.path.exists(out_path):
 			# only create if doesn't already exist for this transcript (as can be a somewhat time intensive process)
 			try:
-				transcript_wordcloud(cur_trans, out_path)
+				transcript_wordcloud(cur_trans, out_path, verbose=True, title=title)
 				# note that sometimes multiple words with a space between will be considered as one word, seemingly inexplicably
 				# this happens infrequently enough that it is not worth the time to troubleshoot currently
 				# instead simply color the "word" as blue instead of on the normal red/black/green colorscale
 				# (see transcript_wordcloud function for more details)
-			except:
+			except Exception as e:
 				print("Function crashed on " + transcript_path)
+				print(e, flush=True)
 				continue
 	
 if __name__ == '__main__':

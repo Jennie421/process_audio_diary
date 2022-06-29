@@ -40,6 +40,7 @@ cd $study_loc/"$study"
 
 # first check that it is truly an OLID, that has previouly processed audio
 if [[ ! -d $p/phone/processed/audio ]]; then
+	"No proper file structure, skipping"
 	continue
 fi
 cd "$p"/phone/processed/audio
@@ -55,11 +56,12 @@ if [[ ! -d transcripts/visualizations/heatmaps/ ]]; then
 fi
 
 # check that there is an audio QC CSV to use, if so run the heatmap generation script (for audio and transcript combined!)
-# the combined file is in "/n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/FRESH_17_3KS75_merged.csv"
+# Now the file also contains NLP features. 
 cd transcripts
-if [[ -n $(shopt -s nullglob; echo *_audiotranscriptQCmerged.csv) ]]; then
-	echo "on participant ${p}"
+if [[ -n $(shopt -s nullglob; echo *_AudioTranscriptQCmerged.csv) ]]; then
 	python "$func_root"/phone_diary_qc_heatmaps.py "$study" "$p"
+else 
+	echo "Combined QC file not found"
 fi
 
 # back out of folder before continuing to next patient

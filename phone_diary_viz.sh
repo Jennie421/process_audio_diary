@@ -52,7 +52,7 @@ export study
 # let user know script is starting
 echo ""
 echo "Beginning script - diary visualization generation for:"
-echo "$study"
+echo "$study - $p"
 echo ""
 
 # add current time for runtime tracking purposes
@@ -60,9 +60,9 @@ now=$(date +"%T")
 echo "Current time: ${now}"
 echo ""
 
-# start with distributions - per patient and for the overall study
-# feature distributions (OpenSMILE and NLP) also generated here, including doing OpenSMILE summary operation
-# echo "*******************Generating QC and feature distributions with histograms*******************"
+# # start with distributions - per patient and for the overall study
+# # feature distributions (OpenSMILE and NLP) also generated here, including doing OpenSMILE summary operation
+# echo "******************* Generating QC and feature distributions with histograms *******************"
 # bash "$repo_root"/individual_modules/run_distribution_plots.sh
 # echo ""
 
@@ -73,16 +73,16 @@ echo ""
 
 # create heatmaps to see progression of select audio and transcript QC features over time per patient (each diary one block)
 # (could also propose alternative dot plots?)
-echo "*******************Generating QC heatmaps for each patient*******************"
+echo "******************* Generating QC heatmaps for $p *******************"
 bash "$repo_root"/individual_modules/run_heatmap_plots.sh
 echo ""
 
-# # add current time for runtime tracking purposes
-# now=$(date +"%T")
-# echo "Current time: ${now}"
-# echo ""
+# add current time for runtime tracking purposes
+now=$(date +"%T")
+echo "Current time: ${now}"
+echo ""
 
-# # sentiment-colored wordclouds for the transcripts
+# sentiment-colored wordclouds for the transcripts
 # echo "*******************Generating sentiment-colored wordclouds for each available transcript*******************"
 # bash "$repo_root"/individual_modules/run_wordclouds.sh
 # echo ""
@@ -110,3 +110,4 @@ unset study_loc
 unset transcript_loc
 unset audio_qc_loc
 echo "=============Script completed============="
+echo "  "

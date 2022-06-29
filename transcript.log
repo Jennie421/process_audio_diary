@@ -18243,3 +18243,133 @@ No available transcript CSVs for input3KS75
 Current time: 16:58:06
 
 =============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - phone transcript preprocessing for:
+FRESH_17 - 3KS75
+
+Current time: 22:17:34
+
+*************Converting newly pulled transcripts to CSV*************
+
+Found transcript that is not ASCII encoded, skipping for now. Please address the following portions of FRESH_17_3KS75_phoneAudioDiary_recording0213.txt:
+S1 01:22.441 Um, and then it was good because I heard from one of my friends back home who's been through a rough time right now though 'cause he broke up with his fiancée.
+
+Done converting new transcripts for 3KS75
+
+Current time: 22:17:38
+
+*************Running QC on all available transcripts for 3KS75*************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 180, in <module>
+    diary_transcript_qc(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 65, in diary_transcript_qc
+Running Transcript QC for 3KS75
+    cur_trans = cur_trans[["subject", "timefromstart", "text"]]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/frame.py", line 3461, in __getitem__
+    indexer = self.loc._get_listlike_indexer(key, axis=1)[1]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/indexing.py", line 1309, in _get_listlike_indexer
+    indexer = ax.get_indexer_for(keyarr)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 5276, in get_indexer_for
+    return self.get_indexer(target, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3461, in get_indexer
+    if is_categorical_dtype(target.dtype):
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/dtypes/common.py", line 529, in is_categorical_dtype
+    return CategoricalDtype.is_dtype(arr_or_dtype)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/dtypes/base.py", line 289, in is_dtype
+    if isinstance(dtype, (ABCSeries, ABCIndex, ABCDataFrame, np.dtype)):
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/dtypes/generic.py", line 45, in _check
+    return getattr(inst, attr, "_typ") in comp
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - phone transcript preprocessing for:
+FRESH_17 - 3KS75
+
+Current time: 23:16:13
+
+*************Converting newly pulled transcripts to CSV*************
+Done converting new transcripts for 3KS75
+
+Current time: 23:16:26
+
+*************Running QC on all available transcripts for 3KS75*************
+Running Transcript QC for 3KS75
+
+Current time: 23:16:34
+
+*************Extracting NLP features for all available transcripts*************
+Current working directory: /n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_nlp.py", line 10, in <module>
+    from language_feature_functions import count_number_syllables, calculate_speaking_rate, calculate_wordtovec_transcript, calculate_sentiment, count_keywords, summarize_transcript_stats
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/language_feature_functions.py", line 40, in <module>
+    import nltk
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/nltk/__init__.py", line 130, in <module>
+    from nltk.featstruct import *
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/nltk/featstruct.py", line 97, in <module>
+    from nltk.sem.logic import (
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/nltk/sem/__init__.py", line 44, in <module>
+    from nltk.sem.util import parse_sents, interpret_sents, evaluate_sents, root_semrep
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 941, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - phone transcript preprocessing for:
+FRESH_17 - 3KS75
+
+Current time: 14:49:31
+
+*************Converting newly pulled transcripts to CSV*************
+
+Current time: 14:49:31
+
+*************Running QC on all available transcripts for 3KS75*************
+Running Transcript QC for 3KS75
+
+Current time: 14:49:39
+
+*************Extracting NLP features for all available transcripts*************
+Current working directory: /n/home_fasse/jennieli/FRESH_17/3KS75/phone/processed/audio/transcripts/transcript_data
+
+Running Transcript Feature Extraction for 3KS75
+
+Current time: 14:52:11
+
+=============Script completed=============
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - phone transcript preprocessing for:
+FRESH_17 - 3KS75
+
+Current time: 14:54:57
+
+*************Converting newly pulled transcripts to CSV*************
+
+Current time: 14:54:58
+
+*************Running QC on all available transcripts for 3KS75*************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_qc.py", line 12, in <module>
+    import pandas as pd 
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/__init__.py", line 11, in <module>
+    __import__(dependency)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/__init__.py", line 156, in <module>
+    from . import random
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/random/__init__.py", line 179, in <module>
+    from . import _pickle
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/random/_pickle.py", line 1, in <module>
+    from .mtrand import RandomState
+  File "mtrand.pyx", line 1, in init numpy.random.mtrand
+  File "bit_generator.pyx", line 40, in init numpy.random.bit_generator
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/secrets.py", line 18, in <module>
+    from hmac import compare_digest
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/hmac.py", line 8, in <module>
+    import _hashlib as _hashopenssl
+KeyboardInterrupt

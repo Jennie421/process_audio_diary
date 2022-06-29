@@ -36,8 +36,7 @@ def transcript_dist(study, OLID):
 	# JL MERGE 
 	audioQCmerged = pd.read_csv("../" + study + "_" + OLID + "_audioQCmerged.csv")
 	cur_QC = pd.merge(audioQCmerged, cur_QC, on=['transcript_name'], how='left')
-	cur_QC.to_csv(study + "_" + OLID + '_audiotranscriptQCmerged.csv', index=False)
-	cur_QC["filename"] = cur_QC["transcript_name"]
+	cur_QC.to_csv(study + "_" + OLID + '_AudioTranscriptQCmerged.csv', index=False)
 	merger = cur_QC[["filename","hours_until_submission"]]
 	merger = cur_QC[["filename"]]
 
@@ -108,6 +107,9 @@ def transcript_dist(study, OLID):
 		print("No NLP features computed for this patient (" + OLID + ") yet, returning")
 		return
 	
+
+
+
 	# match with convention for QC features
 	cur_dist_NLP = cur_dist_NLP.merge(merger, on="filename", how="left") # get submission time for when we start tracking multiple submissions
 	# cur_dist_NLP["patient"] = [x.split("_")[1] for x in cur_dist_NLP["filename"].tolist()]

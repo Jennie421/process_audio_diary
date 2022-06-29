@@ -53,11 +53,11 @@ export study
 # echo "TranscribeMe account password?"
 # read -s transcribeme_password
 
-# # let user know script is starting
-# echo ""
-# echo "Beginning script - phone transcript preprocessing for:"
-# echo "$study"
-# echo ""
+# let user know script is starting
+echo ""
+echo "Beginning script - phone transcript preprocessing for:"
+echo "$study - $p"
+echo ""
 
 # # add current time for runtime tracking purposes
 # now=$(date +"%T")
@@ -94,7 +94,7 @@ echo "Current time: ${now}"
 echo ""
 
 # run transcript QC on all available transcripts for this study
-echo "*************Running QC on all available transcripts for this study*************"
+echo "*************Running QC on all available transcripts for $p*************"
 bash "$repo_root"/individual_modules/run_transcript_qc.sh
 echo ""
 

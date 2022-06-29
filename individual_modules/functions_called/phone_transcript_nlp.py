@@ -96,7 +96,7 @@ def diary_transcript_nlp(study, OLID):
 		trans_dfs.append(cur_trans)
 
 	if len(trans_dfs) == 0: # transcripts/csv folder could exist without there being anything in it - but should only be able to reach this if function called directly rather than through pipeline/bash module
-		print("No available transcript CSVs for input" + OLID)
+		print("No newly available transcript CSVs for input" + OLID)
 		return
 
 	# finally compute the summary stats for this pt

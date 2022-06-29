@@ -37,7 +37,6 @@ fi
 # body:
 # actually start running the main computations
 cd $study_loc/"$study"
-echo "Distribution plots for patient " + "$p"
 
 # first check that it is truly an OLID, that has previouly processed audio
 if [[ ! -d $p/phone/processed/audio ]]; then
@@ -67,12 +66,15 @@ if [[ ! -d transcripts/visualizations/distributions/ ]]; then
 	mkdir transcripts/visualizations/distributions/
 fi
 
+echo "Generating distribution plots for $p"
 # check that there is an audio qc CSV to use, if so run the audio distribution compile script (works on QC and also OpenSMILE if available)
 # (this script updates the study-wide distribution and generates a PDF of histograms for current patient)
 # NOTE: JL the names of QC files are changed
 if [[ -n $(shopt -s nullglob; echo *_phoneAudioDiary_QC.csv) ]]; then
 	python "$func_root"/phone_audio_per_patient_distributions.py "$study" "$p"
 	echo "AUDIO QC DONE"
+else 
+	echo "Audio QC not found"
 fi
 
 # now do analogously for the transcript QC, and transcript NLP if available
@@ -80,6 +82,8 @@ cd transcripts
 if [[ -n $(shopt -s nullglob; echo *_phone_audio_transcriptQC_output.csv) ]]; then
 	python "$func_root"/phone_transcript_per_patient_distributions.py "$study" "$p"
 	echo "TRANSCRIPT QC DONE"
+else 
+	echo "Transcript QC not found"
 fi
 
 # back out of folder before continuing to next patient
