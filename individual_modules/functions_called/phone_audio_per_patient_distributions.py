@@ -37,10 +37,13 @@ def audio_dist(study, OLID):
 	data2 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_QC.csv")
 
 	# using merge function by setting how='left'
-	merged = pd.merge(data1, data2, on=['filename'], how='left')
+	merged = pd.merge(data1, data2, on=['filename'], how='right')
 
 	# add column "transcript_name"
 	merged['transcript_name'] = merged.apply(lambda row: str(row.filename).split(".")[0] + ".csv", axis=1)
+
+	# rename column "patient" to "OLID". Not doing this now 
+	# merged.rename(columns={"subject": "OLID"}, inplace=True)
 
 	merged.to_csv(study + "_" + OLID + '_audioQCmerged.csv', index=False)
 

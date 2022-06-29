@@ -11,44 +11,62 @@ from scipy.cluster.hierarchy import ClusterWarning
 from warnings import simplefilter
 simplefilter("ignore", ClusterWarning)
 
+study_loc = os.environ['study_loc']
+
+dist_path = os.environ['dist_path']
+study_wide_metadata_loc = os.environ['study_wide_metadata_loc']
+
+
 def study_correlations(study):
 	# start with settings info:
 
 	# study distribution paths
-	audio_qc_dist_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioQC-distribution.csv"
-	transcript_qc_dist_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneTranscriptQC-distribution.csv"
-	OS_dist_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioOpenSMILESummary-distribution.csv"
-	OS_filtered_dist_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioFilteredOpenSMILESummary-distribution.csv"
-	transcript_nlp_dist_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneTranscriptNLP-distribution.csv"
-	combined_dist_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneDiaryKeyFeatures-distribution.csv"
+	audio_qc_dist_path = dist_path + study + "-phoneAudioQC-distribution.csv"
+	transcript_qc_dist_path = dist_path + study + "-phoneTranscriptQC-distribution.csv"
+	OS_dist_path = dist_path + study + "-phoneAudioOpenSMILESummary-distribution.csv"
+	OS_filtered_dist_path = dist_path + study + "-phoneAudioFilteredOpenSMILESummary-distribution.csv"
+	transcript_nlp_dist_path = dist_path + study + "-phoneTranscriptNLP-distribution.csv"
+	combined_dist_path = dist_path + study + "-phoneDiaryKeyFeatures-distribution.csv"
 
 	# out paths
-	audio_qc_corr_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioQC-correlationMatrix.png"
-	transcript_qc_corr_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneTranscriptQC-correlationMatrix.png"
-	OS_corr_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioOpenSMILESummary-correlationMatrix.png"
-	OS_filtered_corr_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneAudioFilteredOpenSMILESummary-correlationMatrix.png"
-	transcript_nlp_corr_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneTranscriptNLP-correlationMatrix.png"
-	combined_corr_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneDiaryKeyFeatures-correlationMatrix.png"
+	audio_qc_corr_path = dist_path + study + "-phoneAudioQC-correlationMatrix.png"
+	transcript_qc_corr_path = dist_path + study + "-phoneTranscriptQC-correlationMatrix.png"
+	OS_corr_path = dist_path + study + "-phoneAudioOpenSMILESummary-correlationMatrix.png"
+	OS_filtered_corr_path = dist_path + study + "-phoneAudioFilteredOpenSMILESummary-correlationMatrix.png"
+	transcript_nlp_corr_path = dist_path + study + "-phoneTranscriptNLP-correlationMatrix.png"
+	combined_corr_path = dist_path + study + "-phoneDiaryKeyFeatures-correlationMatrix.png"
 	# for key features also doing dendrogram
-	combined_dend_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneDiaryKeyFeatures-clustersDendrogram.png"
+	combined_dend_path = dist_path + study + "-phoneDiaryKeyFeatures-clustersDendrogram.png"
 	# and clustered matrix
-	combined_corr_cluster_path = "/data/sbdp/Distributions/phone/voiceRecording/" + study + "-phoneDiaryKeyFeatures-correlationMatrixClustered.png"
+	combined_corr_cluster_path = dist_path + study + "-phoneDiaryKeyFeatures-correlationMatrixClustered.png"
 
 	# columns to drop from each distribution before proceeding
-	diary_ID_feats = ["day","patient","ET_hour_int_formatted"]
+	diary_ID_feats = ["day","OLID","hours_until_submission"]
 
 	# now load in DFs and calculate correlation matrix when available:
 
 	# start with audio QC
 	try:
-		audio_qc_dist = pd.read_csv(audio_qc_dist_path).drop(labels=diary_ID_feats,axis=1)
+		audio_qc_dist = pd.read_csv(audio_qc_dist_path)
+		audio_qc_dist.rename(columns={"subject": "OLID"}, inplace=True)
+		audio_qc_dist.drop(labels=diary_ID_feats,axis=1)
 		# also remove any -infinity values popping up in the decibel field: okay to replace with 0
+	except Exception as e:
+		print("Fail to read audio qc: " + str(e)) 
+		return
+		
+	try:
 		audio_qc_dist.replace(to_replace=-inf, value=0, inplace=True)
 		audio_qc_r, audio_qc_p = calculate_correlation_matrix(audio_qc_dist)
+	except Exception as e:
+		print("Fail to compute correlation matrix: " + str(e)) 
+		return
+	try: 
 		# offset values based on visual inspection of resulting matrix - depends a bit on size
 		plot_correlation_matrix(audio_qc_r, audio_qc_dist.columns, audio_qc_corr_path, x_offset=0.01, y_offset=0.01)
-	except:
-		print("No audio QC data yet to correlate, continuing") 
+	except Exception as e:
+		print("Fail to plot correlation matrix:" + str(e)) 
+		return
 
 	# then transcript QC
 	try:

@@ -15,6 +15,7 @@ pd.options.mode.chained_assignment = None
 study_loc = os.environ['study_loc']
 combined_qc_loc = os.environ['combined_qc_loc'] # file that combines audio and transcript QC 
 NLP_loc = os.environ['NLP_loc']
+study_wide_metadata_loc = os.environ['study_wide_metadata_loc']
 
 def diary_qc_heatmap(study, OLID, wipe=False):
     # switch to specific patient folder
@@ -24,16 +25,6 @@ def diary_qc_heatmap(study, OLID, wipe=False):
         print("Problem with input arguments") # should never reach this error if calling via bash module
         return
    
-    # NOTE save csv file of audio QC + transcript QC + NLP features
-    cur_NLP_path = study_loc + study + "/" + OLID + NLP_loc + study + "_" + OLID + "_phone_transcript_NLPFeaturesSummary.csv"
-    cur_dist_NLP = pd.read_csv(cur_NLP_path)
-    
-    all_features = pd.read_csv(study + "_" + OLID + '_AudioTranscriptQCmerged.csv')
-
-    cur_dist_NLP.rename(columns={"filename": "transcript_name"}, inplace=True)
-    csv_out_path = study + "_" + OLID + "_AudioTranscriptNLPmerged.csv"
-    all_features = pd.merge(all_features, cur_dist_NLP, on=['transcript_name'], how='left')
-    all_features.to_csv(csv_out_path)
 
     # load current combined QC file
     cur_QC_path = glob.glob(study + "_" + OLID + "_AudioTranscriptNLPmerged.csv")[0] # should only ever be one match if called from module

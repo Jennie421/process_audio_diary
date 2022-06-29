@@ -14,6 +14,7 @@ from viz_helper_functions import distribution_plots
 study_loc = os.environ['study_loc']
 transcript_qc_loc = os.environ['transcript_qc_loc']
 NLP_loc = os.environ['NLP_loc']
+study_wide_metadata_loc = os.environ['study_wide_metadata_loc']
 
 def transcript_dist(study, OLID):
 	# switch to specific patient folder
@@ -35,7 +36,7 @@ def transcript_dist(study, OLID):
 
 	# JL MERGE 
 	audioQCmerged = pd.read_csv("../" + study + "_" + OLID + "_audioQCmerged.csv")
-	cur_QC = pd.merge(audioQCmerged, cur_QC, on=['transcript_name'], how='left')
+	cur_QC = pd.merge(audioQCmerged, cur_QC, on=['transcript_name'], how='right')
 	cur_QC.to_csv(study + "_" + OLID + '_AudioTranscriptQCmerged.csv', index=False)
 	merger = cur_QC[["filename","hours_until_submission"]]
 	merger = cur_QC[["filename"]]
@@ -108,6 +109,30 @@ def transcript_dist(study, OLID):
 		return
 	
 
+    # NOTE save csv file of audio QC + transcript QC + NLP features
+
+	all_features = pd.read_csv(study + "_" + OLID + '_AudioTranscriptQCmerged.csv')
+	temp_cur_dist_NLP = pd.read_csv(cur_NLP_path)
+	temp_cur_dist_NLP.rename(columns={"filename": "transcript_name"}, inplace=True)
+	csv_out_path = study + "_" + OLID + "_AudioTranscriptNLPmerged.csv"
+	all_features = pd.merge(all_features, temp_cur_dist_NLP, on=['transcript_name'], how='right')
+	all_features.to_csv(csv_out_path)
+
+	# build study wide data 
+	try:
+		study_wide_metadata = pd.read_csv(study_wide_metadata_loc)
+		study_wide_metadata = pd.concat([study_wide_metadata, all_features], ignore_index=True)
+		# full_dist_NLP.drop_duplicates(subset=["day","patient"], inplace=True)
+		# NOTE
+		study_wide_metadata.drop_duplicates(subset=["day","OLID"], inplace=True)
+		study_wide_metadata.reset_index(drop=True, inplace=True)
+	except:
+		# if this is the first patient ever being processed for this study then can just set to be cur_dist_NLP
+		# will also hit this exception if concat fails, which should only occur when there is a column mismatch - so if feature set changes
+		study_wide_metadata = cur_dist_NLP
+
+	# finally save the new study-wide dist
+	study_wide_metadata.to_csv(study_loc + "Study-wide-metadata/study-wide-metadata.csv", index=False)
 
 
 	# match with convention for QC features

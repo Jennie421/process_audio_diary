@@ -66,6 +66,10 @@ if [[ ! -d transcripts/visualizations/distributions/ ]]; then
 	mkdir transcripts/visualizations/distributions/
 fi
 
+if [[ ! -d $study_loc/Distributions/ ]]; then
+	mkdir $study_loc/Distributions/
+fi
+
 echo "Generating distribution plots for $p"
 # check that there is an audio qc CSV to use, if so run the audio distribution compile script (works on QC and also OpenSMILE if available)
 # (this script updates the study-wide distribution and generates a PDF of histograms for current patient)
@@ -90,6 +94,6 @@ fi
 cd $study_loc/"$study"
 
 
-# # once done with loop over patients create study-wide distribution PDFs
+# once done with loop over patients create study-wide distribution PDFs
 # echo "Generating study-wide plots"
 # python "$func_root"/phone_diary_total_distributions.py "$study"

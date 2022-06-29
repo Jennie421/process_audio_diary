@@ -42,7 +42,9 @@ def calculate_correlation_matrix(df1, df2=None, save_path=None, pearson=True):
 		for j in range(size2):
 			lab = cols2[j]
 			cur_col = df2[lab].tolist()
-			nas = np.logical_or(np.isnan(np.array(cur_row)), np.isnan(np.array(cur_col)))
+			# print("CURRENT ROW: ", cur_row)
+			# nas = np.logical_or(np.isnan(np.array(cur_row)), np.isnan(np.array(cur_col))) #NOTE `np.isnan` causes error
+			nas = np.logical_or(pd.isna(np.array(cur_row)), pd.isna(np.array(cur_col)))
 			if pearson:
 				try:
 					pearson_calc = pearsonr(np.array(cur_row)[~nas], np.array(cur_col)[~nas])
