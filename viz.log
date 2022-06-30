@@ -6237,3 +6237,535 @@ IndexError: index 20 is out of bounds for axis 0 with size 20
 
 =============Script completed=============
   
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+Current time: 19:35:28
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_per_patient_distributions.py", line 17, in <module>
+    study_wide_metadata_loc = os.environ['study_wide_metadata_loc']
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'study_wide_metadata_loc'
+TRANSCRIPT QC DONE
+
+phone_diary_viz.sh: line 92: sentiment-colored: command not found
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 93, in <module>
+Generating transcript wordclouds for 6YG55
+    weeklevel_transcript_wordclouds(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 62, in weeklevel_transcript_wordclouds
+    df_info = pd.read_csv(df_info_path)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles
+    self.handles = get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio/transcripts/FRESH_17_6YG55_AudioTranscriptQCmerged.csv'
+
+Current time: 19:36:00
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+Current time: 19:36:39
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_per_patient_distributions.py", line 17, in <module>
+    study_wide_metadata_loc = os.environ['study_wide_metadata_loc']
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'study_wide_metadata_loc'
+TRANSCRIPT QC DONE
+
+phone_diary_viz.sh: line 92: sentiment-colored: command not found
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Generating transcript wordclouds for 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 93, in <module>
+    weeklevel_transcript_wordclouds(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 62, in weeklevel_transcript_wordclouds
+    df_info = pd.read_csv(df_info_path)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles
+    self.handles = get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/n/home_fasse/jennieli/FRESH_17/6YG55/phone/processed/audio/transcripts/FRESH_17_6YG55_AudioTranscriptQCmerged.csv'
+
+Current time: 19:37:10
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+Current time: 19:37:34
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+phone_diary_viz.sh: line 92: sentiment-colored: command not found
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 6, in <module>
+    from viz_helper_functions import transcript_wordcloud
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 18, in <module>
+    import seaborn as sns
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/__init__.py", line 2, in <module>
+    from .rcmod import *  # noqa: F401,F403
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/rcmod.py", line 7, in <module>
+    from . import palettes
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/palettes.py", line 9, in <module>
+    from .utils import desaturate, get_color_cycle
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/seaborn/utils.py", line 10, in <module>
+    from scipy import stats
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/__init__.py", line 391, in <module>
+    from .stats import *
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/stats.py", line 180, in <module>
+    from . import distributions
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/distributions.py", line 8, in <module>
+    from ._distn_infrastructure import (entropy, rv_discrete, rv_continuous,
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py", line 23, in <module>
+    from scipy import optimize
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/optimize/__init__.py", line 400, in <module>
+    from .optimize import *
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/scipy/optimize/optimize.py", line 33, in <module>
+    from .linesearch import (line_search_wolfe1, line_search_wolfe2,
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 941, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC heatmaps for 6YG55 *******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 158, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 163, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 43, in diary_qc_heatmap
+    days_full = range(1,last_day+1)
+TypeError: 'float' object cannot be interpreted as an integer
+
+Current time: 20:00:06
+
+phone_diary_viz.sh: line 92: sentiment-colored: command not found
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Generating transcript wordclouds for 6YG55
+problem with word: college.
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 91, in <module>
+    weeklevel_transcript_wordclouds(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 77, in weeklevel_transcript_wordclouds
+    transcript_wordcloud(cur_trans, out_path, verbose=True, title=title)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 328, in transcript_wordcloud
+    wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words, 
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 632, in generate
+    return self.generate_from_text(text)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 614, in generate_from_text
+    self.generate_from_frequencies(words)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 496, in generate_from_frequencies
+    font = ImageFont.truetype(self.font_path, font_size)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/PIL/ImageFont.py", line 855, in truetype
+    return freetype(font)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/PIL/ImageFont.py", line 852, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/PIL/ImageFont.py", line 173, in __init__
+    freetype_version = features.version_module("freetype2")
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/PIL/features.py", line 49, in version_module
+    module, ver = modules[feature]
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC heatmaps for 6YG55 *******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 158, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 163, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 35, in diary_qc_heatmap
+    last_day = int(days_avail[-1])
+ValueError: cannot convert float NaN to integer
+
+Current time: 20:02:16
+
+phone_diary_viz.sh: line 92: sentiment-colored: command not found
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 6, in <module>
+    from viz_helper_functions import transcript_wordcloud
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 5, in <module>
+    import matplotlib.pyplot as plt
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/pyplot.py", line 38, in <module>
+    from matplotlib import rcsetup, style
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/style/__init__.py", line 1, in <module>
+    from .core import use, context, available, library, reload_library
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/style/core.py", line 224, in <module>
+    _base_library = load_base_library()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/style/core.py", line 166, in load_base_library
+    library = read_style_directory(BASE_LIBRARY_PATH)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/style/core.py", line 201, in read_style_directory
+    styles[path.stem] = rc_params_from_file(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/__init__.py", line 883, in rc_params_from_file
+    config_from_file = _rc_params_in_file(fname, fail_on_error=fail_on_error)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/__init__.py", line 812, in _rc_params_in_file
+    with _open_file_or_url(fname) as fd:
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/matplotlib/__init__.py", line 790, in _open_file_or_url
+    with open(fname, encoding=encoding) as f:
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/codecs.py", line 309, in __init__
+    def __init__(self, errors='strict'):
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+phone_diary_viz.sh: line 92: sentiment-colored: command not found
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Generating transcript wordclouds for 6YG55
+problem with word: fear
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 98, in <module>
+    weeklevel_transcript_wordclouds(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 84, in weeklevel_transcript_wordclouds
+    transcript_wordcloud(cur_trans, out_path, verbose=True, title=title)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 328, in transcript_wordcloud
+    wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words, 
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 632, in generate
+    return self.generate_from_text(text)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 614, in generate_from_text
+    self.generate_from_frequencies(words)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 541, in generate_from_frequencies
+    occupancy.update(img_array, x, y)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 54, in update
+    partial_integral = np.cumsum(np.cumsum(img_array[pos_x:, pos_y:],
+  File "<__array_function__ internals>", line 5, in cumsum
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 2511, in cumsum
+    return _wrapfunc(a, 'cumsum', axis=axis, dtype=dtype, out=out)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 58, in _wrapfunc
+    return bound(*args, **kwds)
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+phone_diary_viz.sh: line 92: sentiment-colored: command not found
+*******************Generating sentiment-colored wordclouds for each available transcript*******************
+Generating transcript wordclouds for 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 98, in <module>
+    weeklevel_transcript_wordclouds(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_transcript_wordclouds.py", line 84, in weeklevel_transcript_wordclouds
+    transcript_wordcloud(cur_trans, out_path, verbose=True, title=title)
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/viz_helper_functions.py", line 328, in transcript_wordcloud
+    wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words, 
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 632, in generate
+    return self.generate_from_text(text)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 614, in generate_from_text
+    self.generate_from_frequencies(words)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 541, in generate_from_frequencies
+    occupancy.update(img_array, x, y)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/wordcloud/wordcloud.py", line 54, in update
+    partial_integral = np.cumsum(np.cumsum(img_array[pos_x:, pos_y:],
+  File "<__array_function__ internals>", line 5, in cumsum
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 2511, in cumsum
+    return _wrapfunc(a, 'cumsum', axis=axis, dtype=dtype, out=out)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 58, in _wrapfunc
+    return bound(*args, **kwds)
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+******************* Generating QC heatmaps for 6YG55 *******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 158, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 163, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 43, in diary_qc_heatmap
+    days_full = range(1,last_day+1)
+TypeError: 'float' object cannot be interpreted as an integer
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+******************* Generating QC heatmaps for 6YG55 *******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 158, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 163, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 43, in diary_qc_heatmap
+    days_full = range(1,last_day+1)
+TypeError: 'float' object cannot be interpreted as an integer
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+******************* Generating QC heatmaps for 6YG55 *******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 158, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 163, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 137, in diary_qc_heatmap
+    bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], 
+NameError: name 'weekday_offset' is not defined
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+No OpenSMILE results yet for 6YG55, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+******************* Generating QC heatmaps for 6YG55 *******************
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_audio_per_patient_distributions.py", line 4, in <module>
+    import pandas as pd
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/__init__.py", line 11, in <module>
+    __import__(dependency)
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/dateutil/__init__.py", line 3, in <module>
+    from ._version import version as __version__
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 941, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+KeyboardInterrupt
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC heatmaps for 6YG55 *******************
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 158, in <module>
+    if sys.argv[3]:
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 163, in <module>
+    diary_qc_heatmap(sys.argv[1], sys.argv[2])
+  File "/n/home_fasse/jennieli/process_audio_diary/individual_modules/functions_called/phone_diary_qc_heatmaps.py", line 77, in diary_qc_heatmap
+    full_QC.to_csv(study_loc + study + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/fullQC_' + OLID + '.csv')
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/core/generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 237, in save
+    with get_handle(
+  File "/n/home_fasse/jennieli/.conda/envs/audio_process/lib/python3.9/site-packages/pandas/io/common.py", line 701, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/n/home_fasse/jennieli/FRESH_176YG55/phone/processed/audio/transcripts/visualizations/heatmaps/fullQC_6YG55.csv'
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC heatmaps for 6YG55 *******************
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+******************* Generating QC heatmaps for 6YG55 *******************
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 3EF35
+
+******************* Generating QC heatmaps for 3EF35 *******************
+Combined QC file not found
+
+=============Script completed=============
+  
+Enter command in the formmat: bash script_name.sh study_name subject_id
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 3EF35
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 3EF35
+Preparing audio feature distributions for 3EF35
+No OpenSMILE results yet for 3EF35, skipping
+AUDIO QC DONE
+Preparing transcript feature distributions for 3EF35
+TRANSCRIPT QC DONE
+
+******************* Generating QC heatmaps for 3EF35 *******************
+
+=============Script completed=============
+  

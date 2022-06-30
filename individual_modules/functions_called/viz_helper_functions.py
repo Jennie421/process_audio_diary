@@ -94,13 +94,8 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 		input_df.fillna(nan_color[0],inplace=True)
 		GB_input_dfs[0].fillna(nan_color[1],inplace=True)
 		GB_input_dfs[1].fillna(nan_color[2],inplace=True)
-	
 	# else: # otherwise fill the NaNs with a value that will clearly be outside of the bounds. defaults to -10000 but if for some reason this is a viable value then will need to specify a different input for that
 		# input_df.fillna(nan_fill,inplace=True) # NOTE: this is where "-10000" comes from
-	
-	# if "late_submission" in input_df.columns:
-	# 	late_submission = input_df['late_submission']
-	# 	input_df.drop("late_submission", inplace=True, axis=1)
 
 	# prepare plot
 	fig,ax = plt.subplots(figsize=fig_size)
@@ -137,11 +132,12 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 			else:
 				features_rename[idx] = features_rename[idx] + '(' + str(feature_min) + ', ' + str(feature_max) + ')' # Add ranges to labels
 		
-		#NOTE: generate df_info 
+		# NOTE: generate df_info, contains min and max of each feature 
 		df_info = pd.DataFrame()
 		for range_pair, label in zip(abs_col_bounds_list, input_df.columns):
 			df_info[label] = list(range_pair)
 
+		# NOTE Standadize within each feature 
 		df_norm = (input_df - df_info.iloc[0])/(df_info.iloc[1]-df_info.iloc[0])
 		df_plot = (df_norm - df_norm.min())/(df_norm.max()-df_norm.min())
 		sns.heatmap(df_plot.T, mask=df_plot.T.isnull(), cmap='RdBu_r', cbar=False).set_facecolor('xkcd:black') # NOTE: `set_facecolor` is so that NA values are more obvious, not necessary
@@ -191,7 +187,7 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 	# Color the days where `late_submission`==1 as grey. 
 	if late_submission is not None:
 		for i, is_late in enumerate(late_submission):
-			if is_late:
+			if is_late==1:
 				ax.add_patch(Rectangle((i, 0), 1, len(features_rename), fill=True, facecolor='grey'))
 		
 	plt.savefig(save_path, bbox_inches="tight")  

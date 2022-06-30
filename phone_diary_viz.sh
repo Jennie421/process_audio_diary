@@ -39,8 +39,8 @@ export transcript_qc_loc
 NLP_loc=/phone/processed/audio/transcripts/NLP_features/
 export NLP_loc
 
-study_wide_metadata_loc=$study_loc/Study-wide-metadata/study-wide-metadata.csv
-export study_wide_metadata_loc
+# study_wide_metadata_loc=$study_loc/Study-wide-metadata/study-wide-metadata.csv
+# export study_wide_metadata_loc
 
 dist_path=$study_loc/Distributions/
 export dist_path
@@ -62,31 +62,26 @@ echo "$study - $p"
 echo ""
 
 # add current time for runtime tracking purposes
-now=$(date +"%T")
-echo "Current time: ${now}"
-echo ""
-
-# # start with distributions - per patient and for the overall study
-# # feature distributions (OpenSMILE and NLP) also generated here, including doing OpenSMILE summary operation
-# echo "******************* Generating QC and feature distributions with histograms *******************"
-# bash "$repo_root"/individual_modules/run_distribution_plots.sh
+# now=$(date +"%T")
+# echo "Current time: ${now}"
 # echo ""
+
+# start with distributions - per patient and for the overall study
+# feature distributions (OpenSMILE and NLP) also generated here, including doing OpenSMILE summary operation
+echo "******************* Generating QC and feature distributions with histograms *******************"
+bash "$repo_root"/individual_modules/run_distribution_plots.sh
+echo ""
 
 # # add current time for runtime tracking purposes
 # now=$(date +"%T")
 # echo "Current time: ${now}"
 # echo ""
 
-# # once done with loop over patients create study-wide distribution PDFs
-# echo "Generating study-wide distribution plots"
-# python "$repo_root"/individual_modules/functions_called/phone_diary_total_distributions.py "$study"
-
-
 # create heatmaps to see progression of select audio and transcript QC features over time per patient (each diary one block)
 # (could also propose alternative dot plots?)
-# echo "******************* Generating QC heatmaps for $p *******************"
-# bash "$repo_root"/individual_modules/run_heatmap_plots.sh
-# echo ""
+echo "******************* Generating QC heatmaps for $p *******************"
+bash "$repo_root"/individual_modules/run_heatmap_plots.sh
+echo ""
 
 # # add current time for runtime tracking purposes
 # now=$(date +"%T")
@@ -106,9 +101,9 @@ echo ""
 
 # # finally do correlation matrices for the study-wide distributions
 # # since no need to loop over patients here or do any other bash preprocessing, just call python script directly
-echo "*******************Creating study-wide correlation matrices*******************"
-python "$repo_root"/individual_modules/functions_called/phone_diary_correlations.py "$study"
-echo ""
+# echo "*******************Creating study-wide correlation matrices*******************"
+# python "$repo_root"/individual_modules/functions_called/phone_diary_correlations.py "$study"
+# echo ""
 
 # # add current time for runtime tracking purposes
 # now=$(date +"%T")

@@ -32,12 +32,12 @@ def audio_dist(study, OLID):
 	data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezoneCorrected.csv") 
 	# data1.rename(columns={"file_name": "filename"}, inplace=True) # NOTE: rename file_name to filename
 	# data1.replace({'weekday': {"Mon":0, "Tue":1, "Wed":2, "Thu":3, "Fri":4, "Sat":5, "Sun":6}}, inplace=True) # NOTE: convert weekday to int
-	data1['weekday_num'] = data1['weekday_num'].apply(lambda x: x - 1)
+	# data1['weekday_num'] = data1['weekday_num'].apply(lambda x: x - 1)
 
 	data2 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_QC.csv")
 
 	# using merge function by setting how='left'
-	merged = pd.merge(data1, data2, on=['filename'], how='right')
+	merged = pd.merge(data1, data2, on=['filename'], how='left')
 
 	# add column "transcript_name"
 	merged['transcript_name'] = merged.apply(lambda row: str(row.filename).split(".")[0] + ".csv", axis=1)

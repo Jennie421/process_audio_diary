@@ -14,8 +14,6 @@ simplefilter("ignore", ClusterWarning)
 study_loc = os.environ['study_loc']
 
 dist_path = os.environ['dist_path']
-study_wide_metadata_loc = os.environ['study_wide_metadata_loc']
-
 
 def study_correlations(study):
 	# start with settings info:

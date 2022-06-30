@@ -15,7 +15,6 @@ pd.options.mode.chained_assignment = None
 study_loc = os.environ['study_loc']
 combined_qc_loc = os.environ['combined_qc_loc'] # file that combines audio and transcript QC 
 NLP_loc = os.environ['NLP_loc']
-study_wide_metadata_loc = os.environ['study_wide_metadata_loc']
 
 def diary_qc_heatmap(study, OLID, wipe=False):
     # switch to specific patient folder
@@ -69,17 +68,19 @@ def diary_qc_heatmap(study, OLID, wipe=False):
                         "num_questionable","num_redacted","min_timestamp_space_per_word", 
                         "speaking-rate_file-mean"] 
 
+
+    # NOTE: make the row NA if the file is late. 
     for feature in select_features: 
         full_QC.loc[ full_QC["late_submission"]==1, feature ] = np.nan # Method 1
         # full_QC[feature].mask(full_QC['late_submission'] == 1, np.nan, inplace=True) # Method 2
     
-    # full_QC.to_csv('/n/home_fasse/jennieli/FRESH_17/' + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/fullQC_' + OLID + '.csv')
+    full_QC.to_csv(study_loc + study + "/" + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/fullQC_' + OLID + '.csv')
     
     select_features.append("day")
     final_QC = full_QC[select_features]
     final_QC.set_index("day", inplace=True) # Make day as index, for plotting purposes. 
     final_QC.index = final_QC.index.map(int) # Ensure days are integer
-    # final_QC.to_csv('/n/home_fasse/jennieli/FRESH_17/' + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/finalQC_' + OLID + '.csv')
+    final_QC.to_csv(study_loc + study + "/" + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/finalQC_' + OLID + '.csv')
     
 
     # NOTE: Used combined csv directly, no need to repeat audio and transcript separately 
