@@ -2,3 +2,5 @@ Study of interest?
 (should match PHOENIX study name, validated options are BLS and DPBPD)
 phone_audio_preprocess.sh: line 31: cd: /data/sbdp/PHOENIX/PROTECTED: No such file or directory
 invalid study id
+Study of interest?
+(should match PHOENIX study name, validated options are BLS and DPBPD)

@@ -17,7 +17,8 @@ from viz_helper_functions import distribution_plots
 # NOTE: Modify the paths in `phone_transcript_processes.sh`
 study_loc = os.environ['study_loc']
 audio_qc_loc = os.environ['audio_qc_loc']
-
+transcript_qc_loc = os.environ['transcript_qc_loc']
+NLP_loc = os.environ['NLP_loc']
 
 def audio_dist(study, OLID):
 	# switch to specific patient folder
@@ -28,29 +29,32 @@ def audio_dist(study, OLID):
 		return
 
 
-	# JL: MERGE 
-	data1 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezoneCorrected.csv") 
-	# data1.rename(columns={"file_name": "filename"}, inplace=True) # NOTE: rename file_name to filename
-	# data1.replace({'weekday': {"Mon":0, "Tue":1, "Wed":2, "Thu":3, "Fri":4, "Sat":5, "Sun":6}}, inplace=True) # NOTE: convert weekday to int
-	# data1['weekday_num'] = data1['weekday_num'].apply(lambda x: x - 1)
-
-	data2 = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_QC.csv")
+	# MERGE AUDIO QCs
+	file_data = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_fileMetadata_timezoneCorrected.csv") 
+	audio_qc = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_QC.csv")
 
 	# using merge function by setting how='left'
-	merged = pd.merge(data1, data2, on=['filename'], how='left')
+	audioQCmerged = pd.merge(file_data, audio_qc, on=['filename'], how='left')
 
-	# add column "transcript_name"
-	merged['transcript_name'] = merged.apply(lambda row: str(row.filename).split(".")[0] + ".csv", axis=1)
+	# # add column "transcript_name"
+	# audioQCmerged['transcript_name'] = audioQCmerged.apply(lambda row: str(row.filename).split(".")[0] + ".csv", axis=1)
 
-	# rename column "patient" to "OLID". Not doing this now 
-	# merged.rename(columns={"subject": "OLID"}, inplace=True)
+	# # MERGE TRANSCRIPT QC
+	# transcript_QC = pd.read_csv(study_loc + study + "/" + OLID + transcript_qc_loc + study + "_" + OLID + "_phoneAudioDiary_transcript_QC.csv")
+	# AudioTranscriptQCmerged = pd.merge(audioQCmerged, transcript_QC, on=['transcript_name'], how='left')
 
-	merged.to_csv(study + "_" + OLID + '_audioQCmerged.csv', index=False)
+	# # MERGE NLP SUMMARY
+	# NLP_summary = pd.read_csv(study_loc + study + "/" + OLID + NLP_loc + study + "_" + OLID + "_phoneAudioDiary_transcript_NLPFeaturesSummary.csv")
+	# NLP_summary.rename(columns={"filename": "transcript_name"}, inplace=True)
+	# all_features = pd.merge(AudioTranscriptQCmerged, NLP_summary, on=['transcript_name'], how='left')
+	
+	# # save this file 
+	# all_features.to_csv(study + "_" + OLID + "_phoneAudioDiary_allFeatures.csv")
 
-	# load current QC file
-	# cur_QC_path = glob.glob(study + "-" + OLID + "-phoneAudioQC-day1to*.csv")[0] # should only ever be one match if called from module
-	cur_QC_path = study + "_" + OLID + "_audioQCmerged.csv"
-	cur_QC = pd.read_csv(cur_QC_path)
+
+
+	# load current audio QC file
+	cur_QC = audioQCmerged
 	# requires audio QC file to do the core work here, so not a big deal if it crashes on a given patient for not having one
 
 	# before doing QC preprocessing prep a filemap for OpenSMILE portion later

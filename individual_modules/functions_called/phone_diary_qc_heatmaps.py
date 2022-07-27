@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from curses.ascii import NAK
 import os
 import pandas as pd
 import numpy as np
@@ -13,26 +14,25 @@ pd.options.mode.chained_assignment = None
 
 # NOTE: Modify the paths in `phone_transcript_processes.sh`
 study_loc = os.environ['study_loc']
-combined_qc_loc = os.environ['combined_qc_loc'] # file that combines audio and transcript QC 
-NLP_loc = os.environ['NLP_loc']
+all_features_loc = os.environ['all_features_loc'] # file that combines audio and transcript QC 
 
 def diary_qc_heatmap(study, OLID, wipe=False):
     # switch to specific patient folder
     try:
-        os.chdir(study_loc + study + "/" + OLID + combined_qc_loc)
+        os.chdir(study_loc + study + "/" + OLID + all_features_loc)
     except:
         print("Problem with input arguments") # should never reach this error if calling via bash module
         return
    
 
     # load current combined QC file
-    cur_QC_path = glob.glob(study + "_" + OLID + "_AudioTranscriptNLPmerged.csv")[0] # should only ever be one match if called from module
+    cur_QC_path = glob.glob(study + "_" + OLID + "_phoneAudioDiary_allFeatures.csv")[0] # should only ever be one match if called from module
     cur_QC = pd.read_csv(cur_QC_path)
 
-    # prep to fill in empty days
-    days_avail = cur_QC["day"].tolist()
-    first_day = days_avail[0]
-    last_day = days_avail[-1]
+    # NOTE: NOT NEEDED. prep to fill in empty days
+    # days_avail = cur_QC["acad_cal_day"].tolist()
+    # first_day = days_avail[0]
+    # last_day = days_avail[-1]
     # if first_day < 1 or last_day != max(days_avail):
     # 	print("Problem with study day numbering for subject " + OLID + ", exiting")
     # 	return
@@ -40,28 +40,28 @@ def diary_qc_heatmap(study, OLID, wipe=False):
     # num_splits = int(math.ceil(float(last_day)/91.0)) # 91 days in 13 weeks, round up
     # last_day_stretch = num_splits * 91 # fill it out to this divisible day, not the actual last day of available recording
     # days_full = range(1,last_day_stretch+1)
-    days_full = range(1,last_day+1)
-    days_full_df = pd.DataFrame()
-    days_full_df["day"] = days_full
-    days_full_df["hack"] = ["hack" for x in days_full] # add a second column so pandas thinks the upcoming join is real
-    full_QC = days_full_df.merge(cur_QC, on="day", how="left")
+    # days_full = range(1,last_day+1)
+    # days_full_df = pd.DataFrame()
+    # days_full_df["day"] = days_full
+    # days_full_df["hack"] = ["hack" for x in days_full] # add a second column so pandas thinks the upcoming join is real
+    # full_QC = days_full_df.merge(cur_QC, on="day", how="left")
+    full_QC = cur_QC
 
     # get weekday of day 1 for spacing of the thick bars
-    weekday_list = cur_QC["weekday_num"].tolist()
-    first_weekday = weekday_list[0] # first need weekday of first available day
-    days_passed = first_day - 1 # get how many days passed between the day of consent (1) and the first available day
-    if days_passed < first_weekday: # adjustment is easy if don't have to loop back around
-        weekday_one = first_weekday - days_passed
-    else:
-        remaining_offset = days_passed - first_weekday # days left to go backwards after reset to 7
-        adjusted_offset = remaining_offset % 7 # for every 7 days loop back around to 7 again, so just need the mod
-        weekday_one = 7 - adjusted_offset # go backwards the additional remaining day
-    # dpdash considers saturday 1 and friday 7, but really we want monday to have an offset of 0 and sunday an offset of 6 (as initial line would come 6 in in that case)
-    weekday_offset = (weekday_one + 4) % 7
+    # weekday_list = cur_QC["weekday_num"].tolist()
+    # first_weekday = weekday_list[0] # first need weekday of first available day
+    # days_passed = first_day - 1 # get how many days passed between the day of consent (1) and the first available day
+    # if days_passed < first_weekday: # adjustment is easy if don't have to loop back around
+    #     weekday_one = first_weekday - days_passed
+    # else:
+    #     remaining_offset = days_passed - first_weekday # days left to go backwards after reset to 7
+    #     adjusted_offset = remaining_offset % 7 # for every 7 days loop back around to 7 again, so just need the mod
+    #     weekday_one = 7 - adjusted_offset # go backwards the additional remaining day
+    # # dpdash considers saturday 1 and friday 7, but really we want monday to have an offset of 0 and sunday an offset of 6 (as initial line would come 6 in in that case)
+    # weekday_offset = (weekday_one + 4) % 7
     
 
-
-    late_submission = full_QC["late_submission"]
+    unavailable_diary = full_QC["unavailable_diary"]
 
     select_features = ["length_minutes","overall_db","mean_flatness",
                         "num_sentences","num_words","num_inaudible",
@@ -71,16 +71,16 @@ def diary_qc_heatmap(study, OLID, wipe=False):
 
     # NOTE: make the row NA if the file is late. 
     for feature in select_features: 
-        full_QC.loc[ full_QC["late_submission"]==1, feature ] = np.nan # Method 1
-        # full_QC[feature].mask(full_QC['late_submission'] == 1, np.nan, inplace=True) # Method 2
+        full_QC.loc[ full_QC["unavailable_diary"]==1, feature ] = np.nan # Method 1
+        # full_QC[feature].mask(full_QC['unavailable_diary'] == 1, np.nan, inplace=True) # Method 2
     
-    full_QC.to_csv(study_loc + study + "/" + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/fullQC_' + OLID + '.csv')
+    # full_QC.to_csv(study_loc + study + "/" + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/fullQC_' + OLID + '.csv')
     
-    select_features.append("day")
+    select_features.append("acad_cal_day")
     final_QC = full_QC[select_features]
-    final_QC.set_index("day", inplace=True) # Make day as index, for plotting purposes. 
+    final_QC.set_index("acad_cal_day", inplace=True) # Make day as index, for plotting purposes. 
     final_QC.index = final_QC.index.map(int) # Ensure days are integer
-    final_QC.to_csv(study_loc + study + "/" + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/finalQC_' + OLID + '.csv')
+    # final_QC.to_csv(study_loc + study + "/" + OLID + '/phone/processed/audio/transcripts/visualizations/heatmaps/finalQC_' + OLID + '.csv')
     
 
     # NOTE: Used combined csv directly, no need to repeat audio and transcript separately 
@@ -93,7 +93,7 @@ def diary_qc_heatmap(study, OLID, wipe=False):
     # # now also load transcript QC to do similarly (if it exists) otherwise make blank df
     # # load current QC file
     # try:
-    # 	cur_QC_path_trans = glob.glob(study + "_" + OLID + "_phone_audio_transcriptQC_output.csv")[0] # won't be a match unless there are transcripts for this patient
+    # 	cur_QC_path_trans = glob.glob(study + "_" + OLID + "_phoneAudioDiary_transcript_QC.csv")[0] # won't be a match unless there are transcripts for this patient
     # 	cur_QC_trans = pd.read_csv(cur_QC_path_trans)
     # except:
     # 	cur_QC_trans = pd.DataFrame()
@@ -132,11 +132,11 @@ def diary_qc_heatmap(study, OLID, wipe=False):
                         "Sentence Count", "Word Count ", "Inaudible Count", 
                         "Questionable Count", "Redacted Count", "Quickest Sentence", "Speaking Rate"]
     
-    out_path = "visualizations/heatmaps/" + study + "-" + OLID + "-phoneDiaryQC-featureProgression-days" + ".png" # output name again hardcoded (per patient/study) for now
-    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, 
-                                bars_width=7, time_bars_offset=weekday_offset, time_nums_offset=0, cluster_bars_index=[4], 
+    out_path = "transcripts/visualizations/heatmaps/" + study + "-" + OLID + "-phoneDiaryQC-featureProgression-days" + ".png" # output name again hardcoded (per patient/study) for now
+    generate_horizontal_heatmap(final_QC, out_path, abs_col_bounds_list=abs_col_bounds_list, x_axis_title="Academic Calendar Day",
+                                bars_width=7, time_bars_offset=0, time_nums_offset=0, cluster_bars_index=[4], 
                                 label_time=True, features_rename=feature_labels, title=OLID, cap_max_min=False,
-                                late_submission=late_submission)
+                                missing_data=unavailable_diary)
     
     # for i in range(num_splits): # loop through sections to make the heatmaps
     # 	out_path = "visualizations/heatmaps/" + study + "-" + OLID + "-phoneDiaryQC-featureProgression-days" + str(i*91 + 1) + "to" + str((i+1)*91) + ".png" # output name again hardcoded (per patient/study) for now

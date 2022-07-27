@@ -14,6 +14,7 @@ from viz_helper_functions import distribution_plots
 study_loc = os.environ['study_loc']
 transcript_qc_loc = os.environ['transcript_qc_loc']
 NLP_loc = os.environ['NLP_loc']
+audio_qc_loc = os.environ['audio_qc_loc']
 # study_wide_metadata_loc = os.environ['study_wide_metadata_loc']
 
 def transcript_dist(study, OLID):
@@ -28,18 +29,18 @@ def transcript_dist(study, OLID):
 	# load current QC file
 	try:
 		# cur_QC_path = glob.glob(study + "-" + OLID + "-phoneTranscriptQC-day1to*.csv")[0] # should only ever be one match if called from module
-		cur_QC_path = study + "_" + OLID + "_phone_audio_transcriptQC_output.csv"
+		cur_QC_path = study + "_" + OLID + "_phoneAudioDiary_transcript_QC.csv"
 		cur_QC = pd.read_csv(cur_QC_path)
 	except:
 		print("No transcripts processed yet for this patient, returning") # in case this function is called standalone, notify the user if no processed transcripts exist
 		return
 
 	# JL MERGE 
-	audioQCmerged = pd.read_csv("../" + study + "_" + OLID + "_audioQCmerged.csv")
-	cur_QC = pd.merge(audioQCmerged, cur_QC, on=['transcript_name'], how='left')
-	cur_QC.to_csv(study + "_" + OLID + '_AudioTranscriptQCmerged.csv', index=False)
-	merger = cur_QC[["filename","hours_until_submission"]]
-	merger = cur_QC[["filename"]]
+	# audioQCmerged = pd.read_csv("../" + study + "_" + OLID + "_audioQCmerged.csv")
+	# AudioTranscriptQCmerged = pd.merge(audioQCmerged, cur_QC, on=['transcript_name'], how='left')
+	all_features = pd.read_csv(study_loc + study + '/' + OLID + audio_qc_loc + study + "_" + OLID + "_phoneAudioDiary_allFeatures.csv")
+	merger = all_features[["filename","hours_until_submission"]]
+	merger = all_features[["filename"]]
 
 	# set up for merging with NLP later before doing the QC-related processing
 	# cur_QC["filename"] = cur_QC["transcript_name"]
@@ -57,7 +58,7 @@ def transcript_dist(study, OLID):
 					   "min_timestamp_space","max_timestamp_space","min_timestamp_space_per_word","max_timestamp_space_per_word"]
 
 	# unit for all the timestamp space features is minutes
-	cur_QC = cur_QC[select_features]
+	cur_QC = all_features[select_features]
 
 
 	print("Preparing transcript feature distributions for " + OLID)
@@ -100,7 +101,7 @@ def transcript_dist(study, OLID):
 	cur_dist.to_csv(dist_path, index=False)
 
 	# repeat the same for the NLP features
-	cur_NLP_path = study_loc + study + "/" + OLID + NLP_loc + study + "_" + OLID + "_phone_transcript_NLPFeaturesSummary.csv"
+	cur_NLP_path = study_loc + study + "/" + OLID + NLP_loc + study + "_" + OLID + "_phoneAudioDiary_transcript_NLPFeaturesSummary.csv"
 	
 	try:
 		cur_dist_NLP = pd.read_csv(cur_NLP_path)
@@ -109,14 +110,9 @@ def transcript_dist(study, OLID):
 		return
 	
 
-    # NOTE save csv file of audio QC + transcript QC + NLP features
-
-	all_features = pd.read_csv(study + "_" + OLID + '_AudioTranscriptQCmerged.csv')
-	temp_cur_dist_NLP = pd.read_csv(cur_NLP_path)
-	temp_cur_dist_NLP.rename(columns={"filename": "transcript_name"}, inplace=True)
-	csv_out_path = study + "_" + OLID + "_AudioTranscriptNLPmerged.csv"
-	all_features = pd.merge(all_features, temp_cur_dist_NLP, on=['transcript_name'], how='left')
-	all_features.to_csv(csv_out_path)
+    # NOTE 
+	# read csv file of audio QC + transcript QC + NLP features
+	# all_features = pd.read_cav(study_loc + study + '/' + OLID + audio_qc_loc)
 
 	# build study wide data 
 	# try:
@@ -171,8 +167,7 @@ def transcript_dist(study, OLID):
 		full_dist_NLP = pd.read_csv(dist_path_NLP)
 		full_dist_NLP = pd.concat([full_dist_NLP, cur_dist_NLP], ignore_index=True)
 		# full_dist_NLP.drop_duplicates(subset=["day","patient"], inplace=True)
-		# NOTE
-		full_dist_NLP.drop_duplicates(subset=["day","OLID"], inplace=True)
+		full_dist_NLP.drop_duplicates(subset=["day","OLID"], inplace=True) # NOTE changed from above line
 		full_dist_NLP.reset_index(drop=True, inplace=True)
 	except:
 		# if this is the first patient ever being processed for this study then can just set to be cur_dist_NLP

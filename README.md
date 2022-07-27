@@ -270,6 +270,18 @@ The pipeline calls run_heatmap_plots.sh to create updated heatmaps for each pati
 	<summary>WordClouds:</summary>
 
 The pipeline calls run_wordclouds.sh to create frequency-based wordclouds for each available transcript. It loops through patients in the input study, calling phone_transcript_wordclouds.py for each patient. That script will use VADER sentiment along with the python wordcloud package to generate a sentiment-colored wordcloud for each transcript CSV available for that patient, if such a wordcloud does not already exist. The wordclouds can be found in a subfolder of phone/processed/audio called wordclouds.
+
+__JL 22/07/01 Notes:__
+The logic of assigning sentiment score in NLP vs. word cloud generation:  
+
+NLP  
+- use Vader to compute “compound score” for each sentence (at sentence level)
+
+Wordcloud    
+- get “compound score” for each sentence
+- every word in the sentence is added to a dictionary, where the value is a list of sentiment scores from each sentence it is present.
+- the final score of each word is the average across all “compound scores” it received.    
+
 </details>
 
 <details>

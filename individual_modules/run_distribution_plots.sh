@@ -83,7 +83,7 @@ fi
 
 # now do analogously for the transcript QC, and transcript NLP if available
 cd transcripts
-if [[ -n $(shopt -s nullglob; echo *_phone_audio_transcriptQC_output.csv) ]]; then
+if [[ -n $(shopt -s nullglob; echo *_phoneAudioDiary_transcript_QC.csv) ]]; then
 	python "$func_root"/phone_transcript_per_patient_distributions.py "$study" "$p"
 	echo "TRANSCRIPT QC DONE"
 else 

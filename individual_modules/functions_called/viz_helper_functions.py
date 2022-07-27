@@ -1,6 +1,7 @@
 # set of functions for generating visualizations
 
 import matplotlib as mpl
+from matplotlib import textpath
 mpl.use('Agg')
 import matplotlib.pyplot as plt
 plt.ioff()
@@ -60,9 +61,9 @@ def distribution_plots(dist_df, pdf_save_path, ignore_list=[], bins_list=None, r
 def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_df=None, abs_col_bounds_list=[], 
 								GB_input_dfs=[], colormap=copy.copy(cm.get_cmap("bwr")), nan_color="grey", property_reorder_name=None, 
 								rel_col_std_bounds=3, cluster_bars_index=[], time_bars_offset=0, time_nums_offset=0, time_bars_index_space=7, 
-								x_axis_title="Study Day", title=None, label_features=True, features_rename=[], label_time=False, flip_y_label=False, 
+								x_axis_title="Day", title=None, label_features=True, features_rename=[], label_time=False, flip_y_label=False, 
 								fig_size=(30,5), x_ticks_add_offset=-0.02, y_ticks_add_offset=-0.02, cap_max_min=True, minors_width=1, bars_width=5, nan_fill=-10000,
-								x_axis_label=None, late_submission=None):
+								x_axis_label=None, missing_data=None):
 	for dc in drop_cols:
 		input_df.drop(columns=dc,inplace=True)
 	plt.rcParams["axes.grid"] = False
@@ -184,9 +185,9 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 
 	ax.set_axisbelow(True)
 
-	# Color the days where `late_submission`==1 as grey. 
-	if late_submission is not None:
-		for i, is_late in enumerate(late_submission):
+	# Color the days where `missing_data`==1 as grey. 
+	if missing_data is not None:
+		for i, is_late in enumerate(missing_data):
 			if is_late==1:
 				ax.add_patch(Rectangle((i, 0), 1, len(features_rename), fill=True, facecolor='grey'))
 		
@@ -196,9 +197,15 @@ def generate_horizontal_heatmap(input_df, save_path, drop_cols=[], distribution_
 # setup defaults for wordcloud input (stop words are removed)
 # currently hardcoded - will probably want to add more?
 stops = set(STOPWORDS)
-stops.add("Um")
-stops.add("Yeah")
-stops.add("Uh")
+stops.add("um")
+stops.add("yeah")
+stops.add("uh")
+
+'''List of words to remove from word clouds'''
+skip_list = ["today", "really"]
+
+for w in skip_list:
+    stops.add(w) # added to `stop words`
 
 # helper function that is passed to wordcloud function for sentiment colored words
 # verbose can be set to True optionally to print additional info on any issues encountered
@@ -230,8 +237,8 @@ def sentiment_color_func(sentiment_dict, punc_skip, verbose=False):
 		except:
 			if verbose:
 				print("failed on word: " + word)
-				print("current keys: ")
-				print(sentiment_dict.keys())
+				# print("current keys: ")
+				# print(sentiment_dict.keys())
 			return "rgb(0,0,255)" # color blue, as missing info on its sentiment but still want in wordcloud
 	return sentiment_color
 	
@@ -242,7 +249,7 @@ def sentiment_color_func(sentiment_dict, punc_skip, verbose=False):
 # 	(max font is effectively a saturation point for very common words)
 # nothing in the script will denote on your output whether this is patient speech only or all speech, so ensure save_path is clear on this or a title is provided
 # in addition to the optional wordcloud settings, verbose can be set to True optionally to print additional info on any issues encountered
-def transcript_wordcloud(transcript_df, save_path, sentiment=True, pt_only=True, title=None, min_font=6, max_font=200, freq_weight=1.0, 
+def transcript_wordcloud(transcript_df, plot_path, table_path, text_path=None, subject_text_path=None, sentiment=True, pt_only=True, title=None, min_font=6, max_font=200, freq_weight=1.0, 
 						 include_punctuation=["'",'[',']',"-"], stop_words=stops, fig_size=(20,10), bg_color="white", 
 						 split_char=" ", custom_word_color=sentiment_color_func, verbose=False):
 	plural_check = inflect.engine() # use to count plural and singular versions of a word as the same word
@@ -270,6 +277,7 @@ def transcript_wordcloud(transcript_df, save_path, sentiment=True, pt_only=True,
 	sentences = transcript_df["text"].tolist()
 	text_full = ""
 	word_dict = {}
+
 	analyser = SentimentIntensityAnalyzer() # color a word by the sentiment of the sentence it is in, when applicable
 	# as sentiment coloring is the default and it is an easy computation, it is more straightforward to just include the sentiment info in the dictionary building process below
 	# 	(when sentiment is off, the coloring will just not be based on this in the next section)
@@ -321,21 +329,84 @@ def transcript_wordcloud(transcript_df, save_path, sentiment=True, pt_only=True,
 		val_mean = np.nanmean(val)
 		word_dict[key] = val_mean 
 
-	# actually create wordcloud and clean up figure
-	if sentiment:
-		cur_color_function = custom_word_color(word_dict, include_punctuation, verbose=verbose)
-		# note that if custom_word_color is provided as an optional argument, it will have to accept these (and only these) arguments in current implementation 
-		wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words, 
-							  min_font_size=min_font, max_font_size=max_font, max_words=1000, color_func=cur_color_function, 
-							  prefer_horizontal=0.8).generate(text_full) # relative scaling set to decide based on word frequency
-	else: # just use default color assignment instead
-		wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words,
-							  min_font_size=min_font, max_font_size=max_font, max_words=1000, 
-							  prefer_horizontal=0.8).generate(text_full) # relative scaling set to decide based on word frequency
-	plt.figure(1, figsize=fig_size)
-	plt.imshow(wordcloud)
-	plt.axis("off")
-	if title is not None:
-		plt.title(title)
-	plt.savefig(save_path, bbox_inches="tight")
-	plt.close("all")
+	
+	# Export daily or weekly full text for topic modeling in R
+	if text_path != None:
+		time_point = re.findall(r'\d+', table_path)[-1] # Get week or day 
+		cur_text_df = pd.DataFrame({'doc_id': [time_point], 'text': [text_full]}) # week or day as doc id
+
+		try:
+			full_text_df = pd.read_csv(f'{text_path}')
+			full_text_df = pd.concat([full_text_df, cur_text_df])
+		except:
+			full_text_df = cur_text_df
+
+		full_text_df.to_csv(f'{text_path}', index=False)
+
+
+	# # Create subject level text for topic modeling in R
+	# if subject_text_path != None:
+	# 	subject_id = subject_text_path.split("/")[-1].split("_")[2]
+	# 	cur_text_df = pd.DataFrame({'doc_id': [subject_id], 'text': [text_full]}) 
+		
+	# 	try:
+	# 		full_text_df = pd.read_csv(f'{subject_text_path}') # check if doc exists
+	# 		full_text_df.set_index("doc_id")
+
+	# 		# if the subject exist, concat cur text to the existing text of the subject
+	# 		if subject_id in full_text_df["doc_id"].values:
+	# 			full_text_df.at[subject_id,'text'] += text_full
+	# 			print("old subject " + subject_id + text_full, flush=True)
+
+	# 		# else, create a new row for the subject 
+	# 		else: 
+	# 			full_text_df = pd.concat([full_text_df, cur_text_df])
+	# 			print("new subject " + subject_id + text_full, flush=True)
+
+	# 	except:
+	# 		full_text_df = cur_text_df
+	# 		print(text_path, flush=True)
+
+	# 	full_text_df.set_index("doc_id")
+	# 	full_text_df.to_csv(f'{subject_text_path}', index=False)
+
+
+	# # Get word frequencies 
+	# word_count_dict = WordCloud().process_text(text_full)
+
+	# df = pd.DataFrame.from_dict([word_count_dict])	# Convert dict to df 
+	# df = df.T # NOTE: Words are the index 
+	# df.reset_index(inplace=True)
+	# df.rename(columns={df.columns[0]: 'word', df.columns[1]: 'abs_freq'},inplace=True) # Rename columns
+
+	# df = df[~df['word'].isin(stops)] # Filter out words in "stops" 
+	# df.sort_values(by='abs_freq', ascending=False, inplace=True) # Sort by absolute frequency 
+
+	# # Get relative frequency
+	# df['relative_freq'] = df.abs_freq / sum(df['abs_freq'])
+	# # Add sentiment score 
+	# df['sentiment'] = df['word'].map(word_dict)
+
+	# # Save a table of word absolute & relative frequencies 
+	# df.to_csv(table_path, index=False)
+
+
+
+	# # actually create wordcloud and clean up figure
+	# if sentiment:
+	# 	cur_color_function = custom_word_color(word_dict, include_punctuation, verbose=verbose)
+	# 	# note that if custom_word_color is provided as an optional argument, it will have to accept these (and only these) arguments in current implementation 
+	# 	wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words, 
+	# 						  min_font_size=min_font, max_font_size=max_font, max_words=1000, color_func=cur_color_function, 
+	# 						  prefer_horizontal=0.8).generate(text_full) # relative scaling set to decide based on word frequency
+	# else: # just use default color assignment instead
+	# 	wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words,
+	# 						  min_font_size=min_font, max_font_size=max_font, max_words=1000, 
+	# 						  prefer_horizontal=0.8).generate(text_full) # relative scaling set to decide based on word frequency
+	# plt.figure(1, figsize=fig_size)
+	# plt.imshow(wordcloud)
+	# plt.axis("off")
+	# if title is not None:
+	# 	plt.title(title)
+	# plt.savefig(plot_path, bbox_inches="tight")
+	# plt.close("all")

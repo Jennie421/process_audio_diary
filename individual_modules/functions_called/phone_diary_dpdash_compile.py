@@ -130,7 +130,7 @@ def dpdash_compile(study, OLID):
 
 	# now check for transcript QC output similarly
 	try:
-		transcript_qc = pd.read_csv(study + "_" + OLID + "_phone_audio_transcriptQC_output.csv")
+		transcript_qc = pd.read_csv(study + "_" + OLID + "_phoneAudioDiary_transcript_QC.csv")
 	except:
 		# no transcripts yet for this OLID, so nothing left for function to do. 
 		return

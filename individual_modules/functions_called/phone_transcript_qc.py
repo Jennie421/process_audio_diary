@@ -170,7 +170,7 @@ def diary_transcript_qc(study, OLID):
 		new_csv[h] = vals
 
 	# save current CSV - overwrite any existing one for this patient
-	output_path = study+"_"+OLID+"_phone_audio_transcriptQC_output.csv"
+	output_path = study+"_"+OLID+"_phoneAudioDiary_transcript_QC.csv"
 	# running through all transcripts every time for now, as much faster to run than audio QC and don't have the decrypted files concern either. 
 	# may revisit making this more efficient in the future though
 	new_csv.to_csv(output_path,index=False)

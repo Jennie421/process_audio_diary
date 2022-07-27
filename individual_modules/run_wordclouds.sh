@@ -45,11 +45,12 @@ fi
 cd "$p"/phone/processed/audio
 
 # NOTE: Cony & Jennie's organization
-if [[ ! -d transcripts/visualizations/ ]]; then
-	mkdir transcripts/visualizations/
+if [[ ! -d transcripts/visualizations/wordclouds/week_level_wordclouds/plots ]]; then
+	mkdir -p transcripts/visualizations/wordclouds/week_level_wordclouds/{plots,tables} # create output folder if there isn't already
 fi
-if [[ ! -d transcripts/visualizations/wordclouds ]]; then
-	mkdir transcripts/visualizations/wordclouds # create output folder if there isn't already
+
+if [[ ! -d transcripts/visualizations/wordclouds/transcript_level_wordclouds/plots ]]; then
+	mkdir -p transcripts/visualizations/wordclouds/transcript_level_wordclouds/{plots,tables} # create output folder if there isn't already
 fi
 
 # run the function - it will loop through the transcripts csv folder and create wordcloud pngs for any transcripts that don't already have

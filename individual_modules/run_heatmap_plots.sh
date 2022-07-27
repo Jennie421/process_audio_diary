@@ -57,11 +57,10 @@ fi
 
 # check that there is an audio QC CSV to use, if so run the heatmap generation script (for audio and transcript combined!)
 # Now the file also contains NLP features. 
-cd transcripts
-if [[ -n $(shopt -s nullglob; echo *_AudioTranscriptQCmerged.csv) ]]; then
+if [[ -n $(shopt -s nullglob; echo *_phoneAudioDiary_allFeatures.csv) ]]; then
 	python "$func_root"/phone_diary_qc_heatmaps.py "$study" "$p"
 else 
-	echo "Combined QC file not found"
+	echo "Combined QC file not found (check if filename/path is correct in run_heatmap_plots.sh)"
 fi
 
 # back out of folder before continuing to next patient

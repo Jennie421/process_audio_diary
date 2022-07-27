@@ -69,7 +69,7 @@ fi
 new_files=$(diff <(ls -1a csv) <(ls -1a $csv_with_features_path))
 if [[ -z "${new_files}" ]]; then # if diff of file names of these directories is empty
 	cd $study_loc/"$study" # back out of folder before skipping over patient
-	continue
+	# continue  # Only meaningful in a loop, no longer needed 
 fi
 
 # now run script on this patient
