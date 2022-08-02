@@ -42,8 +42,6 @@ export transcript_qc_loc
 NLP_loc=/phone/processed/audio/transcripts/NLP_features/
 export NLP_loc
 
-daily_text_loc=/phone/processed/audio/transcripts/visualizations/wordclouds/transcript_level_wordclouds/tables/
-export daily_text_loc
 
 # study_wide_metadata_loc=$study_loc/Study-wide-metadata/study-wide-metadata.csv
 # export study_wide_metadata_loc
@@ -67,52 +65,43 @@ echo "Beginning script - diary visualization generation for:"
 echo "$study - $p"
 echo ""
 
-# add current time for runtime tracking purposes
-# now=$(date +"%T")
-# echo "Current time: ${now}"
-# echo ""
+add current time for runtime tracking purposes
+now=$(date +"%T")
+echo "Current time: ${now}"
+echo ""
 
 
-# # Build subject-level metadata 
-# echo "******************* Generating subject-level metadata *******************"
-# python "$repo_root"/individual_modules/functions_called/phone_transcript_metadata.py "$study" "$p"
-# echo ""
+# Build subject-level metadata 
+echo "******************* Generating subject-level metadata *******************"
+python "$repo_root"/individual_modules/functions_called/phone_transcript_metadata.py "$study" "$p"
+echo ""
 
 # start with distributions - per patient and for the overall study
 # feature distributions (OpenSMILE and NLP) also generated here, including doing OpenSMILE summary operation
-# echo "******************* Generating QC and feature distributions with histograms *******************"
-# bash "$repo_root"/individual_modules/run_distribution_plots.sh
-# echo ""
-
-# # add current time for runtime tracking purposes
-# now=$(date +"%T")
-# echo "Current time: ${now}"
-# echo ""
-
-# # create heatmaps to see progression of select audio and transcript QC features over time per patient (each diary one block)
-# # (could also propose alternative dot plots?)
-# echo "******************* Generating QC heatmaps for $p *******************"
-# bash "$repo_root"/individual_modules/run_heatmap_plots.sh
-# echo ""
-
-# # add current time for runtime tracking purposes
-# now=$(date +"%T")
-# echo "Current time: ${now}"
-# echo ""
-
-
-# # sentiment-colored wordclouds for the transcripts
-# echo "*******************Generating daily sentiment-colored wordclouds *******************"
-# bash "$repo_root"/individual_modules/run_wordclouds.sh
-# echo ""
+echo "******************* Generating QC and feature distributions with histograms *******************"
+bash "$repo_root"/individual_modules/run_distribution_plots.sh
+echo ""
 
 # add current time for runtime tracking purposes
 now=$(date +"%T")
 echo "Current time: ${now}"
 echo ""
 
-echo "******************* subject-level transcript text summary *******************"
-bash "$repo_root"/individual_modules/run_transcript_text_summary.sh
+# create heatmaps to see progression of select audio and transcript QC features over time per patient (each diary one block)
+# (could also propose alternative dot plots?)
+echo "******************* Generating QC heatmaps for $p *******************"
+bash "$repo_root"/individual_modules/run_heatmap_plots.sh
+echo ""
+
+# add current time for runtime tracking purposes
+now=$(date +"%T")
+echo "Current time: ${now}"
+echo ""
+
+
+# sentiment-colored wordclouds for the transcripts
+echo "*******************Generating daily sentiment-colored wordclouds *******************"
+bash "$repo_root"/individual_modules/run_wordclouds.sh
 echo ""
 
 

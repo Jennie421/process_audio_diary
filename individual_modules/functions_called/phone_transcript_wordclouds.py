@@ -37,16 +37,14 @@ def transcript_wordclouds(study, OLID):
 
 		plot_outpath = f'../../visualizations/wordclouds/transcript_level_wordclouds/plots/{study}_{OLID}_phoneAudioDiary_transcript_wordCloud_acadday{acad_cal_day}.png'
 		table_outpath = f'../../visualizations/wordclouds/transcript_level_wordclouds/tables/{study}_{OLID}_phoneAudioDiary_transcript_wordFrequencies_acadday{acad_cal_day}.csv'
-		daily_text_outpath = f'../../visualizations/wordclouds/transcript_level_wordclouds/tables/{study}_{OLID}_dailyText.csv'
-		subject_text_outpath = f'{study_loc}/topicModeling/{study}_{OLID}_subjectText.csv'
-		
+
 		title = f'{OLID}: Week {week}, {period}, Acad Day {acad_cal_day} (Word Count = {word_count})'
 
 		
 		if not os.path.exists(plot_outpath):
 			# only create if doesn't already exist for this transcript (as can be a somewhat time intensive process)
 			try:
-				transcript_wordcloud(cur_trans, plot_outpath, table_outpath, text_path=daily_text_outpath, subject_text_path=subject_text_outpath, verbose=True, title=title)
+				transcript_wordcloud(cur_trans, plot_outpath, table_outpath, verbose=True, title=title)
 				# note that sometimes multiple words with a space between will be considered as one word, seemingly inexplicably
 				# this happens infrequently enough that it is not worth the time to troubleshoot currently
 				# instead simply color the "word" as blue instead of on the normal red/black/green colorscale
@@ -57,28 +55,6 @@ def transcript_wordclouds(study, OLID):
 				continue
 	
 
-"""
-Pads academic calendar days to a full range. 
-Adds week number inforrmation to a given metadata data frame. 
-"""
-def acad_cal_days_and_weeks(metadata):
-	# generating a full academic days and weeks df
-	acad_cal_days = []
-	week = [1]*5
-	# Declare a list that is to be converted into a column
-	for i in range (1, 280): 
-		acad_cal_days.append(i)
-
-	for j in range (2, 42):
-		temp = [j] * 7
-		week += temp
-
-	week_info = metadata['subject']
-	df1 = pd.DataFrame({"acad_cal_day": acad_cal_days})
-	df2 = pd.DataFrame({"week": week})
-	week_info = pd.concat([week_info, df1, df2], axis=1)
-
-	return week_info
 
 
 '''
@@ -112,11 +88,10 @@ def wordcloud_per_week(weekly_files: list):
 
 	plot_outpath = f'../../visualizations/wordclouds/week_level_wordclouds/plots/{study}_{subject}_phoneAudioDiary_transcript_wordCloud_week{week}.png'
 	table_outpath = f'../../visualizations/wordclouds/week_level_wordclouds/tables/{study}_{subject}_phoneAudioDiary_transcript_wordFrequencies_week{week}.csv'
-	weekly_text_outpath = f'../../visualizations/wordclouds/week_level_wordclouds/tables/{study}_{subject}_weeklyText.csv'
-	subject_text_outpath = None
+
 	title = f'{subject}: Week {week}, {special_period}, Acad Days {acad_days[0]}-{acad_days[-1]} ({num_files} Transcripts Available; Avg Word Count = {avg_word_count})'
 	# actually plotting 
-	transcript_wordcloud(concat_result, plot_outpath, table_outpath, text_path=weekly_text_outpath, subject_text_path=subject_text_outpath, verbose=True, title=title)
+	transcript_wordcloud(concat_result, plot_outpath, table_outpath, verbose=True, title=title)
 
 
 '''
@@ -142,6 +117,30 @@ def weeklevel_transcript_wordclouds(study, OLID):
 
 
 """
+Pads academic calendar days to a full range. 
+Adds week number inforrmation to a given metadata data frame. 
+"""
+def acad_cal_days_and_weeks(metadata):
+	# generating a full academic days and weeks df
+	acad_cal_days = []
+	week = [1]*5
+	# Declare a list that is to be converted into a column
+	for i in range (1, 280): 
+		acad_cal_days.append(i)
+
+	for j in range (2, 42):
+		temp = [j] * 7
+		week += temp
+
+	week_info = metadata['subject']
+	df1 = pd.DataFrame({"acad_cal_day": acad_cal_days})
+	df2 = pd.DataFrame({"week": week})
+	week_info = pd.concat([week_info, df1, df2], axis=1)
+
+	return week_info
+
+
+"""
 Create a file called mmetadataWithWeek.csv
 """
 def add_week(study, OLID):
@@ -161,4 +160,4 @@ if __name__ == '__main__':
 	## Map command line arguments to function arguments.
 	add_week(sys.argv[1], sys.argv[2])
 	transcript_wordclouds(sys.argv[1], sys.argv[2])
-	# weeklevel_transcript_wordclouds(sys.argv[1], sys.argv[2])
+	weeklevel_transcript_wordclouds(sys.argv[1], sys.argv[2])

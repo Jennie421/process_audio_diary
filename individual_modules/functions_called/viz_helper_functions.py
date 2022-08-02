@@ -249,7 +249,7 @@ def sentiment_color_func(sentiment_dict, punc_skip, verbose=False):
 # 	(max font is effectively a saturation point for very common words)
 # nothing in the script will denote on your output whether this is patient speech only or all speech, so ensure save_path is clear on this or a title is provided
 # in addition to the optional wordcloud settings, verbose can be set to True optionally to print additional info on any issues encountered
-def transcript_wordcloud(transcript_df, plot_path, table_path, text_path=None, subject_text_path=None, sentiment=True, pt_only=True, title=None, min_font=6, max_font=200, freq_weight=1.0, 
+def transcript_wordcloud(transcript_df, plot_path, table_path, sentiment=True, pt_only=True, title=None, min_font=6, max_font=200, freq_weight=1.0, 
 						 include_punctuation=["'",'[',']',"-"], stop_words=stops, fig_size=(20,10), bg_color="white", 
 						 split_char=" ", custom_word_color=sentiment_color_func, verbose=False):
 	plural_check = inflect.engine() # use to count plural and singular versions of a word as the same word
@@ -329,84 +329,43 @@ def transcript_wordcloud(transcript_df, plot_path, table_path, text_path=None, s
 		val_mean = np.nanmean(val)
 		word_dict[key] = val_mean 
 
-	
-	# Export daily or weekly full text for topic modeling in R
-	if text_path != None:
-		time_point = re.findall(r'\d+', table_path)[-1] # Get week or day 
-		cur_text_df = pd.DataFrame({'doc_id': [time_point], 'text': [text_full]}) # week or day as doc id
 
-		try:
-			full_text_df = pd.read_csv(f'{text_path}')
-			full_text_df = pd.concat([full_text_df, cur_text_df])
-		except:
-			full_text_df = cur_text_df
+	# Get word frequencies 
+	word_count_dict = WordCloud().process_text(text_full)
 
-		full_text_df.to_csv(f'{text_path}', index=False)
+	df = pd.DataFrame.from_dict([word_count_dict])	# Convert dict to df 
+	df = df.T # NOTE: Words are the index 
+	df.reset_index(inplace=True)
+	df.rename(columns={df.columns[0]: 'word', df.columns[1]: 'abs_freq'},inplace=True) # Rename columns
 
+	df = df[~df['word'].isin(stops)] # Filter out words in "stops" 
+	df.sort_values(by='abs_freq', ascending=False, inplace=True) # Sort by absolute frequency 
 
-	# # Create subject level text for topic modeling in R
-	# if subject_text_path != None:
-	# 	subject_id = subject_text_path.split("/")[-1].split("_")[2]
-	# 	cur_text_df = pd.DataFrame({'doc_id': [subject_id], 'text': [text_full]}) 
-		
-	# 	try:
-	# 		full_text_df = pd.read_csv(f'{subject_text_path}') # check if doc exists
-	# 		full_text_df.set_index("doc_id")
+	# Get relative frequency
+	df['relative_freq'] = df.abs_freq / sum(df['abs_freq'])
+	# Add sentiment score 
+	df['sentiment'] = df['word'].map(word_dict)
 
-	# 		# if the subject exist, concat cur text to the existing text of the subject
-	# 		if subject_id in full_text_df["doc_id"].values:
-	# 			full_text_df.at[subject_id,'text'] += text_full
-	# 			print("old subject " + subject_id + text_full, flush=True)
-
-	# 		# else, create a new row for the subject 
-	# 		else: 
-	# 			full_text_df = pd.concat([full_text_df, cur_text_df])
-	# 			print("new subject " + subject_id + text_full, flush=True)
-
-	# 	except:
-	# 		full_text_df = cur_text_df
-	# 		print(text_path, flush=True)
-
-	# 	full_text_df.set_index("doc_id")
-	# 	full_text_df.to_csv(f'{subject_text_path}', index=False)
-
-
-	# # Get word frequencies 
-	# word_count_dict = WordCloud().process_text(text_full)
-
-	# df = pd.DataFrame.from_dict([word_count_dict])	# Convert dict to df 
-	# df = df.T # NOTE: Words are the index 
-	# df.reset_index(inplace=True)
-	# df.rename(columns={df.columns[0]: 'word', df.columns[1]: 'abs_freq'},inplace=True) # Rename columns
-
-	# df = df[~df['word'].isin(stops)] # Filter out words in "stops" 
-	# df.sort_values(by='abs_freq', ascending=False, inplace=True) # Sort by absolute frequency 
-
-	# # Get relative frequency
-	# df['relative_freq'] = df.abs_freq / sum(df['abs_freq'])
-	# # Add sentiment score 
-	# df['sentiment'] = df['word'].map(word_dict)
-
-	# # Save a table of word absolute & relative frequencies 
-	# df.to_csv(table_path, index=False)
+	# Save a table of word absolute & relative frequencies 
+	df.to_csv(table_path, index=False)
 
 
 
-	# # actually create wordcloud and clean up figure
-	# if sentiment:
-	# 	cur_color_function = custom_word_color(word_dict, include_punctuation, verbose=verbose)
-	# 	# note that if custom_word_color is provided as an optional argument, it will have to accept these (and only these) arguments in current implementation 
-	# 	wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words, 
-	# 						  min_font_size=min_font, max_font_size=max_font, max_words=1000, color_func=cur_color_function, 
-	# 						  prefer_horizontal=0.8).generate(text_full) # relative scaling set to decide based on word frequency
-	# else: # just use default color assignment instead
-	# 	wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words,
-	# 						  min_font_size=min_font, max_font_size=max_font, max_words=1000, 
-	# 						  prefer_horizontal=0.8).generate(text_full) # relative scaling set to decide based on word frequency
-	# plt.figure(1, figsize=fig_size)
-	# plt.imshow(wordcloud)
-	# plt.axis("off")
-	# if title is not None:
-	# 	plt.title(title)
-	# plt.savefig(plot_path, bbox_inches="tight")
-	# plt.close("all")
+	# actually create wordcloud and clean up figure
+	if sentiment:
+		cur_color_function = custom_word_color(word_dict, include_punctuation, verbose=verbose)
+		# note that if custom_word_color is provided as an optional argument, it will have to accept these (and only these) arguments in current implementation 
+		wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words, 
+							  min_font_size=min_font, max_font_size=max_font, max_words=1000, color_func=cur_color_function, 
+							  prefer_horizontal=0.8).generate(text_full) # relative scaling set to decide based on word frequency
+	else: # just use default color assignment instead
+		wordcloud = WordCloud(regexp=regexp, width=1600, height=800, background_color=bg_color, relative_scaling = freq_weight, stopwords = stop_words,
+							  min_font_size=min_font, max_font_size=max_font, max_words=1000, 
+							  prefer_horizontal=0.8).generate(text_full) # relative scaling set to decide based on word frequency
+	plt.figure(1, figsize=fig_size)
+	plt.imshow(wordcloud)
+	plt.axis("off")
+	if title is not None:
+		plt.title(title)
+	plt.savefig(plot_path, bbox_inches="tight")
+	plt.close("all")
