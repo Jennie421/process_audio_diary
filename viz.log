@@ -15044,3 +15044,56 @@ Completed analysis for 9SA35
 
 =============Script Terminated=============
   
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+phone_diary_viz.sh: line 68: add: command not found
+Current time: 15:57:26
+
+******************* Generating subject-level metadata *******************
+saving all features
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+phone_diary_viz.sh: line 83: : command not found
+Current time: 15:58:36
+
+******************* Generating QC heatmaps for 6YG55 *******************
+
+Current time: 15:58:57
+
+*******************Generating daily sentiment-colored wordclouds *******************
+bash: /n/home_fasse/jennieli/process_audio_diary/individual_modules/run_wordclouds.sh: No such file or directory
+
+=============Script Terminated=============
+  
+
+Beginning script - diary visualization generation for:
+FRESH_17 - 6YG55
+
+phone_diary_viz.sh: line 68: add: command not found
+Current time: 16:01:47
+
+******************* Generating allFeatures for 6YG55 *******************
+saving all features
+
+******************* Generating QC and feature distributions with histograms *******************
+Generating distribution plots for 6YG55
+Preparing audio feature distributions for 6YG55
+AUDIO QC DONE
+Preparing transcript feature distributions for 6YG55
+TRANSCRIPT QC DONE
+
+Current time: 16:02:44
+
+******************* Generating QC heatmaps for 6YG55 *******************
+
+Current time: 16:03:00
+
+*******************Generating daily sentiment-colored wordclouds *******************
+Generating daily transcript wordclouds for 6YG55

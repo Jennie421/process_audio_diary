@@ -72,8 +72,8 @@ echo ""
 
 
 # Build subject-level metadata 
-echo "******************* Generating subject-level metadata *******************"
-python "$repo_root"/individual_modules/functions_called/phone_transcript_metadata.py "$study" "$p"
+echo "******************* Generating allFeatures for $p *******************"
+python "$repo_root"/individual_modules/functions_called/phone_transcript_allFeatures.py "$study" "$p"
 echo ""
 
 # start with distributions - per patient and for the overall study

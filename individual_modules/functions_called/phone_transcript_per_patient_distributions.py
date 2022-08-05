@@ -29,16 +29,14 @@ def transcript_dist(study, OLID):
 	# load current QC file
 	try:
 		# cur_QC_path = glob.glob(study + "-" + OLID + "-phoneTranscriptQC-day1to*.csv")[0] # should only ever be one match if called from module
-		cur_QC_path = study + "_" + OLID + "_phoneAudioDiary_transcript_QC.csv"
-		cur_QC = pd.read_csv(cur_QC_path)
+		all_features = pd.read_csv(study_loc + study + '/' + OLID + audio_qc_loc + study + "_" + OLID + "_phoneAudioDiary_allFeatures.csv")
 	except:
-		print("No transcripts processed yet for this patient, returning") # in case this function is called standalone, notify the user if no processed transcripts exist
+		print("No allFeatures file yet for this patient, returning") # in case this function is called standalone, notify the user if no processed transcripts exist
 		return
 
 	# JL MERGE 
 	# audioQCmerged = pd.read_csv("../" + study + "_" + OLID + "_audioQCmerged.csv")
 	# AudioTranscriptQCmerged = pd.merge(audioQCmerged, cur_QC, on=['transcript_name'], how='left')
-	all_features = pd.read_csv(study_loc + study + '/' + OLID + audio_qc_loc + study + "_" + OLID + "_phoneAudioDiary_allFeatures.csv")
 	merger = all_features[["filename","hours_until_submission"]]
 	merger = all_features[["filename"]]
 
